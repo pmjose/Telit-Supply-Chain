@@ -1,0 +1,10 @@
+# Snowflake CLI project configuration
+definition_version: 1
+streamlit:
+  name: TELIT_SUPPLY_CHAIN_APP
+  stage: STREAMLIT_STAGE
+  query_warehouse: COMPUTE_WH
+  main_file: streamlit_app.py
+  env_file: environment.yml
+  pages_dir: pages/
+
