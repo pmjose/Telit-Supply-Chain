@@ -370,3 +370,4 @@ ORDER BY event_date DESC;
 | "We already have BI tools" | This isn't replacement—it's augmentation with AI capabilities your current tools don't have. |
 | "Security concerns with AI" | All data stays in your Snowflake account. No data leaves to external AI services. |
 
+

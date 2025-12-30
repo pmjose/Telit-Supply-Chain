@@ -140,7 +140,7 @@ if page == "🏠 Home":
     st.markdown("### 📊 Executive Summary: Platform Business Impact")
     k1, k2, k3, k4, k5, k6 = st.columns(6)
     k1.metric("Annual Savings", "$4.2M", "projected ROI")
-    k2.metric("Data Sources", "12+", "unified")
+    k2.metric("Data Sources", "18+", "unified")
     k3.metric("IoT Ingestion", "<30 sec", "real-time")
     k4.metric("Inventory Reduction", "10%", "$5M freed")
     k5.metric("Forecast MAPE", "-15%", "ML-powered")
@@ -958,6 +958,67 @@ if page == "🏠 Home":
                     </div>
                 </div>
                 """, unsafe_allow_html=True)
+        
+        # AI Command Center
+        with st.expander("🎛️ **AI Command Center** - Cortex AI-powered decision support hub", expanded=True):
+            col1, col2 = st.columns([3, 2])
+            with col1:
+                st.markdown("**Business Value:**")
+                st.success("Consolidates AI insights, scenario planning, and decision support in one powerful hub. Natural language queries via Snowflake Cortex enable executives to ask questions in plain English and get instant, data-driven answers.")
+                
+                st.markdown("**Key Capabilities:**")
+                st.markdown("""
+                - 🤖 **AI Insights**: Natural language queries powered by Cortex LLM
+                - 🎚️ **What-If Simulator**: Model supply disruptions, demand surges, cost changes
+                - 🔔 **Live Alerts**: Real-time critical alert monitoring with severity tracking
+                - 🕸️ **Network Graph**: Interactive supplier-product-customer relationship map
+                - ⏱️ **Time Machine**: Historical performance exploration
+                - 💰 **ROI Calculator**: Investment analysis and savings projection
+                """)
+                
+                st.markdown("**ROI Metrics:**")
+                m1, m2, m3 = st.columns(3)
+                m1.metric("Decision Speed", "+40%", "faster response")
+                m2.metric("Risk Mitigation", "$2M+", "avoided losses")
+                m3.metric("Exec Adoption", "85%", "self-service")
+            
+            with col2:
+                st.markdown(f"""
+                <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-radius: 12px; padding: 20px; border: 1px solid #764ba2;">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px;">
+                        <span style="font-size: 16px; font-weight: 700; color: white;">📅 Implementation Plan</span>
+                        <span style="background: rgba(255,255,255,0.2); color: white; padding: 6px 14px; border-radius: 8px; font-size: 13px; font-weight: 600;">~6 weeks</span>
+                    </div>
+                    <div style="background: rgba(255,255,255,0.1); border-radius: 8px; padding: 12px; margin-bottom: 12px;">
+                        <div style="font-size: 11px; font-weight: 600; color: white; margin-bottom: 8px;">📋 DELIVERY TIMELINE</div>
+                        <div style="display: flex; align-items: center; margin-bottom: 6px;">
+                            <div style="width: 18px; height: 18px; background: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #764ba2; font-size: 7px; font-weight: 700;">1-2</div>
+                            <div style="flex: 1; height: 2px; background: white; margin: 0 3px;"></div>
+                            <div style="width: 18px; height: 18px; background: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #764ba2; font-size: 7px; font-weight: 700;">3-4</div>
+                            <div style="flex: 1; height: 2px; background: white; margin: 0 3px;"></div>
+                            <div style="width: 18px; height: 18px; background: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #764ba2; font-size: 7px; font-weight: 700;">5-6</div>
+                        </div>
+                        <div style="display: flex; justify-content: space-between; font-size: 8px; color: rgba(255,255,255,0.8);">
+                            <span>Cortex Setup</span>
+                            <span>What-If Engine</span>
+                            <span>UI & Training</span>
+                        </div>
+                    </div>
+                    <div style="background: rgba(255,255,255,0.15); border-radius: 8px; padding: 10px; margin-bottom: 12px;">
+                        <div style="font-size: 11px; font-weight: 600; color: white; margin-bottom: 5px;">⚡ PREREQUISITES</div>
+                        <div style="font-size: 10px; color: rgba(255,255,255,0.9);">✓ Snowflake Enterprise Edition<br>✓ Cortex AI enabled<br>✓ Core dashboards complete<br>✓ Historical data (2+ years)</div>
+                    </div>
+                    <div style="display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 10px;">
+                        <span style="background: rgba(255,255,255,0.2); color: white; padding: 3px 8px; border-radius: 4px; font-size: 9px; font-weight: 600;">Cortex LLM</span>
+                        <span style="background: rgba(255,255,255,0.2); color: white; padding: 3px 8px; border-radius: 4px; font-size: 9px; font-weight: 600;">Snowpark</span>
+                        <span style="background: rgba(255,255,255,0.2); color: white; padding: 3px 8px; border-radius: 4px; font-size: 9px; font-weight: 600;">Streamlit</span>
+                        <span style="background: rgba(255,255,255,0.2); color: white; padding: 3px 8px; border-radius: 4px; font-size: 9px; font-weight: 600;">Monte Carlo</span>
+                    </div>
+                    <div style="font-size: 10px; color: rgba(255,255,255,0.8); display: flex; align-items: center; gap: 5px;">
+                        <span style="color: #fbbf24;">●</span> Data Cleanup: <strong>Medium</strong> - Data mart aggregations
+                    </div>
+                </div>
+                """, unsafe_allow_html=True)
     
     # =================================================================
     # PHASE 5: EXTENDED CAPABILITIES
@@ -1337,6 +1398,7 @@ if page == "🏠 Home":
         {"Use Case": "🔗 Traceability", "Start": 16, "Duration": 5, "Phase": "Phase 3", "Effort": "120 hrs"},
         {"Use Case": "🔧 Predictive Maintenance", "Start": 21, "Duration": 6, "Phase": "Phase 4", "Effort": "150 hrs"},
         {"Use Case": "🌱 Carbon ESG", "Start": 24, "Duration": 5, "Phase": "Phase 4", "Effort": "110 hrs"},
+        {"Use Case": "🎛️ AI Command Center", "Start": 22, "Duration": 6, "Phase": "Phase 4", "Effort": "180 hrs"},
         {"Use Case": "📱 Certifications", "Start": 29, "Duration": 4, "Phase": "Phase 5", "Effort": "80 hrs"},
         {"Use Case": "🔄 Product Lifecycle", "Start": 30, "Duration": 5, "Phase": "Phase 5", "Effort": "90 hrs"},
         {"Use Case": "📋 Customer Orders", "Start": 32, "Duration": 4, "Phase": "Phase 5", "Effort": "70 hrs"},
@@ -1436,12 +1498,12 @@ if page == "🏠 Home":
     # Summary table below the Gantt
     st.markdown("#### 📋 Detailed Summary")
     summary_data = pd.DataFrame({
-        "Use Case": ["Executive Dashboard", "Inventory & Shipments", "Digital Twin", "Quality Control", "Supplier Performance", "Demand Forecasting", "Risk Intelligence", "Traceability", "Predictive Maintenance", "Carbon ESG", "Certifications", "Product Lifecycle", "Customer Orders", "Returns & RMA", "CM Portal", "Financial & Costing"],
-        "Phase": ["1", "1", "2", "2", "2", "3", "3", "3", "4", "4", "5", "5", "5", "5", "5", "5"],
-        "Timeline": ["2 weeks", "3 weeks", "4 weeks", "3 weeks", "3 weeks", "4 weeks", "4 weeks", "5 weeks", "6 weeks", "5 weeks", "4 weeks", "5 weeks", "4 weeks", "4 weeks", "5 weeks", "5 weeks"],
-        "Effort (hrs)": [40, 60, 120, 80, 70, 100, 90, 120, 150, 110, 80, 90, 70, 60, 100, 80],
-        "Data Cleanup": ["Low", "Medium", "High", "Medium", "High", "High", "Medium", "High", "High", "High", "Medium", "High", "Medium", "Low", "High", "Medium"],
-        "ROI": ["$500K", "$5.8M", "$575K", "$430K", "$1.5M", "$1.8M", "$1M+", "$50M*", "$680K", "$15M*", "$2M*", "$5M*", "$1.5M", "$300K", "$800K", "$2M"]
+        "Use Case": ["Executive Dashboard", "Inventory & Shipments", "Digital Twin", "Quality Control", "Supplier Performance", "Demand Forecasting", "Risk Intelligence", "Traceability", "Predictive Maintenance", "Carbon ESG", "AI Command Center", "Certifications", "Product Lifecycle", "Customer Orders", "Returns & RMA", "CM Portal", "Financial & Costing"],
+        "Phase": ["1", "1", "2", "2", "2", "3", "3", "3", "4", "4", "4", "5", "5", "5", "5", "5", "5"],
+        "Timeline": ["2 weeks", "3 weeks", "4 weeks", "3 weeks", "3 weeks", "4 weeks", "4 weeks", "5 weeks", "6 weeks", "5 weeks", "6 weeks", "4 weeks", "5 weeks", "4 weeks", "4 weeks", "5 weeks", "5 weeks"],
+        "Effort (hrs)": [40, 60, 120, 80, 70, 100, 90, 120, 150, 110, 180, 80, 90, 70, 60, 100, 80],
+        "Data Cleanup": ["Low", "Medium", "High", "Medium", "High", "High", "Medium", "High", "High", "High", "Medium", "Medium", "High", "Medium", "Low", "High", "Medium"],
+        "ROI": ["$500K", "$5.8M", "$575K", "$430K", "$1.5M", "$1.8M", "$1M+", "$50M*", "$680K", "$15M*", "$2M+", "$2M*", "$5M*", "$1.5M", "$300K", "$800K", "$2M"]
     })
     st.dataframe(summary_data, use_container_width=True)
     st.caption("*Revenue/contracts protected, not direct savings")
@@ -1522,6 +1584,7 @@ if page == "🏠 Home":
         "Traceability": {"MES Integration": False, "Lot Tracking": True, "BOM Accuracy": False},
         "Predictive Maintenance": {"Sensor Data": False, "Failure History": False, "CMMS Access": True},
         "Carbon & ESG": {"Energy Meters": False, "Emission Factors": False, "Supplier ESG": False},
+        "AI Command Center": {"Cortex Enabled": True, "Data Marts Ready": True, "Historical Data": True},
         "Certifications": {"Cert Database": True, "Carrier APIs": False, "Reg Calendar": True},
         "Product Lifecycle": {"PLM Access": True, "Roadmap Data": True, "EOL Policy": True},
         "Customer Orders": {"SAP SD": True, "CRM Integration": False, "VMI Data": True},
@@ -1886,52 +1949,180 @@ elif page == "🎛️ AI Command Center":
         st.subheader("🤖 AI-Powered Supply Chain Insights")
         st.markdown("Ask questions in natural language — powered by **Snowflake Cortex LLM**")
         
+        # Initialize session state for selected question
+        if 'selected_question' not in st.session_state:
+            st.session_state.selected_question = None
+        
         # Natural Language Query Interface
         col_query, col_examples = st.columns([3, 1])
         with col_query:
             user_query = st.text_input(
                 "💬 Ask your supply chain anything:",
                 placeholder="e.g., Which suppliers have the highest risk of delay next month?",
-                key="ai_query"
+                key="ai_query_input"
             )
         with col_examples:
             st.markdown("**Quick questions:**")
             if st.button("🔴 Critical risks?", key="q1"):
-                user_query = "What are the critical supply chain risks right now?"
+                st.session_state.selected_question = "risks"
             if st.button("📦 Inventory issues?", key="q2"):
-                user_query = "Which products are at risk of stockout?"
+                st.session_state.selected_question = "inventory"
             if st.button("📈 Demand trends?", key="q3"):
-                user_query = "What demand trends should I watch?"
+                st.session_state.selected_question = "demand"
         
-        if user_query or st.session_state.get('ai_query'):
+        # Determine which response to show
+        show_response = False
+        response_type = None
+        query_text = ""
+        
+        if user_query:
+            show_response = True
+            query_text = user_query
+            # Determine response type based on keywords
+            if any(word in user_query.lower() for word in ['risk', 'delay', 'critical', 'problem', 'issue']):
+                response_type = "risks"
+            elif any(word in user_query.lower() for word in ['inventory', 'stock', 'shortage', 'stockout']):
+                response_type = "inventory"
+            elif any(word in user_query.lower() for word in ['demand', 'forecast', 'trend', 'growth']):
+                response_type = "demand"
+            elif any(word in user_query.lower() for word in ['supplier', 'vendor', 'lead time']):
+                response_type = "suppliers"
+            elif any(word in user_query.lower() for word in ['quality', 'defect', 'yield', 'fpy']):
+                response_type = "quality"
+            else:
+                response_type = "general"
+        elif st.session_state.selected_question:
+            show_response = True
+            response_type = st.session_state.selected_question
+            if response_type == "risks":
+                query_text = "What are the critical supply chain risks right now?"
+            elif response_type == "inventory":
+                query_text = "Which products are at risk of stockout?"
+            elif response_type == "demand":
+                query_text = "What demand trends should I watch?"
+        
+        # AI Responses for different question types
+        ai_responses = {
+            "risks": {
+                "findings": [
+                    ("⚠️", "High Risk", "Qualcomm MDM9607 lead times extended to 18 weeks (was 12) due to Taiwan fab capacity constraints"),
+                    ("🔴", "Critical", "3 POs from u-blox at risk of delay (affects ME310G1 production next month)"),
+                    ("📦", "Inventory Alert", "SE868K3 GNSS module at 8 DOS — below safety stock threshold"),
+                    ("🚢", "Logistics", "Shanghai port congestion adding 4-6 days to APAC shipments")
+                ],
+                "actions": [
+                    "Activate secondary supplier (MediaTek) for MDM chipsets — pre-qualified last quarter",
+                    "Expedite u-blox POs with air freight option (+$12K cost)",
+                    "Increase SE868K3 production priority on SMT Line 4"
+                ],
+                "confidence": 94
+            },
+            "inventory": {
+                "findings": [
+                    ("🔴", "Critical Stockout Risk", "SE868K3 GNSS module at 8 DOS — only 12 days until stockout at current demand"),
+                    ("🟠", "Low Stock", "ME310G1-WW at 15 DOS — below 18-day safety threshold, 2 weeks to replenish"),
+                    ("🟡", "Watch List", "FN990A memory components at 22 DOS — supplier lead time extended"),
+                    ("✅", "Overstocked", "LE910C4-EU sitting at 65 DOS — consider promotion or reallocation")
+                ],
+                "actions": [
+                    "Place emergency PO for SE868K3 components — expedite via air freight",
+                    "Shift 5K units of ME310G1 allocation from EMEA to Americas hub",
+                    "Review FN990A BOM for alternative memory supplier qualification"
+                ],
+                "confidence": 91
+            },
+            "demand": {
+                "findings": [
+                    ("📈", "Strong Growth", "FN990A 5G modules: +23% YoY demand from automotive OEMs (BMW, Continental)"),
+                    ("🔄", "Seasonal Pattern", "LE910C4 showing typical Q1 dip (-8%) in smart metering — expect recovery Q2"),
+                    ("🚀", "New Opportunity", "Design win pipeline shows 3 new Tier 1 automotive accounts for ME310G1"),
+                    ("⚠️", "Declining", "SE868K3 legacy GNSS: -12% as customers migrate to newer modules")
+                ],
+                "actions": [
+                    "Increase FN990A production allocation by 15% for Q1",
+                    "Engage with SE868K3 customers about upgrade path to SE868K5",
+                    "Pre-position inventory for design win ramp-ups in Q2"
+                ],
+                "confidence": 88
+            },
+            "suppliers": {
+                "findings": [
+                    ("🔴", "At Risk", "u-blox OTD dropped to 78% (was 92%) — component shortage at their supplier"),
+                    ("🟡", "Watch", "Qualcomm lead times extended 6 weeks — fab capacity constraints"),
+                    ("✅", "Strong", "Murata maintaining 98% OTD despite market constraints"),
+                    ("📊", "Trend", "Overall supplier OTD: 87.2% — down 3.1 pts from last quarter")
+                ],
+                "actions": [
+                    "Schedule executive escalation call with u-blox",
+                    "Activate MediaTek as qualified alternative for Qualcomm",
+                    "Increase Murata allocation given strong performance"
+                ],
+                "confidence": 92
+            },
+            "quality": {
+                "findings": [
+                    ("🔴", "Alert", "AOI Station #2 showing 12% false rejection rate — calibration drift detected"),
+                    ("🟡", "Trend", "FN990A RF test yield down 0.8% this week — under investigation"),
+                    ("✅", "Improvement", "ME310G1 FPY improved to 98.9% after reflow profile adjustment"),
+                    ("📊", "Overall", "Plant FPY at 98.7% — meeting target but below best-in-class 99.2%")
+                ],
+                "actions": [
+                    "Schedule AOI Station #2 recalibration during next maintenance window",
+                    "Root cause analysis on FN990A RF yield — check antenna alignment",
+                    "Document ME310G1 reflow optimization for other products"
+                ],
+                "confidence": 96
+            },
+            "general": {
+                "findings": [
+                    ("📊", "Overview", "Supply chain health score: 82/100 — Good with some areas needing attention"),
+                    ("💰", "Financial", "YTD revenue: $509M (+6% vs LY), Gross margin: 38.5%"),
+                    ("📦", "Operations", "Overall OTD: 94.3%, Inventory turns: 8.2x, Quality FPY: 98.7%"),
+                    ("⚠️", "Top Risk", "Semiconductor supply constraints remain primary concern for Q1")
+                ],
+                "actions": [
+                    "Review AI Command Center dashboards for detailed analysis",
+                    "Check Live Alerts tab for items requiring immediate attention",
+                    "Run What-If scenarios to stress-test current supply plan"
+                ],
+                "confidence": 90
+            }
+        }
+        
+        if show_response and response_type:
             with st.spinner("🧠 Cortex AI analyzing..."):
                 import time
-                time.sleep(1.5)  # Simulate AI processing
+                time.sleep(1.2)
             
             st.success("✅ Analysis complete")
             
-            # Simulated AI Response
-            st.markdown("""
+            response = ai_responses.get(response_type, ai_responses["general"])
+            
+            # Build findings HTML
+            findings_html = ""
+            for icon, label, text in response["findings"]:
+                findings_html += f'<li>{icon} <strong>{label}:</strong> {text}</li>'
+            
+            # Build actions HTML
+            actions_html = ""
+            for i, action in enumerate(response["actions"], 1):
+                actions_html += f'<li>{action}</li>'
+            
+            st.markdown(f"""
             <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); padding: 20px; border-radius: 12px; color: white;">
                 <h4 style="margin-top: 0; color: white;">🤖 Cortex AI Analysis</h4>
-                <p><strong>Query:</strong> "What are the critical supply chain risks right now?"</p>
+                <p><strong>Query:</strong> "{query_text}"</p>
                 <hr style="border-color: rgba(255,255,255,0.3);">
                 <p><strong>Key Findings:</strong></p>
-                <ul>
-                    <li>⚠️ <strong>High Risk:</strong> Qualcomm MDM9607 lead times extended to 18 weeks (was 12) due to Taiwan fab capacity constraints</li>
-                    <li>🔴 <strong>Critical:</strong> 3 POs from u-blox at risk of delay (affects ME310G1 production next month)</li>
-                    <li>📦 <strong>Inventory Alert:</strong> SE868K3 GNSS module at 8 DOS — below safety stock threshold</li>
-                    <li>🚢 <strong>Logistics:</strong> Shanghai port congestion adding 4-6 days to APAC shipments</li>
-                </ul>
+                <ul>{findings_html}</ul>
                 <p><strong>Recommended Actions:</strong></p>
-                <ol>
-                    <li>Activate secondary supplier (MediaTek) for MDM chipsets — pre-qualified last quarter</li>
-                    <li>Expedite u-blox POs with air freight option (+$12K cost)</li>
-                    <li>Increase SE868K3 production priority on SMT Line 4</li>
-                </ol>
-                <p style="font-size: 0.85em; opacity: 0.8; margin-bottom: 0;">Confidence: 94% | Data freshness: 2 minutes ago | Model: Cortex-Complete</p>
+                <ol>{actions_html}</ol>
+                <p style="font-size: 0.85em; opacity: 0.8; margin-bottom: 0;">Confidence: {response["confidence"]}% | Data freshness: 2 minutes ago | Model: Cortex-Complete</p>
             </div>
             """, unsafe_allow_html=True)
+            
+            # Reset selected question after showing response
+            st.session_state.selected_question = None
         
         st.markdown("---")
         
@@ -2201,7 +2392,7 @@ elif page == "🎛️ AI Command Center":
         
         critical_alerts = [
             {
-                "id": "ALT-2024-1847",
+                "id": "ALT-2025-1847",
                 "title": "Qualcomm MDM9607 Supply Shortage",
                 "severity": "CRITICAL",
                 "age": "2h 34m",
@@ -2211,7 +2402,7 @@ elif page == "🎛️ AI Command Center":
                 "status": "In Progress"
             },
             {
-                "id": "ALT-2024-1852",
+                "id": "ALT-2025-1852",
                 "title": "AOI Station #2 Quality Deviation",
                 "severity": "CRITICAL", 
                 "age": "45m",
@@ -2221,7 +2412,7 @@ elif page == "🎛️ AI Command Center":
                 "status": "Investigating"
             },
             {
-                "id": "ALT-2024-1855",
+                "id": "ALT-2025-1855",
                 "title": "FCC Certification Expiry - SE868K3",
                 "severity": "CRITICAL",
                 "age": "18m",
@@ -2302,88 +2493,222 @@ elif page == "🎛️ AI Command Center":
         # Network controls
         net_col1, net_col2, net_col3 = st.columns(3)
         with net_col1:
-            view_depth = st.selectbox("View Depth", ["Full Network", "Tier 1 Only", "Critical Path", "Single-Source Risk"])
+            view_depth = st.selectbox("View Depth", ["Full Network", "Tier 1 Only", "Critical Path", "Single-Source Risk"], key="net_view")
         with net_col2:
-            highlight = st.selectbox("Highlight", ["None", "High Risk Nodes", "Revenue Impact", "Lead Time Critical"])
+            highlight = st.selectbox("Highlight", ["None", "High Risk Nodes", "Revenue Impact", "Lead Time Critical"], key="net_highlight")
         with net_col3:
-            product_filter = st.selectbox("Product Focus", ["All Products", "ME310G1", "FN990A", "LE910C4", "SE868K3"])
+            product_filter = st.selectbox("Product Focus", ["All Products", "ME310G1", "FN990A", "LE910C4", "SE868K3"], key="net_product")
         
-        # Create network graph using Plotly
-        # Nodes: Suppliers -> Components -> Products -> Customers
+        # Define complete network data with metadata
+        network_data = {
+            "suppliers": [
+                {"name": "Qualcomm", "risk": "high", "revenue": 52, "lead_time": 18, "single_source": True, "products": ["ME310G1", "LE910C4"]},
+                {"name": "u-blox", "risk": "high", "revenue": 18, "lead_time": 14, "single_source": True, "products": ["ME310G1", "SE868K3"]},
+                {"name": "Skyworks", "risk": "medium", "revenue": 12, "lead_time": 10, "single_source": False, "products": ["ME310G1", "FN990A"]},
+                {"name": "Murata", "risk": "low", "revenue": 8, "lead_time": 8, "single_source": False, "products": ["ME310G1", "FN990A", "LE910C4", "SE868K3"]},
+                {"name": "Samsung", "risk": "medium", "revenue": 15, "lead_time": 12, "single_source": False, "products": ["FN990A"]},
+                {"name": "MediaTek", "risk": "low", "revenue": 6, "lead_time": 10, "single_source": False, "products": ["LE910C4"]},
+                {"name": "JCET", "risk": "low", "revenue": 4, "lead_time": 6, "single_source": False, "products": ["ME310G1", "LE910C4"]},
+                {"name": "ASE", "risk": "low", "revenue": 3, "lead_time": 6, "single_source": False, "products": ["FN990A", "SE868K3"]},
+            ],
+            "components": [
+                {"name": "MDM9607", "suppliers": ["Qualcomm"], "products": ["ME310G1", "LE910C4"], "critical": True},
+                {"name": "UBX-M10", "suppliers": ["u-blox"], "products": ["SE868K3"], "critical": True},
+                {"name": "SKY78", "suppliers": ["Skyworks"], "products": ["ME310G1", "FN990A"], "critical": False},
+                {"name": "GRM188", "suppliers": ["Murata"], "products": ["ME310G1", "FN990A", "LE910C4", "SE868K3"], "critical": False},
+                {"name": "Memory", "suppliers": ["Samsung"], "products": ["FN990A"], "critical": True},
+                {"name": "RF-FEM", "suppliers": ["Skyworks", "MediaTek"], "products": ["LE910C4"], "critical": False},
+                {"name": "Package", "suppliers": ["JCET", "ASE"], "products": ["ME310G1", "FN990A"], "critical": False},
+                {"name": "Test", "suppliers": ["ASE"], "products": ["SE868K3"], "critical": False},
+            ],
+            "products": [
+                {"name": "ME310G1", "revenue": 85, "customers": ["BMW", "Continental", "Vodafone"]},
+                {"name": "FN990A", "revenue": 62, "customers": ["BMW", "Continental", "NTT"]},
+                {"name": "LE910C4", "revenue": 48, "customers": ["Landis+Gyr", "Vodafone", "Honeywell"]},
+                {"name": "SE868K3", "revenue": 32, "customers": ["Landis+Gyr", "NTT", "Honeywell"]},
+            ],
+            "customers": [
+                {"name": "BMW", "revenue": 42, "products": ["ME310G1", "FN990A"]},
+                {"name": "Continental", "revenue": 38, "products": ["ME310G1", "FN990A"]},
+                {"name": "Landis+Gyr", "revenue": 32, "products": ["LE910C4", "SE868K3"]},
+                {"name": "Vodafone", "revenue": 28, "products": ["ME310G1", "LE910C4"]},
+                {"name": "NTT", "revenue": 22, "products": ["FN990A", "SE868K3"]},
+                {"name": "Honeywell", "revenue": 18, "products": ["LE910C4", "SE868K3"]},
+            ]
+        }
         
-        # Node positions (calculated for radial layout)
-        import math
+        # Filter data based on product focus
+        if product_filter != "All Products":
+            selected_product = product_filter
+            # Filter suppliers
+            filtered_suppliers = [s for s in network_data["suppliers"] if selected_product in s["products"]]
+            # Filter components
+            filtered_components = [c for c in network_data["components"] if selected_product in c["products"]]
+            # Filter products
+            filtered_products = [p for p in network_data["products"] if p["name"] == selected_product]
+            # Filter customers
+            filtered_customers = [c for c in network_data["customers"] if selected_product in c["products"]]
+        else:
+            filtered_suppliers = network_data["suppliers"]
+            filtered_components = network_data["components"]
+            filtered_products = network_data["products"]
+            filtered_customers = network_data["customers"]
         
-        # Define nodes by tier
-        suppliers = ['Qualcomm', 'u-blox', 'Skyworks', 'Murata', 'Samsung', 'MediaTek', 'JCET', 'ASE']
-        components = ['MDM9607', 'UBX-M10', 'SKY78', 'GRM188', 'Memory', 'RF-FEM', 'Package', 'Test']
-        products = ['ME310G1', 'FN990A', 'LE910C4', 'SE868K3']
-        customers = ['BMW', 'Continental', 'Landis+Gyr', 'Vodafone', 'NTT', 'Honeywell']
+        # Apply view depth filter
+        if view_depth == "Tier 1 Only":
+            # Show only direct suppliers and customers for products
+            pass  # Keep filtered data as is
+        elif view_depth == "Critical Path":
+            # Show only critical components and their suppliers
+            filtered_components = [c for c in filtered_components if c.get("critical", False)]
+            critical_suppliers = set()
+            for c in filtered_components:
+                critical_suppliers.update(c["suppliers"])
+            filtered_suppliers = [s for s in filtered_suppliers if s["name"] in critical_suppliers]
+        elif view_depth == "Single-Source Risk":
+            # Show only single-source suppliers
+            filtered_suppliers = [s for s in filtered_suppliers if s.get("single_source", False)]
+            single_source_products = set()
+            for s in filtered_suppliers:
+                single_source_products.update(s["products"])
+            filtered_products = [p for p in filtered_products if p["name"] in single_source_products]
+            # Filter components that use single-source suppliers
+            filtered_components = [c for c in filtered_components if any(sup in [s["name"] for s in filtered_suppliers] for sup in c["suppliers"])]
         
-        # Calculate positions
-        node_x = []
-        node_y = []
-        node_text = []
-        node_color = []
-        node_size = []
+        # Build node lists with positions
+        node_x, node_y, node_text, node_color, node_size, node_names = [], [], [], [], [], []
         
-        # Suppliers (left)
-        for i, s in enumerate(suppliers):
+        # Determine colors based on highlight
+        def get_node_color(node_type, node_data):
+            base_colors = {"supplier": TELIT_BLUE, "component": TELIT_ORANGE, "product": TELIT_GREEN, "customer": '#9C27B0'}
+            
+            if highlight == "None":
+                return base_colors[node_type]
+            elif highlight == "High Risk Nodes":
+                if node_type == "supplier" and node_data.get("risk") == "high":
+                    return TELIT_RED
+                elif node_type == "component" and node_data.get("critical"):
+                    return TELIT_RED
+                return base_colors[node_type]
+            elif highlight == "Revenue Impact":
+                rev = node_data.get("revenue", 0)
+                if rev > 40:
+                    return TELIT_RED
+                elif rev > 20:
+                    return TELIT_ORANGE
+                return base_colors[node_type]
+            elif highlight == "Lead Time Critical":
+                if node_type == "supplier" and node_data.get("lead_time", 0) > 12:
+                    return TELIT_RED
+                elif node_type == "supplier" and node_data.get("lead_time", 0) > 8:
+                    return TELIT_ORANGE
+                return base_colors[node_type]
+            return base_colors[node_type]
+        
+        def get_node_size(node_type, node_data):
+            if highlight == "Revenue Impact":
+                rev = node_data.get("revenue", 10)
+                return max(15, min(45, rev * 0.6))
+            return {"supplier": 25, "component": 20, "product": 35, "customer": 25}[node_type]
+        
+        # Add suppliers
+        for i, s in enumerate(filtered_suppliers):
             node_x.append(0)
-            node_y.append(i * 1.2 - len(suppliers) * 0.6)
-            node_text.append(f"<b>{s}</b><br>Supplier")
-            node_color.append(TELIT_BLUE)
-            node_size.append(25)
+            node_y.append(i * 1.4 - len(filtered_suppliers) * 0.7)
+            risk_badge = "🔴" if s["risk"] == "high" else ("🟡" if s["risk"] == "medium" else "🟢")
+            node_text.append(f"<b>{s['name']}</b><br>Risk: {risk_badge} | Lead: {s['lead_time']}wk<br>Revenue: ${s['revenue']}M")
+            node_color.append(get_node_color("supplier", s))
+            node_size.append(get_node_size("supplier", s))
+            node_names.append(s["name"])
         
-        # Components
-        for i, c in enumerate(components):
+        supplier_count = len(filtered_suppliers)
+        
+        # Add components
+        for i, c in enumerate(filtered_components):
             node_x.append(2)
-            node_y.append(i * 1.2 - len(components) * 0.6)
-            node_text.append(f"<b>{c}</b><br>Component")
-            node_color.append(TELIT_ORANGE)
-            node_size.append(20)
+            node_y.append(i * 1.4 - len(filtered_components) * 0.7)
+            critical = "⚠️ Critical" if c.get("critical") else ""
+            node_text.append(f"<b>{c['name']}</b><br>Component {critical}<br>Suppliers: {', '.join(c['suppliers'])}")
+            node_color.append(get_node_color("component", c))
+            node_size.append(get_node_size("component", c))
+            node_names.append(c["name"])
         
-        # Products
-        for i, p in enumerate(products):
+        component_count = len(filtered_components)
+        
+        # Add products
+        for i, p in enumerate(filtered_products):
             node_x.append(4)
-            node_y.append(i * 2 - len(products))
-            node_text.append(f"<b>{p}</b><br>Product")
-            node_color.append(TELIT_GREEN)
-            node_size.append(35)
+            node_y.append(i * 2.0 - len(filtered_products))
+            node_text.append(f"<b>{p['name']}</b><br>Product<br>Revenue: ${p['revenue']}M")
+            node_color.append(get_node_color("product", p))
+            node_size.append(get_node_size("product", p))
+            node_names.append(p["name"])
         
-        # Customers
-        for i, c in enumerate(customers):
+        product_count = len(filtered_products)
+        
+        # Add customers
+        for i, c in enumerate(filtered_customers):
             node_x.append(6)
-            node_y.append(i * 1.3 - len(customers) * 0.65)
-            node_text.append(f"<b>{c}</b><br>Customer")
-            node_color.append('#9C27B0')
-            node_size.append(25)
+            node_y.append(i * 1.4 - len(filtered_customers) * 0.7)
+            node_text.append(f"<b>{c['name']}</b><br>Customer<br>Revenue: ${c['revenue']}M")
+            node_color.append(get_node_color("customer", c))
+            node_size.append(get_node_size("customer", c))
+            node_names.append(c["name"])
         
-        # Define edges
-        edges = [
-            # Supplier -> Component
-            (0, 8), (0, 9), (1, 8), (2, 10), (3, 11), (4, 12), (5, 9), (6, 14), (7, 15),
-            # Component -> Product
-            (8, 16), (8, 17), (9, 16), (9, 17), (10, 16), (10, 18), (11, 16), (11, 17), (11, 18), (11, 19),
-            (12, 17), (13, 17), (14, 16), (14, 17), (14, 18), (15, 18), (15, 19),
-            # Product -> Customer
-            (16, 20), (16, 21), (16, 23), (17, 20), (17, 21), (17, 24), (18, 22), (18, 23), (18, 25), (19, 22), (19, 24), (19, 25)
-        ]
+        # Build edges based on actual relationships
+        edges = []
+        supplier_names = [s["name"] for s in filtered_suppliers]
+        component_names = [c["name"] for c in filtered_components]
+        product_names = [p["name"] for p in filtered_products]
+        customer_names = [c["name"] for c in filtered_customers]
+        
+        # Supplier -> Component edges
+        for c in filtered_components:
+            comp_idx = node_names.index(c["name"]) if c["name"] in node_names else -1
+            if comp_idx >= 0:
+                for sup in c["suppliers"]:
+                    if sup in node_names:
+                        sup_idx = node_names.index(sup)
+                        edges.append((sup_idx, comp_idx))
+        
+        # Component -> Product edges
+        for c in filtered_components:
+            comp_idx = node_names.index(c["name"]) if c["name"] in node_names else -1
+            if comp_idx >= 0:
+                for prod in c["products"]:
+                    if prod in node_names:
+                        prod_idx = node_names.index(prod)
+                        edges.append((comp_idx, prod_idx))
+        
+        # Product -> Customer edges
+        for p in filtered_products:
+            prod_idx = node_names.index(p["name"]) if p["name"] in node_names else -1
+            if prod_idx >= 0:
+                for cust in p["customers"]:
+                    if cust in node_names:
+                        cust_idx = node_names.index(cust)
+                        edges.append((prod_idx, cust_idx))
         
         # Create edge traces
-        edge_x = []
-        edge_y = []
+        edge_x, edge_y = [], []
         for e in edges:
-            edge_x.extend([node_x[e[0]], node_x[e[1]], None])
-            edge_y.extend([node_y[e[0]], node_y[e[1]], None])
+            if e[0] < len(node_x) and e[1] < len(node_x):
+                edge_x.extend([node_x[e[0]], node_x[e[1]], None])
+                edge_y.extend([node_y[e[0]], node_y[e[1]], None])
         
         fig_network = go.Figure()
         
         # Add edges
+        edge_color = 'rgba(150,150,150,0.4)'
+        if highlight == "High Risk Nodes":
+            edge_color = 'rgba(239,68,68,0.3)'
+        elif highlight == "Revenue Impact":
+            edge_color = 'rgba(34,197,94,0.4)'
+        
         fig_network.add_trace(go.Scatter(
             x=edge_x, y=edge_y,
             mode='lines',
-            line=dict(width=1, color='rgba(150,150,150,0.4)'),
+            line=dict(width=2 if highlight != "None" else 1, color=edge_color),
             hoverinfo='none'
         ))
         
@@ -2400,17 +2725,39 @@ elif page == "🎛️ AI Command Center":
         ))
         
         # Add tier labels
-        for x, label in [(0, 'SUPPLIERS'), (2, 'COMPONENTS'), (4, 'PRODUCTS'), (6, 'CUSTOMERS')]:
-            fig_network.add_annotation(x=x, y=5.5, text=f"<b>{label}</b>", showarrow=False,
+        tier_labels = []
+        if len(filtered_suppliers) > 0:
+            tier_labels.append((0, 'SUPPLIERS'))
+        if len(filtered_components) > 0:
+            tier_labels.append((2, 'COMPONENTS'))
+        if len(filtered_products) > 0:
+            tier_labels.append((4, 'PRODUCTS'))
+        if len(filtered_customers) > 0:
+            tier_labels.append((6, 'CUSTOMERS'))
+        
+        for x, label in tier_labels:
+            fig_network.add_annotation(x=x, y=max(node_y) + 1.5 if node_y else 5.5, text=f"<b>{label}</b>", showarrow=False,
                                        font=dict(size=12, color='#6b7280'))
+        
+        # Dynamic title based on filters
+        title_parts = []
+        if view_depth != "Full Network":
+            title_parts.append(view_depth)
+        if product_filter != "All Products":
+            title_parts.append(f"Product: {product_filter}")
+        if highlight != "None":
+            title_parts.append(f"Highlighting: {highlight}")
+        
+        subtitle = " | ".join(title_parts) if title_parts else "Showing all nodes and relationships"
         
         fig_network.update_layout(
             height=500,
             showlegend=False,
             xaxis=dict(visible=False, range=[-1, 7]),
-            yaxis=dict(visible=False, range=[-6, 6]),
-            margin=dict(l=20, r=20, t=20, b=20),
-            plot_bgcolor='#f8fafc'
+            yaxis=dict(visible=False, range=[min(node_y) - 2 if node_y else -6, max(node_y) + 3 if node_y else 6]),
+            margin=dict(l=20, r=20, t=40, b=20),
+            plot_bgcolor='#f8fafc',
+            title=dict(text=f"<span style='font-size:11px; color:#6b7280;'>{subtitle}</span>", x=0.5, y=0.98)
         )
         
         st.plotly_chart(fig_network, use_container_width=True)
@@ -2444,78 +2791,166 @@ elif page == "🎛️ AI Command Center":
         st.subheader("⏱️ Supply Chain Time Machine")
         st.markdown("Explore historical performance and trends — travel back in time to understand what happened")
         
-        # Date selection
-        time_col1, time_col2, time_col3 = st.columns([2, 2, 1])
-        with time_col1:
-            start_date = st.date_input("From", datetime.now() - timedelta(days=365))
-        with time_col2:
-            end_date = st.date_input("To", datetime.now())
-        with time_col3:
-            granularity = st.selectbox("Granularity", ["Daily", "Weekly", "Monthly"])
+        # Historical data by month with all metrics
+        monthly_data = {
+            'Jan 25': {'Revenue': 42.5, 'OTD Rate': 92.8, 'Quality FPY': 98.2, 'Inventory DOS': 35, 'Supplier OTD': 89.5, 'Inventory Value': 48, 'Production Volume': 358},
+            'Feb 25': {'Revenue': 44.2, 'OTD Rate': 93.2, 'Quality FPY': 98.3, 'Inventory DOS': 34, 'Supplier OTD': 90.1, 'Inventory Value': 46, 'Production Volume': 372},
+            'Mar 25': {'Revenue': 43.8, 'OTD Rate': 91.5, 'Quality FPY': 98.1, 'Inventory DOS': 38, 'Supplier OTD': 88.2, 'Inventory Value': 50, 'Production Volume': 365},
+            'Apr 25': {'Revenue': 46.5, 'OTD Rate': 94.0, 'Quality FPY': 98.4, 'Inventory DOS': 33, 'Supplier OTD': 91.2, 'Inventory Value': 47, 'Production Volume': 385},
+            'May 25': {'Revenue': 48.2, 'OTD Rate': 94.8, 'Quality FPY': 98.5, 'Inventory DOS': 31, 'Supplier OTD': 92.0, 'Inventory Value': 44, 'Production Volume': 398},
+            'Jun 25': {'Revenue': 45.8, 'OTD Rate': 93.2, 'Quality FPY': 98.3, 'Inventory DOS': 34, 'Supplier OTD': 87.5, 'Inventory Value': 48, 'Production Volume': 378},
+            'Jul 25': {'Revenue': 47.5, 'OTD Rate': 94.2, 'Quality FPY': 98.5, 'Inventory DOS': 32, 'Supplier OTD': 89.8, 'Inventory Value': 45, 'Production Volume': 392},
+            'Aug 25': {'Revenue': 49.1, 'OTD Rate': 94.8, 'Quality FPY': 98.6, 'Inventory DOS': 30, 'Supplier OTD': 91.0, 'Inventory Value': 43, 'Production Volume': 405},
+            'Sep 25': {'Revenue': 50.2, 'OTD Rate': 95.5, 'Quality FPY': 98.8, 'Inventory DOS': 29, 'Supplier OTD': 92.1, 'Inventory Value': 41, 'Production Volume': 415},
+            'Oct 25': {'Revenue': 51.5, 'OTD Rate': 95.2, 'Quality FPY': 98.9, 'Inventory DOS': 28, 'Supplier OTD': 88.5, 'Inventory Value': 40, 'Production Volume': 422},
+            'Nov 25': {'Revenue': 49.8, 'OTD Rate': 94.5, 'Quality FPY': 98.6, 'Inventory DOS': 30, 'Supplier OTD': 89.5, 'Inventory Value': 42, 'Production Volume': 408},
+            'Dec 25': {'Revenue': 50.5, 'OTD Rate': 94.8, 'Quality FPY': 98.8, 'Inventory DOS': 29, 'Supplier OTD': 90.2, 'Inventory Value': 41, 'Production Volume': 418},
+        }
         
-        # Time slider
+        months_list = ['Jan 25', 'Feb 25', 'Mar 25', 'Apr 25', 'May 25', 'Jun 25', 
+                       'Jul 25', 'Aug 25', 'Sep 25', 'Oct 25', 'Nov 25', 'Dec 25']
+        
+        # Time slider - main control
         st.markdown("#### 📅 Timeline Navigator")
         selected_month = st.select_slider(
-            "Select Period",
-            options=['Jan 24', 'Feb 24', 'Mar 24', 'Apr 24', 'May 24', 'Jun 24', 
-                     'Jul 24', 'Aug 24', 'Sep 24', 'Oct 24', 'Nov 24', 'Dec 24'],
-            value='Dec 24'
+            "Select Period to Analyze",
+            options=months_list,
+            value='Dec 25',
+            key="time_machine_slider"
         )
+        
+        # Get current and previous month data
+        current_idx = months_list.index(selected_month)
+        prev_idx = max(0, current_idx - 1)
+        current_data = monthly_data[selected_month]
+        prev_data = monthly_data[months_list[prev_idx]]
         
         st.markdown("---")
         
-        # KPI comparison
-        st.markdown("### 📊 KPI Comparison: Selected Period vs Previous")
+        # Dynamic KPI comparison based on selected month
+        st.markdown(f"### 📊 KPI Comparison: {selected_month} vs {months_list[prev_idx]}")
         
         kpi_time_col1, kpi_time_col2, kpi_time_col3, kpi_time_col4, kpi_time_col5 = st.columns(5)
-        kpi_time_col1.metric("Revenue", "$48.2M", "+6.2% vs prev", delta_color="normal")
-        kpi_time_col2.metric("OTD Rate", "94.3%", "+2.1 pts", delta_color="normal")
-        kpi_time_col3.metric("Quality FPY", "98.7%", "+0.3 pts", delta_color="normal")
-        kpi_time_col4.metric("Inventory DOS", "32 days", "-3 days", delta_color="normal")
-        kpi_time_col5.metric("Supplier OTD", "89.2%", "-1.8 pts", delta_color="inverse")
         
-        # Historical trend
+        # Calculate deltas
+        rev_delta = current_data['Revenue'] - prev_data['Revenue']
+        rev_pct = (rev_delta / prev_data['Revenue']) * 100
+        kpi_time_col1.metric("Revenue", f"${current_data['Revenue']:.1f}M", f"{rev_pct:+.1f}% vs prev", delta_color="normal" if rev_delta >= 0 else "inverse")
+        
+        otd_delta = current_data['OTD Rate'] - prev_data['OTD Rate']
+        kpi_time_col2.metric("OTD Rate", f"{current_data['OTD Rate']:.1f}%", f"{otd_delta:+.1f} pts", delta_color="normal" if otd_delta >= 0 else "inverse")
+        
+        fpy_delta = current_data['Quality FPY'] - prev_data['Quality FPY']
+        kpi_time_col3.metric("Quality FPY", f"{current_data['Quality FPY']:.1f}%", f"{fpy_delta:+.1f} pts", delta_color="normal" if fpy_delta >= 0 else "inverse")
+        
+        dos_delta = current_data['Inventory DOS'] - prev_data['Inventory DOS']
+        kpi_time_col4.metric("Inventory DOS", f"{current_data['Inventory DOS']} days", f"{dos_delta:+.0f} days", delta_color="inverse" if dos_delta > 0 else "normal")
+        
+        sup_otd_delta = current_data['Supplier OTD'] - prev_data['Supplier OTD']
+        kpi_time_col5.metric("Supplier OTD", f"{current_data['Supplier OTD']:.1f}%", f"{sup_otd_delta:+.1f} pts", delta_color="normal" if sup_otd_delta >= 0 else "inverse")
+        
+        # Historical trend chart
         st.markdown("### 📈 Historical Trends")
         
-        metric_select = st.multiselect(
-            "Select Metrics to Display",
-            ["Revenue", "OTD Rate", "Quality FPY", "Inventory Value", "Production Volume"],
-            default=["Revenue", "OTD Rate"]
-        )
+        # Range selector for chart
+        range_col1, range_col2 = st.columns([3, 1])
+        with range_col1:
+            metric_select = st.multiselect(
+                "Select Metrics to Display",
+                ["Revenue", "OTD Rate", "Quality FPY", "Inventory Value", "Production Volume"],
+                default=["Revenue", "OTD Rate"],
+                key="time_machine_metrics"
+            )
+        with range_col2:
+            chart_range = st.selectbox("Time Range", ["Last 3 months", "Last 6 months", "Full Year"], index=2, key="time_machine_range")
         
-        dates = pd.date_range(start='2024-01-01', periods=12, freq='M')
-        hist_data = pd.DataFrame({
-            'Date': dates,
-            'Revenue': [38, 42, 41, 44, 46, 43, 45, 47, 48, 49, 47, 48],
-            'OTD Rate': [91, 92, 90, 93, 94, 92, 93, 94, 95, 94, 93, 94],
-            'Quality FPY': [97.8, 98.0, 97.9, 98.2, 98.3, 98.1, 98.4, 98.5, 98.6, 98.7, 98.5, 98.7],
-            'Inventory Value': [45, 48, 52, 50, 47, 49, 51, 48, 46, 44, 43, 42],
-            'Production Volume': [320, 345, 338, 362, 378, 355, 368, 382, 390, 398, 385, 392]
-        })
+        # Filter data based on range
+        if chart_range == "Last 3 months":
+            end_idx = current_idx + 1
+            start_idx = max(0, end_idx - 3)
+        elif chart_range == "Last 6 months":
+            end_idx = current_idx + 1
+            start_idx = max(0, end_idx - 6)
+        else:  # Full Year
+            start_idx = 0
+            end_idx = 12
         
+        filtered_months = months_list[start_idx:end_idx]
+        
+        # Build chart data
         fig_hist = go.Figure()
         colors = [TELIT_BLUE, TELIT_GREEN, TELIT_ORANGE, '#9C27B0', TELIT_RED]
-        for i, metric in enumerate(metric_select):
-            fig_hist.add_trace(go.Scatter(
-                x=hist_data['Date'], y=hist_data[metric],
-                name=metric, line=dict(color=colors[i % len(colors)], width=2)
-            ))
         
-        fig_hist.update_layout(height=350, margin=dict(l=0, r=0, t=10, b=0),
-                              legend=dict(orientation="h", yanchor="bottom", y=1.02))
-        st.plotly_chart(fig_hist, use_container_width=True)
+        if metric_select:
+            for i, metric in enumerate(metric_select):
+                y_values = [monthly_data[m][metric] for m in filtered_months]
+                fig_hist.add_trace(go.Scatter(
+                    x=filtered_months, 
+                    y=y_values,
+                    name=metric, 
+                    line=dict(color=colors[i % len(colors)], width=2),
+                    mode='lines+markers',
+                    marker=dict(size=8)
+                ))
+            
+            # Add marker for selected month if in range
+            if selected_month in filtered_months:
+                selected_idx = filtered_months.index(selected_month)
+                # Add annotation to highlight selected month
+                fig_hist.add_annotation(
+                    x=selected_month,
+                    y=max([monthly_data[m][metric_select[0]] for m in filtered_months]) if metric_select else 50,
+                    text=f"▼ {selected_month}",
+                    showarrow=False,
+                    font=dict(color="red", size=12, family="Arial Black"),
+                    yshift=20
+                )
         
-        # Events timeline
+        fig_hist.update_layout(
+            height=350, 
+            margin=dict(l=0, r=0, t=30, b=0),
+            legend=dict(orientation="h", yanchor="bottom", y=1.02),
+            xaxis_title="Month",
+            yaxis_title="Value"
+        )
+        st.plotly_chart(fig_hist, use_container_width=True, key="time_machine_chart")
+        
+        # Month-over-Month comparison table
+        if len(filtered_months) > 1:
+            st.markdown("#### 📊 Month-over-Month Changes")
+            mom_data = []
+            for m in filtered_months:
+                mom_data.append({
+                    "Month": m,
+                    "Revenue ($M)": f"${monthly_data[m]['Revenue']:.1f}",
+                    "OTD (%)": f"{monthly_data[m]['OTD Rate']:.1f}%",
+                    "FPY (%)": f"{monthly_data[m]['Quality FPY']:.1f}%",
+                    "DOS": monthly_data[m]['Inventory DOS'],
+                    "Production (K)": monthly_data[m]['Production Volume']
+                })
+            st.dataframe(pd.DataFrame(mom_data), use_container_width=True)
+        
+        # Events timeline - filtered by selected range
         st.markdown("### 📌 Significant Events")
         
-        events = [
-            {"date": "Dec 2024", "event": "FN990A 5G mass production started", "impact": "positive"},
-            {"date": "Nov 2024", "event": "New Foxconn CM contract signed", "impact": "positive"},
-            {"date": "Oct 2024", "event": "Shanghai port strike - 2 week delays", "impact": "negative"},
-            {"date": "Aug 2024", "event": "BMW design win - $42M/year", "impact": "positive"},
-            {"date": "Jun 2024", "event": "Murata supply shortage", "impact": "negative"},
-            {"date": "Mar 2024", "event": "ISO 14001 certification renewed", "impact": "positive"},
+        all_events = [
+            {"date": "Dec 2025", "month": "Dec 25", "event": "AI Command Center launched - full deployment", "impact": "positive"},
+            {"date": "Nov 2025", "month": "Nov 25", "event": "New Flex CM contract signed - Asia expansion", "impact": "positive"},
+            {"date": "Oct 2025", "month": "Oct 25", "event": "5G module sales exceed $50M milestone", "impact": "positive"},
+            {"date": "Sep 2025", "month": "Sep 25", "event": "Taiwan supply constraints - 3 week delays", "impact": "negative"},
+            {"date": "Aug 2025", "month": "Aug 25", "event": "Continental design win - $38M/year", "impact": "positive"},
+            {"date": "Jun 2025", "month": "Jun 25", "event": "Qualcomm lead time extended to 18 weeks", "impact": "negative"},
+            {"date": "Apr 2025", "month": "Apr 25", "event": "FN990A 5G certification complete - all carriers", "impact": "positive"},
+            {"date": "Mar 2025", "month": "Mar 25", "event": "Snowflake supply chain platform go-live", "impact": "positive"},
+            {"date": "Feb 2025", "month": "Feb 25", "event": "ISO 27001 security certification achieved", "impact": "positive"},
+            {"date": "Jan 2025", "month": "Jan 25", "event": "2025 strategic planning completed", "impact": "positive"},
         ]
+        
+        # Filter events based on selected range
+        events = [e for e in all_events if e["month"] in filtered_months]
+        
+        if not events:
+            st.info(f"No significant events in the selected period ({chart_range})")
         
         for evt in events:
             color = "#dcfce7" if evt['impact'] == 'positive' else "#fef2f2"
@@ -2675,7 +3110,7 @@ elif page == "📊 Executive Dashboard":
     # ==========================================================================
     with exec_tab1:
         # Quick Stats Row
-        st.markdown("#### 🎯 Key Performance Indicators - Q4 2024")
+        st.markdown("#### 🎯 Key Performance Indicators - Q4 2025")
         kpi1, kpi2, kpi3, kpi4, kpi5, kpi6 = st.columns(6)
         kpi1.metric("Revenue YTD", "$509M", "+6.0%")
         kpi2.metric("Gross Margin", "38.5%", "+1.2 pts")
@@ -2785,7 +3220,7 @@ elif page == "📊 Executive Dashboard":
     # TAB 2: FINANCIAL - Deep Dive on Financials
     # ==========================================================================
     with exec_tab2:
-        st.markdown("#### 💰 Financial Performance - FY 2024")
+        st.markdown("#### 💰 Financial Performance - FY 2025")
         
         # Key financial metrics
         f1, f2, f3, f4, f5 = st.columns(5)
@@ -3224,7 +3659,7 @@ elif page == "📊 Executive Dashboard":
         
         # Alert list
         alerts_data = [
-            ("🔴", "CRITICAL", "Low stock: FN990A-WW (5G module) below safety stock - 2,400 units remaining", "Expedite Qualcomm chipset PO #QC-2024-1847", 2, "Inventory"),
+            ("🔴", "CRITICAL", "Low stock: FN990A-WW (5G module) below safety stock - 2,400 units remaining", "Expedite Qualcomm chipset PO #QC-2025-1847", 2, "Inventory"),
             ("🔴", "CRITICAL", "Quality hold: ME310G1 Lot #TC24-2847 - RF calibration drift detected in 3.2% of samples", "Escalate to Trieste QA Manager", 4, "Quality"),
             ("🟡", "WARNING", "Supplier delay: Murata MLCC delivery +5 days vs PO commitment", "Update Continental AG & BMW ETAs", 12, "Supplier"),
             ("🟡", "WARNING", "Geopolitical: Taiwan strait activity elevated - TSMC/MediaTek exposure monitoring", "Review alternate source qualification status", 24, "Risk"),
@@ -3803,7 +4238,7 @@ elif page == "🏭 Digital Twin":
                 "28dB C/N0", "98.7% Pass"
             ],
             "OEE": ["92.5%", "78.3%", "89.1%", "94.2%", "95.1%", "82.0%", "98.5%", "65.2%", "96.8%", "97.2%", "98.1%", "99.5%", "96.3%"],
-            "Next Maint.": ["Dec 28", "Dec 24", "Jan 3", "Jan 5", "Dec 30", "Dec 26", "Jan 5", "NOW", "Jan 10", "Jan 8", "Jan 12", "Jan 15", "Jan 8"],
+            "Next Maint.": ["Jan 3", "Jan 5", "Jan 8", "Jan 10", "Dec 31", "Jan 2", "Jan 8", "NOW", "Jan 12", "Jan 10", "Jan 15", "Jan 18", "Jan 12"],
         })
         st.dataframe(equipment_data, use_container_width=True)
         
@@ -3875,10 +4310,10 @@ elif page == "🏭 Digital Twin":
         st.subheader("📋 Customer Orders in Production")
         order_cols = st.columns(4)
         orders = [
-            ("BMW Group", "FN990A 5G", "V2X Telematics", 2400, 1872, "78%", TELIT_BLUE, "Dec 27"),
-            ("Landis+Gyr", "ME310G1", "Smart Meters", 5000, 3247, "65%", TELIT_GREEN, "Dec 28"),
-            ("Continental AG", "LE910C4", "Fleet Mgmt", 1800, 1620, "90%", TELIT_ORANGE, "Dec 24"),
-            ("Itron Inc", "SE868K3", "AMI Modules", 3000, 1893, "63%", "#6B5B95", "Dec 30"),
+            ("BMW Group", "FN990A 5G", "V2X Telematics", 2400, 1872, "78%", TELIT_BLUE, "Jan 2"),
+            ("Landis+Gyr", "ME310G1", "Smart Meters", 5000, 3247, "65%", TELIT_GREEN, "Jan 3"),
+            ("Continental AG", "LE910C4", "Fleet Mgmt", 1800, 1620, "90%", TELIT_ORANGE, "Dec 31"),
+            ("Itron Inc", "SE868K3", "AMI Modules", 3000, 1893, "63%", "#6B5B95", "Jan 5"),
         ]
         for col, (customer, product, application, total, done, pct, color, ship) in zip(order_cols, orders):
             col.markdown(f"""
@@ -4443,8 +4878,8 @@ elif page == "🏭 Digital Twin":
                 <h3 style="margin: 0;">📦 Unit: {serial_input}</h3>
                 <div style="display: flex; gap: 40px; margin-top: 15px;">
                     <div><strong>Product:</strong> ME310G1-W1</div>
-                    <div><strong>Work Order:</strong> WO-2024-12847</div>
-                    <div><strong>Build Date:</strong> 2024-12-28</div>
+                    <div><strong>Work Order:</strong> WO-2025-12847</div>
+                    <div><strong>Build Date:</strong> 2025-12-30</div>
                     <div><strong>Status:</strong> <span style="color: green;">✅ Shipped</span></div>
                 </div>
             </div>
@@ -4456,7 +4891,7 @@ elif page == "🏭 Digital Twin":
                 st.markdown("##### 🧩 Component Genealogy")
                 components = pd.DataFrame({
                     "Component": ["Qualcomm SDX55 Modem", "u-blox M10 GNSS", "Skyworks PA", "Murata Antenna", "Samsung Flash", "PCB Assembly"],
-                    "Supplier Lot": ["QC-2024-A4521", "UB-2024-M8832", "SK-2024-P2341", "MU-2024-A9912", "SS-2024-F5521", "PCB-2024-12847"],
+                    "Supplier Lot": ["QC-2025-A4521", "UB-2025-M8832", "SK-2025-P2341", "MU-2025-A9912", "SS-2025-F5521", "PCB-2025-12847"],
                     "Date Code": ["2448", "2447", "2446", "2448", "2445", "2449"],
                     "Verified": ["✅", "✅", "✅", "✅", "✅", "✅"]
                 })
@@ -4486,7 +4921,7 @@ elif page == "🏭 Digital Twin":
             st.markdown("##### 🚚 Shipping & Customer Info")
             ship_cols = st.columns(4)
             ship_cols[0].metric("Customer", "Trimble Inc.")
-            ship_cols[1].metric("Ship Date", "2024-12-28")
+            ship_cols[1].metric("Ship Date", "2025-12-30")
             ship_cols[2].metric("Carrier", "DHL Express")
             ship_cols[3].metric("Tracking", "1234567890")
     
@@ -4623,7 +5058,7 @@ elif page == "🏭 Digital Twin":
             890 units remaining (36% of line-side capacity). Consumption: 792/day
             
             **Supplier:** Qualcomm (Singapore fab)
-            **Reorder Status:** PO #47823 in transit, ETA: Dec 26 (2,500 units)
+            **Reorder Status:** PO #47823 in transit, ETA: Jan 3 (2,500 units)
             **Risk:** FN990A 5G production may halt in 27 hours without emergency order
             **Action:** Expedite shipment, contact Qualcomm account manager
             """)
@@ -4645,7 +5080,7 @@ elif page == "🏭 Digital Twin":
             New R&S CMW500 firmware improves 5G NR FR1/FR2 test accuracy by 0.3dB
             
             **Applies to:** RF Test Chamber 1 & 2
-            **Recommended:** Install during next maintenance window (Dec 26)
+            **Recommended:** Install during next maintenance window (Jan 2)
             **Impact:** Reduces FN990A test time by 8%, improves yield correlation
             """)
         
@@ -4895,8 +5330,8 @@ elif page == "🏭 Digital Twin":
                     <div><strong>Features:</strong> 47 signals</div>
                     <div><strong>MAE:</strong> 0.32%</div>
                     <div><strong>R² Score:</strong> 0.94</div>
-                    <div><strong>Last Retrained:</strong> Dec 20</div>
-                    <div><strong>Next Retrain:</strong> Dec 27</div>
+                    <div><strong>Last Retrained:</strong> Dec 28</div>
+                    <div><strong>Next Retrain:</strong> Jan 4</div>
                 </div>
             </div>
             """, unsafe_allow_html=True)
@@ -5281,7 +5716,7 @@ elif page == "📦 Inventory & Shipments":
             "Units": [5000, 8000, 3500, 4200, 2800, 12000],
             "Carrier": ["Maersk", "DHL Express", "FedEx", "SF Express", "DHL Express", "Kuehne+Nagel"],
             "Status": ["🚢 Ocean Transit", "✈️ Air Freight", "📦 At Hub", "✅ Delivered", "✈️ Air Freight", "🚢 Ocean Transit"],
-            "ETA": ["Jan 5", "Dec 28", "Dec 27", "Dec 24", "Dec 29", "Jan 8"],
+            "ETA": ["Jan 8", "Jan 3", "Jan 2", "Dec 31", "Jan 5", "Jan 12"],
             "Value": ["$625K", "$208K", "$147K", "$78K", "$350K", "$312K"]
         })
         st.dataframe(shipment_table, use_container_width=True)
@@ -5371,7 +5806,7 @@ elif page == "📦 Inventory & Shipments":
                 "SKU": ["FN990A28-W1", "ME310G1-WW", "LE910C4-EU", "SE868K3-A"],
                 "Quantity": [5000, 8000, 6000, 4000],
                 "Supplier": ["Qualcomm", "Qualcomm", "Qualcomm", "u-blox"],
-                "ETA": ["Dec 26", "Dec 28", "Jan 2", "Jan 5"],
+                "ETA": ["Jan 2", "Jan 5", "Jan 8", "Jan 12"],
                 "Status": ["🚚 In Transit", "🚚 In Transit", "📦 Shipped", "⏳ Processing"]
             })
             st.dataframe(po_data, use_container_width=True)
@@ -5398,12 +5833,12 @@ elif page == "📦 Inventory & Shipments":
         
         with qh_col1:
             hold_data = pd.DataFrame({
-                "Hold ID": ["QH-2024-0892", "QH-2024-0891", "QH-2024-0890", "RMA-12847", "RMA-12846"],
+                "Hold ID": ["QH-2025-0892", "QH-2025-0891", "QH-2025-0890", "RMA-12847", "RMA-12846"],
                 "SKU": ["FN990A28-W1", "ME310G1-WW", "LE910C4-NF", "FN990A28-EU", "SE868K3-A"],
                 "Quantity": [312, 450, 180, 85, 42],
                 "Reason": ["RF cal drift", "Firmware issue", "Visual defect", "Customer return", "DOA"],
                 "Location": ["Shanghai", "Trieste", "Frankfurt", "Frankfurt", "Singapore"],
-                "Hold Date": ["Dec 21", "Dec 20", "Dec 19", "Dec 18", "Dec 17"],
+                "Hold Date": ["Dec 28", "Dec 27", "Dec 26", "Dec 24", "Dec 23"],
                 "Status": ["🔬 Under Review", "🔧 Rework", "⏳ Pending", "📋 RMA Process", "🗑️ Scrap"],
                 "Value": ["$28K", "$18K", "$9K", "$8K", "$2K"]
             })
@@ -5715,8 +6150,8 @@ elif page == "📦 Inventory & Shipments":
                 "Product": ["FN990A 5G", "ME310G1", "ME310G1", "LE910C4", "SE868K3", "ME310G1", "FN990A 5G"],
                 "Qty": [5000, 8000, 6500, 3200, 2800, 4500, 3800],
                 "Value": ["$625K", "$208K", "$169K", "$134K", "$52K", "$117K", "$475K"],
-                "Request Date": ["Dec 30", "Jan 2", "Jan 3", "Jan 5", "Dec 29", "Jan 8", "Jan 10"],
-                "Promise Date": ["Dec 30", "Jan 3", "Jan 4", "Jan 6", "Dec 30", "Jan 9", "Jan 12"],
+                "Request Date": ["Dec 30", "Jan 3", "Jan 5", "Jan 8", "Dec 31", "Jan 10", "Jan 12"],
+                "Promise Date": ["Jan 2", "Jan 5", "Jan 8", "Jan 10", "Jan 3", "Jan 12", "Jan 15"],
                 "Status": ["🟢 Ready", "🟢 Ready", "🟡 Partial", "🟢 Ready", "🟢 Ready", "🟡 Partial", "🔴 Short"],
                 "Priority": ["⭐⭐⭐", "⭐⭐⭐", "⭐⭐", "⭐⭐⭐", "⭐⭐", "⭐⭐", "⭐⭐⭐"]
             })
@@ -5839,16 +6274,16 @@ elif page == "📦 Inventory & Shipments":
                 "Available": [11200, 9200, 52000, 3100000, 45000, 14000],
                 "Coverage": ["93%", "108%", "116%", "111%", "94%", "112%"],
                 "Status": ["🟡 Short 800", "🟢 OK", "🟢 OK", "🟢 OK", "🟡 Short 3000", "🟢 OK"],
-                "ETA Next PO": ["Jan 8", "Jan 15", "—", "—", "Jan 5", "—"]
+                "ETA Next PO": ["Jan 10", "Jan 18", "—", "—", "Jan 8", "—"]
             })
             st.dataframe(components, use_container_width=True)
         
         with col2:
             st.markdown("##### ⚠️ Critical Shortages")
             shortages = [
-                ("🔴 Qualcomm SDX55", "FN990A 5G", "800 units short", "Jan 8 PO arrival", TELIT_RED),
-                ("🟡 Samsung Flash", "ME310G1", "3,000 units short", "Jan 5 PO arrival", TELIT_ORANGE),
-                ("🟡 AOI Calibration", "All Lines", "Maintenance pending", "Dec 28 scheduled", TELIT_ORANGE),
+                ("🔴 Qualcomm SDX55", "FN990A 5G", "800 units short", "Jan 10 PO arrival", TELIT_RED),
+                ("🟡 Samsung Flash", "ME310G1", "3,000 units short", "Jan 8 PO arrival", TELIT_ORANGE),
+                ("🟡 AOI Calibration", "All Lines", "Maintenance pending", "Jan 2 scheduled", TELIT_ORANGE),
             ]
             for item, product, qty, eta, color in shortages:
                 st.markdown(f"""
@@ -5948,21 +6383,21 @@ elif page == "📦 Inventory & Shipments":
                     <div style="background: {TELIT_GREEN}; color: white; width: 40px; height: 40px; border-radius: 50%; 
                                 display: flex; align-items: center; justify-content: center; margin: 0 auto; font-size: 18px;">✓</div>
                     <div style="font-size: 11px; font-weight: 600; margin-top: 5px;">Order Received</div>
-                    <div style="font-size: 10px; color: {TELIT_GRAY};">Dec 22</div>
+                    <div style="font-size: 10px; color: {TELIT_GRAY};">Dec 26</div>
                 </div>
                 <div style="flex: 0.5; height: 3px; background: {TELIT_GREEN};"></div>
                 <div style="text-align: center; flex: 1;">
                     <div style="background: {TELIT_GREEN}; color: white; width: 40px; height: 40px; border-radius: 50%; 
                                 display: flex; align-items: center; justify-content: center; margin: 0 auto; font-size: 18px;">✓</div>
                     <div style="font-size: 11px; font-weight: 600; margin-top: 5px;">Allocation</div>
-                    <div style="font-size: 10px; color: {TELIT_GRAY};">Dec 23</div>
+                    <div style="font-size: 10px; color: {TELIT_GRAY};">Dec 27</div>
                 </div>
                 <div style="flex: 0.5; height: 3px; background: {TELIT_GREEN};"></div>
                 <div style="text-align: center; flex: 1;">
                     <div style="background: {TELIT_GREEN}; color: white; width: 40px; height: 40px; border-radius: 50%; 
                                 display: flex; align-items: center; justify-content: center; margin: 0 auto; font-size: 18px;">✓</div>
                     <div style="font-size: 11px; font-weight: 600; margin-top: 5px;">Production</div>
-                    <div style="font-size: 10px; color: {TELIT_GRAY};">Dec 24-27</div>
+                    <div style="font-size: 10px; color: {TELIT_GRAY};">Dec 28-29</div>
                 </div>
                 <div style="flex: 0.5; height: 3px; background: {TELIT_BLUE};"></div>
                 <div style="text-align: center; flex: 1;">
@@ -5976,14 +6411,14 @@ elif page == "📦 Inventory & Shipments":
                     <div style="background: {TELIT_GRAY}; color: white; width: 40px; height: 40px; border-radius: 50%; 
                                 display: flex; align-items: center; justify-content: center; margin: 0 auto; font-size: 18px;">○</div>
                     <div style="font-size: 11px; font-weight: 600; margin-top: 5px;">Shipped</div>
-                    <div style="font-size: 10px; color: {TELIT_GRAY};">Dec 30</div>
+                    <div style="font-size: 10px; color: {TELIT_GRAY};">Dec 31</div>
                 </div>
                 <div style="flex: 0.5; height: 3px; background: {TELIT_GRAY};"></div>
                 <div style="text-align: center; flex: 1;">
                     <div style="background: {TELIT_GRAY}; color: white; width: 40px; height: 40px; border-radius: 50%; 
                                 display: flex; align-items: center; justify-content: center; margin: 0 auto; font-size: 18px;">○</div>
                     <div style="font-size: 11px; font-weight: 600; margin-top: 5px;">Delivered</div>
-                    <div style="font-size: 10px; color: {TELIT_GRAY};">Jan 2</div>
+                    <div style="font-size: 10px; color: {TELIT_GRAY};">Jan 5</div>
                 </div>
             </div>
         </div>
@@ -6148,7 +6583,7 @@ elif page == "📦 Inventory & Shipments":
                 "Product Family": ["FN990A (5G)", "ME310G1 (LTE-M)", "LE910C4 (LTE)", "SE868K3 (GNSS)", "HE910 (3G)", "CC864 (2G)", "GE910 (2G)"],
                 "Status": ["🟢 Active - Growth", "🟢 Active - Mature", "🟢 Active - Mature", "🟢 Active - Growth", "🟡 EOL Announced", "🟠 Last Time Buy", "🔴 Discontinued"],
                 "Launch": ["2023", "2020", "2019", "2022", "2015", "2012", "2010"],
-                "EOL Date": ["—", "—", "—", "—", "Jun 2025", "Mar 2024", "Dec 2023"],
+                "EOL Date": ["—", "—", "—", "—", "Jun 2026", "Mar 2025", "Dec 2024"],
                 "Inventory": ["35,000", "78,000", "62,000", "45,000", "12,000", "25,000", "3,200"],
                 "LTB Qty": ["—", "—", "—", "—", "50,000", "Done", "Done"],
                 "Replacement": ["—", "—", "—", "—", "FN990A", "ME310G1", "ME310G1"]
@@ -6172,9 +6607,9 @@ elif page == "📦 Inventory & Shipments":
         st.subheader("⚠️ End-of-Life & Last Time Buy Alerts")
         eol_cols = st.columns(3)
         eol_alerts = [
-            ("🔴 URGENT", "CC864-DUAL", "Last Time Buy ends Mar 15, 2024", "Order within 82 days for 5-year buffer", "25,000 units needed", TELIT_RED),
+            ("🔴 URGENT", "CC864-DUAL", "Last Time Buy ends Mar 15, 2025", "Order within 75 days for 5-year buffer", "25,000 units needed", TELIT_RED),
             ("🟡 PLAN", "HE910-EUR", "EOL announced Jun 2025", "Migration path: FN990A (5G successor)", "12,000 units in stock", TELIT_ORANGE),
-            ("🔵 INFO", "GE910-QUAD", "Discontinued Dec 2023", "No new orders accepted. 3,200 units remaining for warranty/repair", "Scrap after Q2 2024", TELIT_BLUE),
+            ("🔵 INFO", "GE910-QUAD", "Discontinued Dec 2024", "No new orders accepted. 3,200 units remaining for warranty/repair", "Scrap after Q2 2025", TELIT_BLUE),
         ]
         for col, (urgency, sku, title, desc, qty, color) in zip(eol_cols, eol_alerts):
             col.markdown(f"""
@@ -6253,7 +6688,7 @@ elif page == "📦 Inventory & Shipments":
             fig_forecast.update_layout(height=280, margin=dict(l=20, r=20, t=10, b=40), legend=dict(orientation="h", yanchor="bottom", y=1.02))
             st.plotly_chart(fig_forecast, use_container_width=True)
             
-            st.warning("⚠️ **AI Alert:** FN990A stock will breach reorder point in Week 6. Recommended action: Place PO by Dec 28.")
+            st.warning("⚠️ **AI Alert:** FN990A stock will breach reorder point in Week 6. Recommended action: Place PO by Jan 10.")
             
             st.subheader("💰 Working Capital Optimization")
             wc_metrics = st.columns(3)
@@ -6293,8 +6728,8 @@ elif page == "📈 Demand Forecast":
     # Top KPIs
     kpi_cols = st.columns(8)
     for col, (label, value, delta) in zip(kpi_cols, [
-        ("2025 Forecast", "4.2M units", "+18%"),
-        ("Q1 2025", "985K", "+15%"),
+        ("2026 Forecast", "4.8M units", "+14%"),
+        ("Q1 2026", "1.12M", "+14%"),
         ("Revenue Forecast", "$892M", "+22%"),
         ("5G Growth", "+45%", "YoY"),
         ("Accuracy (MAPE)", "5.8%", "-0.4%"),
@@ -6352,14 +6787,14 @@ elif page == "📈 Demand Forecast":
         col1, col2 = st.columns(2)
         
         with col1:
-            st.markdown("##### 📈 Monthly Demand Trend (2024-2025)")
-            months = ['Jul 24', 'Aug 24', 'Sep 24', 'Oct 24', 'Nov 24', 'Dec 24', 
-                     'Jan 25', 'Feb 25', 'Mar 25', 'Apr 25', 'May 25', 'Jun 25',
-                     'Jul 25', 'Aug 25', 'Sep 25', 'Oct 25', 'Nov 25', 'Dec 25']
-            actual = [285, 298, 312, 345, 358, 342, None, None, None, None, None, None, None, None, None, None, None, None]
-            forecast = [None, None, None, None, None, 342, 328, 335, 365, 385, 398, 378, 365, 382, 405, 425, 438, 412]
-            upper = [None, None, None, None, None, None, 352, 362, 398, 425, 442, 418, 402, 425, 455, 478, 495, 468]
-            lower = [None, None, None, None, None, None, 304, 308, 332, 345, 354, 338, 328, 339, 355, 372, 381, 356]
+            st.markdown("##### 📈 Monthly Demand Trend (2025-2026)")
+            months = ['Jan 25', 'Feb 25', 'Mar 25', 'Apr 25', 'May 25', 'Jun 25',
+                     'Jul 25', 'Aug 25', 'Sep 25', 'Oct 25', 'Nov 25', 'Dec 25',
+                     'Jan 26', 'Feb 26', 'Mar 26', 'Apr 26', 'May 26', 'Jun 26']
+            actual = [285, 298, 312, 345, 358, 342, 328, 335, 365, 385, 398, 405, None, None, None, None, None, None]
+            forecast = [None, None, None, None, None, None, None, None, None, None, None, 405, 395, 412, 435, 458, 475, 445]
+            upper = [None, None, None, None, None, None, None, None, None, None, None, None, 435, 458, 488, 512, 535, 498]
+            lower = [None, None, None, None, None, None, None, None, None, None, None, None, 328, 339, 355, 372, 381, 356]
             
             fig_trend = go.Figure()
             fig_trend.add_trace(go.Scatter(x=months, y=upper, fill=None, mode='lines', 
@@ -6398,7 +6833,7 @@ elif page == "📈 Demand Forecast":
         prod_col, reg_col = st.columns(2)
         
         with prod_col:
-            st.markdown("##### 🏭 2025 Forecast by Product Family")
+            st.markdown("##### 🏭 2026 Forecast by Product Family")
             products = ["5G (FN990A)", "LTE-M (ME310G1)", "LTE Cat 4 (LE910C4)", "GNSS (SE868K3)", "Legacy 2G/3G"]
             prod_forecast = [1.2, 1.5, 0.9, 0.5, 0.1]
             prod_colors = [TELIT_GREEN, TELIT_BLUE, TELIT_ORANGE, '#6B5B95', TELIT_GRAY]
@@ -6412,7 +6847,7 @@ elif page == "📈 Demand Forecast":
             st.plotly_chart(fig_prod, use_container_width=True)
         
         with reg_col:
-            st.markdown("##### 🌍 2025 Forecast by Region")
+            st.markdown("##### 🌍 2026 Forecast by Region")
             regions = ["Americas", "EMEA", "APAC"]
             reg_forecast = [1.68, 1.47, 1.05]
             reg_colors = [TELIT_BLUE, TELIT_GREEN, TELIT_ORANGE]
@@ -6535,7 +6970,7 @@ elif page == "📈 Demand Forecast":
                     <strong>Granularity:</strong> SKU × Region × Month
                 </div>
                 <div style="margin-top: 15px; font-size: 12px; color: {TELIT_GREEN};">
-                    ✅ Last model retrain: Dec 22, 2024
+                    ✅ Last model retrain: Dec 28, 2025
                 </div>
             </div>
             """, unsafe_allow_html=True)
@@ -6613,7 +7048,7 @@ elif page == "📈 Demand Forecast":
             st.markdown("##### 🔄 Technology Transition Outlook")
             tech_data = pd.DataFrame({
                 "Technology": ["5G", "LTE-M/NB-IoT", "LTE Cat 4/1", "3G", "2G"],
-                "2024 Share": ["18%", "35%", "28%", "12%", "7%"],
+                "2025 Share": ["18%", "35%", "28%", "12%", "7%"],
                 "2025 Share": ["29%", "38%", "22%", "8%", "3%"],
                 "2026 Share": ["42%", "38%", "15%", "4%", "1%"],
                 "Trend": ["📈📈📈", "📈", "📉", "📉📉", "📉📉📉"]
@@ -6722,7 +7157,7 @@ elif page == "📈 Demand Forecast":
         with country_cols[1]:
             country_data = pd.DataFrame({
                 "Country": ["🇺🇸 United States", "🇩🇪 Germany", "🇨🇳 China", "🇯🇵 Japan", "🇬🇧 United Kingdom"],
-                "2025 Forecast": ["1.12M", "385K", "325K", "245K", "195K"],
+                "2026 Forecast": ["1.28M", "425K", "385K", "285K", "225K"],
                 "YoY Growth": ["+22%", "+12%", "+28%", "+18%", "+15%"],
                 "Top Vertical": ["Smart Meters", "Automotive", "Smart Cities", "Fleet Mgmt", "Utilities"],
                 "Key Customer": ["Landis+Gyr", "BMW Group", "China Mobile", "NTT DoCoMo", "British Gas"]
@@ -6736,13 +7171,13 @@ elif page == "📈 Demand Forecast":
         st.subheader("🏢 Forecast by Customer")
         
         # Top customers
-        st.markdown("##### 🏆 Top 10 Customers by 2025 Forecast")
+        st.markdown("##### 🏆 Top 10 Customers by 2026 Forecast")
         customer_data = pd.DataFrame({
             "Rank": ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10"],
             "Customer": ["Landis+Gyr", "BMW Group", "Itron", "Continental", "NTT DoCoMo", "Honeywell", "Trimble", "Delphi", "Bosch", "Vodafone"],
             "Vertical": ["Smart Metering", "Automotive", "Smart Metering", "Automotive", "Telecom", "Industrial", "Telematics", "Automotive", "Industrial", "Telecom"],
             "Primary Product": ["ME310G1", "FN990A 5G", "ME310G1", "LE910C4", "FN990A 5G", "ME310G1", "SE868K3", "FN990A 5G", "LE910C4", "ME310G1"],
-            "2025 Forecast": ["485K", "420K", "380K", "285K", "245K", "195K", "175K", "165K", "155K", "145K"],
+            "2026 Forecast": ["555K", "485K", "435K", "325K", "285K", "225K", "205K", "195K", "178K", "165K"],
             "Revenue": ["$82M", "$105M", "$64M", "$48M", "$61M", "$33M", "$18M", "$41M", "$26M", "$25M"],
             "YoY Growth": ["+15%", "+42%", "+12%", "+8%", "+35%", "+18%", "+28%", "+52%", "+5%", "+10%"],
             "Confidence": ["🟢 High", "🟢 High", "🟢 High", "🟢 High", "🟡 Medium", "🟢 High", "🟡 Medium", "🟡 Medium", "🟢 High", "🟢 High"]
@@ -7046,7 +7481,7 @@ elif page == "📈 Demand Forecast":
         """, unsafe_allow_html=True)
         
         # Consensus comparison
-        st.markdown("##### 📊 Q1 2025 Forecast Comparison (K units)")
+        st.markdown("##### 📊 Q1 2026 Forecast Comparison (K units)")
         
         col1, col2 = st.columns([2, 1])
         
@@ -7092,7 +7527,7 @@ elif page == "📈 Demand Forecast":
                 </div>
                 <div style="margin-top: 15px; padding: 10px; background: {TELIT_GREEN}20; border-radius: 8px;">
                     <strong>✅ Consensus:</strong> 992K units
-                    <div style="font-size: 11px; color: {TELIT_GRAY};">Approved Dec 15, 2024</div>
+                    <div style="font-size: 11px; color: {TELIT_GRAY};">Approved Dec 15, 2025</div>
                 </div>
             </div>
             """, unsafe_allow_html=True)
@@ -7215,7 +7650,7 @@ elif page == "📈 Demand Forecast":
         
         # Error waterfall
         st.markdown("---")
-        st.markdown("##### 📊 Forecast Error Decomposition (Dec 2024)")
+        st.markdown("##### 📊 Forecast Error Decomposition (Dec 2025)")
         
         error_col1, error_col2 = st.columns([2, 1])
         
@@ -7683,7 +8118,7 @@ elif page == "📈 Demand Forecast":
         with col1:
             st.markdown("##### 🔔 Demand Anomalies Detected")
             anomalies = pd.DataFrame({
-                "Date": ["Dec 23", "Dec 20", "Dec 18", "Dec 15"],
+                "Date": ["Dec 28", "Dec 26", "Dec 24", "Dec 22"],
                 "Product": ["FN990A28-W1", "ME310G1-WW", "LE910C4-EU", "SE868K3-A"],
                 "Customer": ["BMW Group", "Landis+Gyr", "Vodafone", "Trimble"],
                 "Anomaly": ["Demand spike +35%", "Order cancellation", "Forecast revision +20%", "New PO +15K units"],
@@ -7739,7 +8174,7 @@ elif page == "📈 Demand Forecast":
         with surf_col1:
             view_type = st.selectbox("View Type", ["Product × Time × Volume", "Region × Time × Volume", "Customer × Product × Volume"], key="3d_view")
         with surf_col2:
-            time_range = st.selectbox("Time Range", ["2025 Forecast", "2024-2025", "Historical + Forecast"], key="3d_time")
+            time_range = st.selectbox("Time Range", ["2026 Forecast", "2025-2026", "Historical + Forecast"], key="3d_time")
         with surf_col3:
             color_scale = st.selectbox("Color Scale", ["Viridis", "Plasma", "Turbo", "Blues"], key="3d_color")
         
@@ -7829,7 +8264,7 @@ elif page == "📈 Demand Forecast":
             height=550,
             margin=dict(l=0, r=0, t=40, b=0),
             title=dict(
-                text="📈 2025 Demand Forecast - Product × Month × Volume",
+                text="📈 2026 Demand Forecast - Product × Month × Volume",
                 x=0.5,
                 font=dict(size=14)
             ),
@@ -8306,7 +8741,7 @@ elif page == "🤝 Suppliers":
         st.markdown("---")
         st.markdown("##### 📝 Open Supplier Corrective Actions (SCAR)")
         scar_data = pd.DataFrame({
-            "SCAR #": ["SCAR-2024-042", "SCAR-2024-038", "SCAR-2024-035"],
+            "SCAR #": ["SCAR-2025-042", "SCAR-2025-038", "SCAR-2025-035"],
             "Supplier": ["JCET", "STMicro", "Skyworks"],
             "Issue": ["Solder void rate >5%", "MCU firmware bug", "PA gain out of spec"],
             "Severity": ["🔴 Major", "🟡 Minor", "🟡 Minor"],
@@ -8388,7 +8823,7 @@ elif page == "🤝 Suppliers":
             "Supplier": ["Qualcomm", "Murata", "New Vendor", "JCET", "All"],
             "Annual Savings": ["$450K", "$280K", "$220K", "$180K", "$120K"],
             "Status": ["🟢 Achieved", "🟢 Achieved", "🔵 In Progress", "🟡 Negotiating", "🟢 Achieved"],
-            "Start Date": ["Jan 2024", "Mar 2024", "Q1 2025", "Q2 2025", "Jul 2024"]
+            "Start Date": ["Jan 2025", "Mar 2025", "Q1 2026", "Q2 2026", "Jul 2025"]
         })
         st.dataframe(savings_data, use_container_width=True)
     
@@ -8604,10 +9039,10 @@ elif page == "🤝 Suppliers":
         
         quarterly_data = pd.DataFrame({
             "Supplier": ["Qualcomm", "u-blox", "Murata", "JCET", "Samsung", "Skyworks", "STMicro", "Infineon"],
-            "Q1 2024": [91, 94, 97, 88, 93, 89, 90, 91],
-            "Q2 2024": [92, 95, 97, 89, 94, 90, 91, 92],
-            "Q3 2024": [93, 95, 98, 90, 94, 91, 91, 92],
-            "Q4 2024": [94, 96, 98, 91, 95, 92, 92, 93],
+            "Q1 2025": [91, 94, 97, 88, 93, 89, 90, 91],
+            "Q2 2025": [92, 95, 97, 89, 94, 90, 91, 92],
+            "Q3 2025": [93, 95, 98, 90, 94, 91, 91, 92],
+            "Q4 2025": [94, 96, 98, 91, 95, 92, 92, 93],
             "Trend": ["📈 +3", "📈 +2", "📈 +1", "📈 +3", "📈 +2", "📈 +3", "📈 +2", "📈 +2"],
             "YoY Change": ["+4.2%", "+2.8%", "+1.5%", "+5.1%", "+3.2%", "+4.5%", "+2.8%", "+2.5%"]
         })
@@ -9167,10 +9602,10 @@ elif page == "✅ Quality":
         st.markdown("---")
         st.markdown("##### ⚠️ Recent Lot Rejections")
         rejections = pd.DataFrame({
-            "Date": ["Dec 26", "Dec 22", "Dec 18"],
+            "Date": ["Dec 28", "Dec 26", "Dec 24"],
             "Supplier": ["JCET", "Skyworks", "JCET"],
             "Part Number": ["Assembly Service", "SKY66112 PA", "Assembly Service"],
-            "Lot": ["JC-2024-1247", "SK-2024-8821", "JC-2024-1238"],
+            "Lot": ["JC-2025-1247", "SK-2025-8821", "JC-2025-1238"],
             "Qty": ["5,000", "2,500", "3,200"],
             "Defect": ["Solder void >5%", "Gain out of spec", "Visual defects"],
             "Action": ["SCAR-042 opened", "RTV to supplier", "SCAR-035 pending"],
@@ -9322,8 +9757,8 @@ elif page == "✅ Quality":
         # NCR status
         st.markdown("##### 📋 Open Non-Conformance Reports")
         ncr_data = pd.DataFrame({
-            "NCR #": ["NCR-2024-0892", "NCR-2024-0891", "NCR-2024-0890", "NCR-2024-0888", "NCR-2024-0885"],
-            "Date": ["Dec 26", "Dec 24", "Dec 22", "Dec 20", "Dec 18"],
+            "NCR #": ["NCR-2025-0892", "NCR-2025-0891", "NCR-2025-0890", "NCR-2025-0888", "NCR-2025-0885"],
+            "Date": ["Dec 29", "Dec 27", "Dec 26", "Dec 24", "Dec 22"],
             "Product": ["FN990A", "ME310G1", "LE910C4", "FN990A", "SE868K3"],
             "Issue": ["RF sensitivity OOS", "Solder void >5%", "Visual defect", "TX power drift", "GNSS accuracy"],
             "Qty Affected": ["312", "450", "180", "85", "42"],
@@ -9341,7 +9776,7 @@ elif page == "✅ Quality":
         
         with capa_col1:
             capa_data = pd.DataFrame({
-                "CAPA #": ["CAPA-2024-042", "CAPA-2024-038", "CAPA-2024-035", "CAPA-2024-032", "CAPA-2024-028"],
+                "CAPA #": ["CAPA-2025-042", "CAPA-2025-038", "CAPA-2025-035", "CAPA-2025-032", "CAPA-2025-028"],
                 "Source": ["NCR-0892", "Customer", "Audit", "NCR-0880", "Process"],
                 "Issue": ["RF cal process", "Field return analysis", "Documentation gap", "Solder profile", "Training gap"],
                 "Root Cause": ["Equipment drift", "ESD damage", "Procedure outdated", "Profile mismatch", "New operator"],
@@ -9434,7 +9869,7 @@ elif page == "✅ Quality":
         yoy_data = pd.DataFrame({
             "Metric": ["First Pass Yield", "Final Yield", "Defect Rate", "DPMO", "Scrap Rate", "Customer Returns", "COPQ"],
             "2023": ["97.5%", "98.8%", "1.2%", "4,500", "0.5%", "180 ppm", "1.2%"],
-            "2024": ["98.7%", "99.4%", "0.8%", "3,200", "0.3%", "120 ppm", "0.8%"],
+            "2025": ["98.7%", "99.4%", "0.8%", "3,200", "0.3%", "120 ppm", "0.8%"],
             "Change": ["📈 +1.2%", "📈 +0.6%", "📉 -0.4%", "📉 -1,300", "📉 -0.2%", "📉 -60 ppm", "📉 -0.4%"],
             "Status": ["🟢 Improved", "🟢 Improved", "🟢 Improved", "🟢 Improved", "🟢 Improved", "🟢 Improved", "🟢 Improved"]
         })
@@ -9476,7 +9911,7 @@ elif page == "✅ Quality":
                     ✅ <strong>Returns:</strong> 40% lower than average
                 </div>
                 <div style="margin-top: 15px; font-size: 13px; color: {TELIT_GRAY};">
-                    Source: IPC Industry Benchmark 2024
+                    Source: IPC Industry Benchmark 2025
                 </div>
             </div>
             """, unsafe_allow_html=True)
@@ -9608,7 +10043,7 @@ elif page == "🔗 Traceability":
         # Search interface
         search_col1, search_col2, search_col3 = st.columns([2, 1, 1])
         with search_col1:
-            serial_search = st.text_input("🔍 Enter Serial Number, Lot ID, or Work Order", value="ME310G1-W1-2024-12847")
+            serial_search = st.text_input("🔍 Enter Serial Number, Lot ID, or Work Order", value="ME310G1-W1-2025-12847")
         with search_col2:
             search_type = st.selectbox("Search Type", ["Serial Number", "Lot ID", "Work Order", "Customer PO"])
         with search_col3:
@@ -9634,7 +10069,7 @@ elif page == "🔗 Traceability":
                     </div>
                     <div style="text-align: center;">
                         <div style="font-size: 12px; color: {TELIT_GRAY};">Build Date</div>
-                        <div style="font-size: 18px; font-weight: 600;">Dec 28, 2024</div>
+                        <div style="font-size: 18px; font-weight: 600;">Dec 28, 2025</div>
                     </div>
                     <div style="text-align: center;">
                         <div style="font-size: 12px; color: {TELIT_GRAY};">Status</div>
@@ -9650,7 +10085,7 @@ elif page == "🔗 Traceability":
                 st.markdown("##### 🧩 Component Genealogy")
                 components = pd.DataFrame({
                     "Component": ["Qualcomm MDM9207", "Samsung K4B4G16", "u-blox M10", "Skyworks PA", "Murata MLCC Array", "PCB Assembly"],
-                    "Supplier Lot": ["QC-2024-A4521", "SS-2024-M8832", "UB-2024-G2341", "SK-2024-P9912", "MU-2024-C5521", "PCB-2024-12847"],
+                    "Supplier Lot": ["QC-2025-A4521", "SS-2025-M8832", "UB-2025-G2341", "SK-2025-P9912", "MU-2025-C5521", "PCB-2025-12847"],
                     "Date Code": ["2448", "2447", "2448", "2446", "2448", "2449"],
                     "Country": ["🇺🇸 USA", "🇰🇷 Korea", "🇨🇭 Swiss", "🇺🇸 USA", "🇯🇵 Japan", "🇨🇳 China"],
                     "Status": ["✅", "✅", "✅", "✅", "✅", "✅"]
@@ -9695,10 +10130,10 @@ elif page == "🔗 Traceability":
             st.markdown("##### 🚚 Shipping & Customer")
             ship_cols = st.columns(5)
             ship_cols[0].metric("Customer", "Landis+Gyr")
-            ship_cols[1].metric("Ship Date", "Dec 28, 2024")
+            ship_cols[1].metric("Ship Date", "Dec 28, 2025")
             ship_cols[2].metric("Carrier", "DHL Express")
             ship_cols[3].metric("Tracking", "1234567890")
-            ship_cols[4].metric("Delivered", "Dec 30, 2024")
+            ship_cols[4].metric("Delivered", "Dec 30, 2025")
     
     # =================================================================
     # TAB 2: GENEALOGY
@@ -9709,8 +10144,8 @@ elif page == "🔗 Traceability":
         st.markdown(f"""
         <div style="background: linear-gradient(135deg, {TELIT_BLUE}15, {TELIT_DARK}10);
                     border-radius: 12px; padding: 20px; margin-bottom: 20px;">
-            <div style="font-size: 18px; font-weight: 700;">🌳 Genealogy for Lot: LOT-2024-12847</div>
-            <div style="color: {TELIT_GRAY}; font-size: 14px;">ME310G1-W1 • 5,000 units • Build Date: Dec 28, 2024</div>
+            <div style="font-size: 18px; font-weight: 700;">🌳 Genealogy for Lot: LOT-2025-12847</div>
+            <div style="color: {TELIT_GRAY}; font-size: 14px;">ME310G1-W1 • 5,000 units • Build Date: Dec 28, 2025</div>
         </div>
         """, unsafe_allow_html=True)
         
@@ -9720,7 +10155,7 @@ elif page == "🔗 Traceability":
             "Level": ["L0 - Finished Good", "L1 - Sub-Assembly", "L1 - Sub-Assembly", "L2 - Component", "L2 - Component", "L2 - Component", "L2 - Component", "L3 - Raw Material"],
             "Item": ["ME310G1-W1 Module", "RF Front-End Assy", "Digital Core Assy", "Qualcomm MDM9207", "u-blox M10 GNSS", "Samsung Flash", "Skyworks PA", "Silicon Wafer"],
             "Supplier/Source": ["Telit Trieste", "Telit Shanghai", "Telit Shanghai", "Qualcomm USA", "u-blox Switzerland", "Samsung Korea", "Skyworks USA", "TSMC Taiwan"],
-            "Lot/Batch": ["LOT-2024-12847", "RF-2024-8821", "DC-2024-7712", "QC-2024-A4521", "UB-2024-G2341", "SS-2024-M8832", "SK-2024-P9912", "TS-2024-W4421"],
+            "Lot/Batch": ["LOT-2025-12847", "RF-2025-8821", "DC-2025-7712", "QC-2025-A4521", "UB-2025-G2341", "SS-2025-M8832", "SK-2025-P9912", "TS-2025-W4421"],
             "Quantity": ["5,000", "5,000", "5,000", "5,000", "5,000", "5,000", "5,000", "12 wafers"],
             "Status": ["✅ Complete", "✅ Complete", "✅ Complete", "✅ Verified", "✅ Verified", "✅ Verified", "✅ Verified", "✅ Verified"]
         })
@@ -9728,10 +10163,10 @@ elif page == "🔗 Traceability":
         
         # Where-used analysis
         st.markdown("---")
-        st.markdown("##### 🔍 Where-Used Analysis (Qualcomm MDM9207 Lot QC-2024-A4521)")
+        st.markdown("##### 🔍 Where-Used Analysis (Qualcomm MDM9207 Lot QC-2025-A4521)")
         where_used = pd.DataFrame({
             "Product": ["ME310G1-W1", "ME310G1-WW", "ME310G1-EU"],
-            "Lot": ["LOT-2024-12847", "LOT-2024-12852", "LOT-2024-12861"],
+            "Lot": ["LOT-2025-12847", "LOT-2025-12852", "LOT-2025-12861"],
             "Quantity": ["5,000", "3,200", "2,800"],
             "Build Date": ["Dec 28", "Dec 29", "Dec 30"],
             "Customer": ["Landis+Gyr", "Itron", "Vodafone"],
@@ -9758,7 +10193,7 @@ elif page == "🔗 Traceability":
         # Live production
         st.markdown("##### 📊 Active Production Lots")
         active_lots = pd.DataFrame({
-            "Lot ID": ["LOT-2024-12892", "LOT-2024-12891", "LOT-2024-12890", "LOT-2024-12889", "LOT-2024-12888"],
+            "Lot ID": ["LOT-2025-12892", "LOT-2025-12891", "LOT-2025-12890", "LOT-2025-12889", "LOT-2025-12888"],
             "Product": ["FN990A28-W1", "ME310G1-W1", "LE910C4-NF", "SE868K3-A", "ME310G1-WW"],
             "Qty": ["2,500", "5,000", "3,200", "1,800", "4,500"],
             "Current Stage": ["🔧 RF Calibration", "📋 Final QC", "⚡ Programming", "🔬 Testing", "📦 Packaging"],
@@ -9771,7 +10206,7 @@ elif page == "🔗 Traceability":
         
         # Production flow visualization
         st.markdown("---")
-        st.markdown("##### 🔄 Production Flow (LOT-2024-12891)")
+        st.markdown("##### 🔄 Production Flow (LOT-2025-12891)")
         flow_cols = st.columns(8)
         stages = [
             ("SMT", "✅", "08:15", TELIT_GREEN),
@@ -9854,7 +10289,7 @@ elif page == "🔗 Traceability":
         # Recent shipments
         st.markdown("##### 📦 Recent Shipments")
         shipments = pd.DataFrame({
-            "Shipment ID": ["SHP-2024-10892", "SHP-2024-10891", "SHP-2024-10890", "SHP-2024-10889", "SHP-2024-10888"],
+            "Shipment ID": ["SHP-2025-10892", "SHP-2025-10891", "SHP-2025-10890", "SHP-2025-10889", "SHP-2025-10888"],
             "Lots Included": ["LOT-12847, 12848", "LOT-12845, 12846", "LOT-12841", "LOT-12838, 12839, 12840", "LOT-12835"],
             "Units": ["10,000", "8,500", "5,000", "15,000", "3,200"],
             "Customer": ["Landis+Gyr", "BMW Group", "Itron", "Continental", "NTT DoCoMo"],
@@ -9868,7 +10303,7 @@ elif page == "🔗 Traceability":
         
         # Shipment details
         st.markdown("---")
-        st.markdown("##### 📍 Shipment Tracking: SHP-2024-10892")
+        st.markdown("##### 📍 Shipment Tracking: SHP-2025-10892")
         tracking_cols = st.columns(5)
         tracking_steps = [
             ("📦 Packed", "Dec 28, 10:15", "Trieste, Italy", "✅", TELIT_GREEN),
@@ -9912,7 +10347,7 @@ elif page == "🔗 Traceability":
         sim_col1, sim_col2 = st.columns([1, 2])
         
         with sim_col1:
-            affected_lot = st.text_input("Affected Lot/Component", "QC-2024-A4521")
+            affected_lot = st.text_input("Affected Lot/Component", "QC-2025-A4521")
             recall_type = st.selectbox("Recall Type", ["Component Issue", "Quality Escape", "Safety Concern", "Regulatory"])
         
         with sim_col2:
@@ -9981,8 +10416,8 @@ elif page == "🔗 Traceability":
         st.markdown("##### ✅ Compliance & Audit Readiness")
         compliance_cols = st.columns(4)
         compliance_data = [
-            ("ISO 9001:2015", "✅ Certified", "Last Audit: Oct 2024", TELIT_GREEN),
-            ("IATF 16949", "✅ Certified", "Last Audit: Sep 2024", TELIT_GREEN),
+            ("ISO 9001:2015", "✅ Certified", "Last Audit: Oct 2025", TELIT_GREEN),
+            ("IATF 16949", "✅ Certified", "Last Audit: Sep 2025", TELIT_GREEN),
             ("IPC-A-610", "✅ Compliant", "Class 3 Standard", TELIT_GREEN),
             ("REACH/RoHS", "✅ Compliant", "All products", TELIT_GREEN),
         ]
@@ -10336,7 +10771,7 @@ elif page == "📱 Certifications":
             "Carrier": ["AT&T", "Verizon", "T-Mobile USA", "Bell Canada", "Rogers", "Telus"],
             "Modules Certified": [45, 42, 48, 38, 35, 32],
             "Pending": [3, 5, 2, 2, 3, 1],
-            "Last Update": ["2024-12-15", "2024-12-10", "2024-12-18", "2024-11-28", "2024-12-01", "2024-11-25"],
+            "Last Update": ["2025-12-20", "2025-12-18", "2025-12-22", "2025-12-10", "2025-12-15", "2025-12-08"],
             "Status": ["🟢 Current", "🟢 Current", "🟢 Current", "🟢 Current", "🟢 Current", "🟢 Current"]
         })
         st.dataframe(na_carriers, use_container_width=True)
@@ -10347,7 +10782,7 @@ elif page == "📱 Certifications":
             "Carrier": ["Vodafone", "Deutsche Telekom", "Orange", "Telefonica", "Swisscom", "KPN"],
             "Modules Certified": [52, 48, 44, 41, 28, 25],
             "Pending": [2, 3, 4, 2, 1, 2],
-            "Last Update": ["2024-12-12", "2024-12-08", "2024-12-05", "2024-11-30", "2024-12-01", "2024-11-28"],
+            "Last Update": ["2025-12-18", "2025-12-15", "2025-12-12", "2025-12-05", "2025-12-10", "2025-12-03"],
             "Status": ["🟢 Current", "🟢 Current", "🟢 Current", "🟢 Current", "🟢 Current", "🟢 Current"]
         })
         st.dataframe(emea_carriers, use_container_width=True)
@@ -10358,7 +10793,7 @@ elif page == "📱 Certifications":
             "Carrier": ["NTT DoCoMo", "KDDI", "SoftBank", "China Mobile", "Singtel", "Telstra"],
             "Modules Certified": [28, 25, 22, 18, 20, 18],
             "Pending": [4, 3, 2, 5, 2, 3],
-            "Last Update": ["2024-12-10", "2024-12-05", "2024-11-28", "2024-12-01", "2024-11-25", "2024-12-08"],
+            "Last Update": ["2025-12-20", "2025-12-15", "2025-12-10", "2025-12-12", "2025-12-05", "2025-12-18"],
             "Status": ["🟢 Current", "🟢 Current", "🟢 Current", "🟡 Review", "🟢 Current", "🟢 Current"]
         })
         st.dataframe(apac_carriers, use_container_width=True)
@@ -10406,7 +10841,7 @@ elif page == "📱 Certifications":
         st.markdown("#### 📅 Certification Timeline (Next 6 Months)")
         timeline_data = pd.DataFrame({
             "Task": ["ME910C1 AT&T Renewal", "LE910Cx Verizon Renewal", "FN990 New PTCRB", "FN990 GCF", "ME510 FCC", "NE310H2 CE"],
-            "Start": pd.to_datetime(["2024-12-01", "2024-12-15", "2025-01-05", "2025-01-20", "2025-02-01", "2025-02-15"]),
+            "Start": pd.to_datetime(["2025-12-01", "2025-12-15", "2026-01-05", "2026-01-20", "2026-02-01", "2026-02-15"]),
             "End": pd.to_datetime(["2025-01-15", "2025-02-15", "2025-03-15", "2025-04-01", "2025-04-15", "2025-05-01"]),
             "Type": ["Renewal", "Renewal", "New", "New", "New", "New"]
         })
@@ -10435,7 +10870,7 @@ elif page == "📱 Certifications":
         
         with col2:
             # Cost trend
-            months = pd.date_range(start="2024-01-01", periods=12, freq="M")
+            months = pd.date_range(start="2025-01-01", periods=12, freq="M")
             cost_trend = pd.DataFrame({
                 "Month": months,
                 "Cost": [85, 92, 78, 105, 88, 95, 110, 98, 102, 115, 108, 124]
@@ -10474,7 +10909,7 @@ elif page == "📱 Certifications":
             st.markdown("#### Recent Audit Results")
             audits = pd.DataFrame({
                 "Audit": ["IATF 16949 Surveillance", "ISO 9001 Internal", "Carrier Audit - AT&T", "PTCRB Witness Test"],
-                "Date": ["2024-11-15", "2024-10-28", "2024-09-20", "2024-08-15"],
+                "Date": ["2025-11-15", "2025-10-28", "2025-09-20", "2025-08-15"],
                 "Result": ["✅ Pass", "✅ Pass", "✅ Pass", "✅ Pass"],
                 "Findings": [1, 2, 0, 0],
                 "Status": ["Closed", "1 Open", "Closed", "Closed"]
@@ -10484,7 +10919,7 @@ elif page == "📱 Certifications":
         with col2:
             st.markdown("#### Open Compliance Actions")
             actions = pd.DataFrame({
-                "ID": ["CA-2024-045", "CA-2024-048", "CA-2024-052"],
+                "ID": ["CA-2025-045", "CA-2025-048", "CA-2025-052"],
                 "Description": ["Update test procedure TP-RF-012", "Calibration records gap", "Supplier audit schedule"],
                 "Due Date": ["2025-01-15", "2025-01-30", "2025-02-15"],
                 "Owner": ["Quality", "Lab", "Procurement"],
@@ -10548,7 +10983,7 @@ elif page == "🔄 Product Lifecycle":
             "Family": ["ME910", "LE910", "FN920", "ME310", "NE310", "FN990"],
             "Technology": ["LTE Cat-M", "LTE Cat-1", "5G Sub-6", "LTE Cat-M", "NB-IoT", "5G mmWave"],
             "Status": ["🟢 Active", "🟢 Active", "🟢 Active", "🟢 Active", "🟢 Active", "🔵 Ramp-Up"],
-            "Launch": ["2019", "2018", "2022", "2020", "2021", "2024"],
+            "Launch": ["2019", "2018", "2022", "2020", "2021", "2025"],
             "Revenue $M": [45.2, 68.5, 42.8, 38.4, 22.1, 8.5],
             "Units (K)": [2850, 3420, 890, 2150, 1820, 180],
             "Key Vertical": ["Utilities", "Automotive", "Industrial", "Asset Track", "Smart City", "Industrial"]
@@ -10584,7 +11019,7 @@ elif page == "🔄 Product Lifecycle":
         st.markdown("#### NPI Gantt Chart")
         npi_gantt = pd.DataFrame({
             "Task": ["FN995 Development", "FN995 Certification", "ME920 Qual", "ME920 Ramp", "LE920 Dev", "NE320 Concept"],
-            "Start": pd.to_datetime(["2024-06-01", "2025-03-01", "2024-10-01", "2025-02-01", "2024-08-01", "2024-11-01"]),
+            "Start": pd.to_datetime(["2025-06-01", "2026-03-01", "2025-10-01", "2026-02-01", "2025-08-01", "2025-11-01"]),
             "End": pd.to_datetime(["2025-02-28", "2025-08-31", "2025-01-31", "2025-06-30", "2025-05-31", "2025-03-31"]),
             "Phase": ["Development", "Certification", "Qualification", "Ramp-Up", "Development", "Concept"]
         })
@@ -10604,7 +11039,7 @@ elif page == "🔄 Product Lifecycle":
             sunset_data = pd.DataFrame({
                 "Region": ["North America", "Europe", "Japan", "Australia", "Global"],
                 "2G Status": ["🔴 Sunset", "🟡 2025", "🔴 Sunset", "🔴 Sunset", "🟡 Ongoing"],
-                "3G Status": ["🔴 Sunset", "🟡 2025-2027", "🔴 Sunset", "🔴 2024", "🟡 Ongoing"],
+                "3G Status": ["🔴 Sunset", "🟡 2026-2028", "🔴 Sunset", "🔴 2025", "🟡 Ongoing"],
                 "Affected Modules": [8, 12, 4, 3, 27],
                 "Migration Plan": ["✅ Complete", "🔄 In Progress", "✅ Complete", "✅ Complete", "🔄 80%"]
             })
@@ -10623,7 +11058,7 @@ elif page == "🔄 Product Lifecycle":
         
         # Transition revenue impact
         st.markdown("#### Revenue Transition Forecast")
-        years = ["2024", "2025", "2026", "2027", "2028"]
+        years = ["2025", "2026", "2027", "2028", "2029"]
         tech_forecast = pd.DataFrame({
             "Year": years,
             "2G/3G": [18, 8, 2, 0, 0],
@@ -10647,8 +11082,8 @@ elif page == "🔄 Product Lifecycle":
         eol_products = pd.DataFrame({
             "Product": ["GE910", "UE910", "HE910", "CE910", "DE910", "UL865", "GL865", "GC864"],
             "Technology": ["2G", "3G", "3G", "2G", "2G", "3G", "2G", "2G"],
-            "EOL Announced": ["2024-01", "2024-03", "2024-06", "2024-09", "2024-09", "2024-06", "2024-01", "2023-09"],
-            "Last Order": ["2024-12", "2025-03", "2025-06", "2025-09", "2025-09", "2025-06", "2024-12", "2024-06"],
+            "EOL Announced": ["2025-01", "2025-03", "2025-06", "2025-09", "2025-09", "2025-06", "2025-01", "2024-09"],
+            "Last Order": ["2025-12", "2026-03", "2026-06", "2026-09", "2026-09", "2026-06", "2025-12", "2025-06"],
             "Last Ship": ["2025-06", "2025-09", "2025-12", "2026-03", "2026-03", "2025-12", "2025-06", "2025-01"],
             "Active Customers": [12, 28, 45, 18, 8, 22, 15, 5],
             "Migration": ["ME910", "LE910", "LE910", "ME910", "ME910", "LE910", "ME910", "ME910"]
@@ -10664,7 +11099,7 @@ elif page == "🔄 Product Lifecycle":
             "Ordered": [45000, 25000, 28000, 12000],
             "Shipped": [42000, 22000, 25000, 8000],
             "Remaining": [8000, 3000, 10000, 10000],
-            "Due Date": ["2025-03", "2024-12", "2025-06", "2025-09"]
+            "Due Date": ["2026-03", "2026-01", "2026-06", "2026-09"]
         })
         st.dataframe(ltb_orders, use_container_width=True)
     
@@ -10683,13 +11118,13 @@ elif page == "🔄 Product Lifecycle":
         # ECO list
         st.markdown("#### Active ECOs")
         ecos = pd.DataFrame({
-            "ECO #": ["ECO-2024-089", "ECO-2024-092", "ECO-2024-095", "ECO-2024-098", "ECO-2024-101"],
+            "ECO #": ["ECO-2025-089", "ECO-2025-092", "ECO-2025-095", "ECO-2025-098", "ECO-2025-101"],
             "Product": ["ME910C1", "LE910Cx", "FN920", "ME310G1", "NE310H2"],
             "Type": ["Component Change", "Firmware Update", "Design Change", "Component Change", "Process Change"],
             "Reason": ["Supplier EOL", "Security Patch", "Performance", "Cost Reduction", "Yield Improve"],
             "Status": ["🔄 Implementation", "✅ Released", "📋 Review", "🔄 Validation", "📋 Review"],
             "Impact": ["Medium", "Low", "High", "Low", "Medium"],
-            "Target Date": ["2025-01-15", "2024-12-20", "2025-02-28", "2025-01-30", "2025-02-15"]
+            "Target Date": ["2026-01-15", "2026-01-10", "2026-02-28", "2026-01-30", "2026-02-15"]
         })
         st.dataframe(ecos, use_container_width=True)
     
@@ -10772,7 +11207,7 @@ elif page == "📋 Customer Orders":
         
         # Order trend
         st.markdown("#### Order Intake Trend")
-        months = pd.date_range(start="2024-01-01", periods=12, freq="M")
+        months = pd.date_range(start="2025-01-01", periods=12, freq="M")
         order_trend = pd.DataFrame({
             "Month": months,
             "Intake": [38, 42, 45, 52, 48, 55, 58, 52, 62, 58, 65, 68],
@@ -10871,7 +11306,7 @@ elif page == "📋 Customer Orders":
             "Module": ["LE910C4", "ME310G1", "ME310G1", "FN990A", "LE910C4"],
             "Annual Volume": ["250K", "500K", "150K", "25K", "80K"],
             "Ramp Status": ["🟢 On Track", "🟢 On Track", "🟡 Delayed", "🔄 Sampling", "🟢 On Track"],
-            "First Revenue": ["Q2 2024", "Q3 2024", "Q1 2025", "Q2 2025", "Q4 2024"]
+            "First Revenue": ["Q2 2024", "Q3 2024", "Q1 2025", "Q2 2025", "Q4 2025"]
         })
         st.dataframe(dw_ramp, use_container_width=True)
     
@@ -10963,7 +11398,7 @@ elif page == "🔁 Returns & RMA":
         
         with col2:
             # RMA trend
-            months = pd.date_range(start="2024-01-01", periods=12, freq="M")
+            months = pd.date_range(start="2025-01-01", periods=12, freq="M")
             rma_trend = pd.DataFrame({
                 "Month": months,
                 "RMAs": [42, 38, 45, 52, 48, 44, 50, 46, 42, 48, 45, 45],
@@ -11363,7 +11798,7 @@ elif page == "🏭 CM Portal":
         st.markdown("### CM Scorecards")
         
         # Quarterly scorecard
-        st.markdown("#### Q4 2024 Performance Scorecard")
+        st.markdown("#### Q4 2025 Performance Scorecard")
         scorecard = pd.DataFrame({
             "Metric": ["Quality (FPY)", "On-Time Delivery", "Cost Competitiveness", "Responsiveness", 
                       "Inventory Accuracy", "Overall Score"],
@@ -11426,7 +11861,7 @@ elif page == "💱 Financial & Costing":
         
         with col2:
             # Margin trend
-            months = pd.date_range(start="2024-01-01", periods=12, freq="M")
+            months = pd.date_range(start="2025-01-01", periods=12, freq="M")
             margin_trend = pd.DataFrame({
                 "Month": months,
                 "Gross Margin %": [36.8, 37.2, 37.5, 37.8, 38.0, 38.2, 38.1, 38.3, 38.4, 38.5, 38.6, 38.5]
@@ -12442,8 +12877,8 @@ elif page == "⚠️ Risk & Maintenance":
             "Health %": [92.5, 78.3, 95.1, 91.2, 88.7, 65.2, 82.5, 94.8, 89.2, 91.5, 97.2, 93.8],
             "Status": ["🟢 Good", "🟡 Warning", "🟢 Good", "🟢 Good", "🟢 Good", "🔴 Critical", "🟡 Warning", "🟢 Good", "🟢 Good", "🟢 Good", "🟢 Good", "🟢 Good"],
             "RUL (hrs)": ["2,850", "980", "4,200", "2,100", "1,850", "120", "650", "3,100", "2,400", "2,800", "5,200", "3,400"],
-            "Last Maint": ["Dec 15", "Dec 10", "Nov 28", "Dec 18", "Dec 5", "Nov 15", "Dec 8", "Dec 20", "Dec 12", "Dec 22", "Nov 30", "Dec 18"],
-            "Next Maint": ["Jan 15", "Dec 28", "Jan 28", "Jan 18", "Jan 5", "NOW", "Dec 30", "Jan 20", "Jan 12", "Jan 22", "Jan 30", "Jan 18"]
+            "Last Maint": ["Dec 20", "Dec 18", "Dec 10", "Dec 22", "Dec 15", "Nov 25", "Dec 18", "Dec 26", "Dec 20", "Dec 28", "Dec 12", "Dec 24"],
+            "Next Maint": ["Jan 20", "Jan 5", "Jan 28", "Jan 22", "Jan 15", "NOW", "Jan 5", "Jan 26", "Jan 20", "Jan 28", "Feb 12", "Jan 24"]
         })
         
         col1, col2 = st.columns([2, 1])
@@ -12508,9 +12943,9 @@ elif page == "⚠️ Risk & Maintenance":
         st.markdown("##### 📆 30-Day Maintenance Calendar")
         cal_cols = st.columns(4)
         weeks = [
-            ("Week 1 (Dec 23-29)", [("Dec 28", "SMT Line 2", "Preventive", TELIT_ORANGE)]),
-            ("Week 2 (Dec 30-Jan 5)", [("Dec 30", "Wire Bonder", "Preventive", TELIT_ORANGE), ("Jan 5", "Reflow Oven 1", "Scheduled", TELIT_GREEN)]),
-            ("Week 3 (Jan 6-12)", [("Jan 12", "RF Tester", "Scheduled", TELIT_GREEN)]),
+            ("Week 1 (Dec 30-Jan 5)", [("Jan 2", "SMT Line 2", "Preventive", TELIT_ORANGE), ("Jan 5", "Wire Bonder", "Preventive", TELIT_ORANGE)]),
+            ("Week 2 (Jan 6-12)", [("Jan 8", "Reflow Oven 1", "Scheduled", TELIT_GREEN), ("Jan 10", "RF Tester", "Scheduled", TELIT_GREEN)]),
+            ("Week 3 (Jan 13-19)", [("Jan 15", "Pick & Place 1", "Scheduled", TELIT_GREEN)]),
             ("Week 4 (Jan 13-19)", [("Jan 15", "SMT Line 1", "Scheduled", TELIT_GREEN), ("Jan 15", "Packaging", "Scheduled", TELIT_GREEN)]),
         ]
         for col, (week, events) in zip(cal_cols, weeks):
@@ -12662,12 +13097,12 @@ elif page == "🏗️ Architecture":
     # Top Stats
     arch_stats = st.columns(8)
     for col, (label, value) in zip(arch_stats, [
-        ("Dashboards", "17"),
+        ("Dashboards", "18"),
         ("Data Sources", "18"),
-        ("Tables", "85+"),
-        ("ML Models", "12"),
-        ("Pipelines", "24"),
-        ("APIs", "10"),
+        ("Tables", "90+"),
+        ("ML Models", "15"),
+        ("Pipelines", "26"),
+        ("APIs", "12"),
         ("Users", "500+"),
         ("Uptime SLA", "99.9%")
     ]):
@@ -13473,12 +13908,13 @@ telit_supply_chain/
         st.markdown("---")
         st.markdown("##### 🤖 Cortex AI Functions Used")
         
-        cortex_cols = st.columns(4)
+        cortex_cols = st.columns(5)
         cortex_funcs = [
-            ("COMPLETE", "Text generation", "AI insights, recommendations", TELIT_BLUE),
-            ("SUMMARIZE", "Text summarization", "Risk summaries, alerts", TELIT_GREEN),
-            ("SENTIMENT", "Sentiment analysis", "Customer feedback", TELIT_ORANGE),
-            ("FORECAST", "Time series forecast", "Demand prediction", '#ce93d8'),
+            ("COMPLETE", "Text generation", "AI Command Center NL queries", TELIT_BLUE),
+            ("SUMMARIZE", "Text summarization", "Risk summaries, alert digest", TELIT_GREEN),
+            ("SENTIMENT", "Sentiment analysis", "Customer/supplier feedback", TELIT_ORANGE),
+            ("FORECAST", "Time series", "Demand & capacity prediction", '#ce93d8'),
+            ("EMBED_TEXT", "Embeddings", "Semantic search, similarity", '#9c27b0'),
         ]
         for col, (func, desc, usage, color) in zip(cortex_cols, cortex_funcs):
             col.markdown(f"""
@@ -13495,12 +13931,12 @@ telit_supply_chain/
         st.markdown("##### 📊 Dynamic Tables")
         
         dyn_tables = pd.DataFrame({
-            "Table": ["DYN_INVENTORY_POSITION", "DYN_ORDER_STATUS", "DYN_PRODUCTION_KPI", "DYN_SUPPLIER_SCORECARD", "DYN_QUALITY_METRICS", "DYN_CERT_STATUS", "DYN_CM_CAPACITY", "DYN_RMA_SUMMARY", "DYN_PRODUCT_COSTS", "DYN_DEMAND_SIGNAL"],
-            "Target Lag": ["1 minute", "5 minutes", "5 minutes", "1 hour", "15 minutes", "1 hour", "30 minutes", "15 minutes", "1 hour", "5 minutes"],
-            "Warehouse": ["WH_ETL_XS", "WH_ETL_XS", "WH_ETL_XS", "WH_ETL_M", "WH_ETL_XS", "WH_ETL_XS", "WH_ETL_XS", "WH_ETL_XS", "WH_ETL_M", "WH_ETL_XS"],
-            "Refresh Mode": ["Incremental", "Incremental", "Full", "Full", "Incremental", "Full", "Full", "Incremental", "Full", "Incremental"],
-            "Downstream": ["3 views", "4 views", "5 views", "2 views", "4 views", "2 views", "3 views", "2 views", "3 views", "4 views"],
-            "Avg Refresh": ["8 sec", "12 sec", "45 sec", "2 min", "15 sec", "30 sec", "45 sec", "10 sec", "1.5 min", "8 sec"]
+            "Table": ["DYN_INVENTORY_POSITION", "DYN_ORDER_STATUS", "DYN_PRODUCTION_KPI", "DYN_SUPPLIER_SCORECARD", "DYN_QUALITY_METRICS", "DYN_CERT_STATUS", "DYN_CM_CAPACITY", "DYN_RMA_SUMMARY", "DYN_PRODUCT_COSTS", "DYN_DEMAND_SIGNAL", "DYN_CRITICAL_ALERTS", "DYN_NETWORK_GRAPH", "DYN_SCENARIO_RESULTS"],
+            "Target Lag": ["1 minute", "5 minutes", "5 minutes", "1 hour", "15 minutes", "1 hour", "30 minutes", "15 minutes", "1 hour", "5 minutes", "1 minute", "1 hour", "On-demand"],
+            "Warehouse": ["WH_ETL_XS", "WH_ETL_XS", "WH_ETL_XS", "WH_ETL_M", "WH_ETL_XS", "WH_ETL_XS", "WH_ETL_XS", "WH_ETL_XS", "WH_ETL_M", "WH_ETL_XS", "WH_ETL_XS", "WH_ETL_M", "WH_ML_L"],
+            "Refresh Mode": ["Incremental", "Incremental", "Full", "Full", "Incremental", "Full", "Full", "Incremental", "Full", "Incremental", "Incremental", "Full", "On-demand"],
+            "Downstream": ["3 views", "4 views", "5 views", "2 views", "4 views", "2 views", "3 views", "2 views", "3 views", "4 views", "2 views", "1 view", "AI Command Center"],
+            "Avg Refresh": ["8 sec", "12 sec", "45 sec", "2 min", "15 sec", "30 sec", "45 sec", "10 sec", "1.5 min", "8 sec", "5 sec", "3 min", "30 sec"]
         })
         st.dataframe(dyn_tables, use_container_width=True)
     
@@ -13571,14 +14007,14 @@ telit_supply_chain/
         st.markdown("##### 📋 ML Model Inventory")
         
         models = pd.DataFrame({
-            "Model": ["Demand Forecast", "Equipment Failure", "Quality Prediction", "Lead Time Prediction", "Supplier Risk Score", "Inventory Optimization", "Anomaly Detection", "RMA Root Cause", "EOL Impact Predictor", "Certification Delay Risk", "CM Capacity Forecast", "Cost Variance Predictor"],
-            "Type": ["Time Series", "Classification", "Classification", "Regression", "Ensemble", "Optimization", "Unsupervised", "NLP + Classification", "Survival Analysis", "Classification", "Time Series", "Regression"],
-            "Algorithm": ["Prophet + Cortex", "XGBoost", "Random Forest", "Gradient Boost", "Weighted Ensemble", "Linear Prog", "Isolation Forest", "Cortex LLM + RF", "Cox Proportional", "Logistic Reg", "ARIMA", "XGBoost"],
-            "Framework": ["Cortex FORECAST", "Snowpark ML", "Snowpark ML", "Snowpark ML", "Python UDF", "Snowpark", "Snowpark ML", "Cortex + Snowpark", "Snowpark ML", "Snowpark ML", "Snowpark ML", "Snowpark ML"],
-            "Features": ["45", "28", "32", "18", "22", "35", "15", "42", "25", "18", "22", "30"],
-            "Accuracy/Metric": ["MAPE: 8.2%", "AUC: 0.92", "F1: 0.89", "R²: 0.87", "—", "—", "—", "F1: 0.84", "C-Index: 0.81", "AUC: 0.88", "MAPE: 6.5%", "R²: 0.82"],
-            "Refresh": ["Daily", "Hourly", "Hourly", "Daily", "Weekly", "Daily", "Real-time", "On-demand", "Weekly", "Daily", "Daily", "Weekly"],
-            "Owner": ["Data Science", "Data Science", "Data Science", "Data Science", "Analytics", "Data Science", "Data Science", "Data Science", "Data Science", "Quality Team", "CM Mgmt", "Finance"]
+            "Model": ["Demand Forecast", "Equipment Failure", "Quality Prediction", "Lead Time Prediction", "Supplier Risk Score", "Inventory Optimization", "Anomaly Detection", "RMA Root Cause", "EOL Impact Predictor", "Certification Delay Risk", "CM Capacity Forecast", "Cost Variance Predictor", "NL Query Engine", "What-If Simulator", "Network Risk Analysis"],
+            "Type": ["Time Series", "Classification", "Classification", "Regression", "Ensemble", "Optimization", "Unsupervised", "NLP + Classification", "Survival Analysis", "Classification", "Time Series", "Regression", "LLM", "Simulation", "Graph Analytics"],
+            "Algorithm": ["Prophet + Cortex", "XGBoost", "Random Forest", "Gradient Boost", "Weighted Ensemble", "Linear Prog", "Isolation Forest", "Cortex LLM + RF", "Cox Proportional", "Logistic Reg", "ARIMA", "XGBoost", "Cortex Complete", "Monte Carlo", "PageRank + Centrality"],
+            "Framework": ["Cortex FORECAST", "Snowpark ML", "Snowpark ML", "Snowpark ML", "Python UDF", "Snowpark", "Snowpark ML", "Cortex + Snowpark", "Snowpark ML", "Snowpark ML", "Snowpark ML", "Snowpark ML", "Cortex LLM", "Snowpark", "Snowpark + NetworkX"],
+            "Features": ["45", "28", "32", "18", "22", "35", "15", "42", "25", "18", "22", "30", "—", "52", "35"],
+            "Accuracy/Metric": ["MAPE: 8.2%", "AUC: 0.92", "F1: 0.89", "R²: 0.87", "—", "—", "—", "F1: 0.84", "C-Index: 0.81", "AUC: 0.88", "MAPE: 6.5%", "R²: 0.82", "Conf: 94%", "R²: 0.91", "—"],
+            "Refresh": ["Daily", "Hourly", "Hourly", "Daily", "Weekly", "Daily", "Real-time", "On-demand", "Weekly", "Daily", "Daily", "Weekly", "Real-time", "On-demand", "Daily"],
+            "Owner": ["Data Science", "Data Science", "Data Science", "Data Science", "Analytics", "Data Science", "Data Science", "Data Science", "Data Science", "Quality Team", "CM Mgmt", "Finance", "AI/ML Team", "AI/ML Team", "AI/ML Team"]
         })
         st.dataframe(models, use_container_width=True)
         
@@ -14060,13 +14496,13 @@ pydantic==2.5.3
         st.markdown("##### 📊 Dashboard Summary")
         
         dashboards = pd.DataFrame({
-            "Dashboard": ["🏠 Home", "📊 Executive", "🏭 Digital Twin", "📦 Inventory & Shipments", "📈 Demand Forecast", "🤝 Suppliers", "✅ Quality", "🔗 Traceability", "📱 Certifications", "🔄 Product Lifecycle", "📋 Customer Orders", "🔁 Returns & RMA", "🏭 CM Portal", "💱 Financial & Costing", "🌱 Carbon ESG", "⚠️ Risk & Maintenance", "🏗️ Architecture"],
-            "Tabs": ["1", "5", "11", "11", "13", "9", "9", "7", "6", "6", "6", "6", "6", "6", "7", "8", "10"],
-            "Charts": ["15", "12", "25", "20", "18", "12", "15", "8", "10", "12", "10", "12", "14", "12", "12", "10", "10"],
-            "KPI Cards": ["25", "20", "30", "25", "20", "15", "20", "12", "18", "15", "12", "14", "16", "15", "18", "16", "8"],
-            "Tables": ["8", "5", "12", "15", "10", "8", "10", "8", "6", "8", "10", "8", "12", "10", "8", "6", "12"],
-            "ML Models": ["—", "2", "3", "2", "3", "1", "1", "—", "—", "2", "1", "1", "2", "1", "1", "3", "—"],
-            "Data Sources": ["All", "5", "4", "3", "4", "2", "2", "3", "2", "4", "3", "3", "4", "3", "3", "4", "—"]
+            "Dashboard": ["🏠 Home", "🎛️ AI Command Center", "📊 Executive", "🏭 Digital Twin", "📦 Inventory & Shipments", "📈 Demand Forecast", "🤝 Suppliers", "✅ Quality", "🔗 Traceability", "📱 Certifications", "🔄 Product Lifecycle", "📋 Customer Orders", "🔁 Returns & RMA", "🏭 CM Portal", "💱 Financial & Costing", "🌱 Carbon ESG", "⚠️ Risk & Maintenance", "🏗️ Architecture"],
+            "Tabs": ["1", "6", "6", "11", "11", "13", "9", "9", "7", "6", "6", "6", "6", "6", "6", "7", "8", "10"],
+            "Charts": ["15", "8", "12", "25", "20", "18", "12", "15", "8", "10", "12", "10", "12", "14", "12", "12", "10", "10"],
+            "KPI Cards": ["25", "18", "20", "30", "25", "20", "15", "20", "12", "18", "15", "12", "14", "16", "15", "18", "16", "8"],
+            "Tables": ["8", "4", "5", "12", "15", "10", "8", "10", "8", "6", "8", "10", "8", "12", "10", "8", "6", "12"],
+            "ML Models": ["—", "4", "2", "3", "2", "3", "1", "1", "—", "—", "2", "1", "1", "2", "1", "1", "3", "—"],
+            "Data Sources": ["All", "All", "5", "4", "3", "4", "2", "2", "3", "2", "4", "3", "3", "4", "3", "3", "4", "—"]
         })
         st.dataframe(dashboards, use_container_width=True)
         
@@ -14075,11 +14511,11 @@ pydantic==2.5.3
         st.markdown("##### 📅 Implementation Phases")
         
         phases = pd.DataFrame({
-            "Phase": ["Phase 1: Foundation", "Phase 2: Core Dashboards", "Phase 3: Advanced Analytics", "Phase 4: AI/ML", "Phase 5: Extended"],
-            "Duration": ["4 weeks", "6 weeks", "4 weeks", "4 weeks", "14 weeks"],
-            "Deliverables": ["Data platform, ETL, base schemas", "Executive, Inventory, Suppliers, Quality", "Digital Twin, Demand Forecast, Traceability", "Cortex AI, Predictive Models, Insights", "Certifications, PLM, Orders, RMA, CM, Financial"],
+            "Phase": ["Phase 1: Foundation", "Phase 2: Core Dashboards", "Phase 3: Advanced Analytics", "Phase 4: AI/ML & Command Center", "Phase 5: Extended"],
+            "Duration": ["4 weeks", "6 weeks", "4 weeks", "6 weeks", "14 weeks"],
+            "Deliverables": ["Data platform, ETL, base schemas", "Executive, Inventory, Suppliers, Quality", "Digital Twin, Demand Forecast, Traceability", "AI Command Center, Cortex AI, What-If Simulator, ROI Calculator", "Certifications, PLM, Orders, RMA, CM, Financial"],
             "Status": ["✅ Complete", "✅ Complete", "✅ Complete", "✅ Complete", "🔵 In Progress"],
-            "Team": ["Data Eng (3)", "Data Eng (2) + BI (2)", "Data Eng (2) + DS (2)", "Data Science (3)", "Data Eng (2) + BI (2)"]
+            "Team": ["Data Eng (3)", "Data Eng (2) + BI (2)", "Data Eng (2) + DS (2)", "Data Science (3) + AI/ML (2)", "Data Eng (2) + BI (2)"]
         })
         st.dataframe(phases, use_container_width=True)
     
