@@ -85,6 +85,7 @@ with st.sidebar:
         "Navigation",
         options=[
             "🏠 Home",
+            "🎛️ AI Command Center",
             "📊 Executive Dashboard",
             "🏭 Digital Twin",
             "📦 Inventory & Shipments",
@@ -196,6 +197,33 @@ if page == "🏠 Home":
             <span style="font-size: 10px;">Certs, PLM, CM, Finance</span>
         </div>
         """, unsafe_allow_html=True)
+    
+    st.markdown("---")
+    
+    # Featured: AI Command Center
+    st.markdown("#### 🌟 Featured: AI Command Center")
+    st.markdown("""
+    <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-radius: 16px; padding: 25px; color: white; margin-bottom: 20px;">
+        <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap;">
+            <div style="flex: 2; min-width: 300px;">
+                <h3 style="color: white; margin: 0 0 10px 0;">🎛️ AI Command Center — Powered by Snowflake Cortex</h3>
+                <p style="margin: 0 0 15px 0; opacity: 0.95;">The ultimate decision-support hub combining AI insights, scenario simulation, live alerts, and ROI analysis.</p>
+                <div style="display: flex; gap: 15px; flex-wrap: wrap;">
+                    <span style="background: rgba(255,255,255,0.2); padding: 5px 12px; border-radius: 20px; font-size: 0.85em;">🤖 Natural Language Queries</span>
+                    <span style="background: rgba(255,255,255,0.2); padding: 5px 12px; border-radius: 20px; font-size: 0.85em;">🎚️ What-If Simulator</span>
+                    <span style="background: rgba(255,255,255,0.2); padding: 5px 12px; border-radius: 20px; font-size: 0.85em;">🔔 Live Alerts</span>
+                    <span style="background: rgba(255,255,255,0.2); padding: 5px 12px; border-radius: 20px; font-size: 0.85em;">🕸️ Network Graph</span>
+                    <span style="background: rgba(255,255,255,0.2); padding: 5px 12px; border-radius: 20px; font-size: 0.85em;">⏱️ Time Machine</span>
+                    <span style="background: rgba(255,255,255,0.2); padding: 5px 12px; border-radius: 20px; font-size: 0.85em;">💰 ROI Calculator</span>
+                </div>
+            </div>
+            <div style="flex: 1; text-align: center; min-width: 200px; margin-top: 15px;">
+                <div style="font-size: 48px;">🧠</div>
+                <div style="font-size: 0.9em; opacity: 0.9;">Cortex AI + LLM</div>
+            </div>
+        </div>
+    </div>
+    """, unsafe_allow_html=True)
     
     st.markdown("---")
     
@@ -1839,6 +1867,786 @@ if page == "🏠 Home":
     st.info("👈 **Select any dashboard** from the sidebar to explore each use case with live data!")
 
 # =============================================================================
+# PAGE: AI COMMAND CENTER
+# =============================================================================
+elif page == "🎛️ AI Command Center":
+    st.title("🎛️ AI Command Center")
+    st.markdown("**Powered by Snowflake Cortex AI** — Real-time intelligence, predictive insights, and decision support")
+    
+    # Tabs for different WOW features
+    ai_tab1, ai_tab2, ai_tab3, ai_tab4, ai_tab5, ai_tab6 = st.tabs([
+        "🤖 AI Insights", "🎚️ What-If Simulator", "🔔 Live Alerts", 
+        "🕸️ Network Graph", "⏱️ Time Machine", "💰 ROI Calculator"
+    ])
+    
+    # ==========================================================================
+    # TAB 1: AI INSIGHTS - Snowflake Cortex AI
+    # ==========================================================================
+    with ai_tab1:
+        st.subheader("🤖 AI-Powered Supply Chain Insights")
+        st.markdown("Ask questions in natural language — powered by **Snowflake Cortex LLM**")
+        
+        # Natural Language Query Interface
+        col_query, col_examples = st.columns([3, 1])
+        with col_query:
+            user_query = st.text_input(
+                "💬 Ask your supply chain anything:",
+                placeholder="e.g., Which suppliers have the highest risk of delay next month?",
+                key="ai_query"
+            )
+        with col_examples:
+            st.markdown("**Quick questions:**")
+            if st.button("🔴 Critical risks?", key="q1"):
+                user_query = "What are the critical supply chain risks right now?"
+            if st.button("📦 Inventory issues?", key="q2"):
+                user_query = "Which products are at risk of stockout?"
+            if st.button("📈 Demand trends?", key="q3"):
+                user_query = "What demand trends should I watch?"
+        
+        if user_query or st.session_state.get('ai_query'):
+            with st.spinner("🧠 Cortex AI analyzing..."):
+                import time
+                time.sleep(1.5)  # Simulate AI processing
+            
+            st.success("✅ Analysis complete")
+            
+            # Simulated AI Response
+            st.markdown("""
+            <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); padding: 20px; border-radius: 12px; color: white;">
+                <h4 style="margin-top: 0; color: white;">🤖 Cortex AI Analysis</h4>
+                <p><strong>Query:</strong> "What are the critical supply chain risks right now?"</p>
+                <hr style="border-color: rgba(255,255,255,0.3);">
+                <p><strong>Key Findings:</strong></p>
+                <ul>
+                    <li>⚠️ <strong>High Risk:</strong> Qualcomm MDM9607 lead times extended to 18 weeks (was 12) due to Taiwan fab capacity constraints</li>
+                    <li>🔴 <strong>Critical:</strong> 3 POs from u-blox at risk of delay (affects ME310G1 production next month)</li>
+                    <li>📦 <strong>Inventory Alert:</strong> SE868K3 GNSS module at 8 DOS — below safety stock threshold</li>
+                    <li>🚢 <strong>Logistics:</strong> Shanghai port congestion adding 4-6 days to APAC shipments</li>
+                </ul>
+                <p><strong>Recommended Actions:</strong></p>
+                <ol>
+                    <li>Activate secondary supplier (MediaTek) for MDM chipsets — pre-qualified last quarter</li>
+                    <li>Expedite u-blox POs with air freight option (+$12K cost)</li>
+                    <li>Increase SE868K3 production priority on SMT Line 4</li>
+                </ol>
+                <p style="font-size: 0.85em; opacity: 0.8; margin-bottom: 0;">Confidence: 94% | Data freshness: 2 minutes ago | Model: Cortex-Complete</p>
+            </div>
+            """, unsafe_allow_html=True)
+        
+        st.markdown("---")
+        
+        # AI-Generated Insights Cards
+        st.markdown("### 📊 Auto-Generated Daily Insights")
+        
+        insight_col1, insight_col2, insight_col3 = st.columns(3)
+        
+        with insight_col1:
+            st.markdown("""
+            <div style="background: #f0fdf4; border-left: 4px solid #22c55e; padding: 15px; border-radius: 8px;">
+                <h5 style="color: #166534; margin: 0;">✅ Opportunity Detected</h5>
+                <p style="margin: 10px 0; font-size: 0.9em;">FN990A 5G demand up 23% in automotive. Consider increasing Q1 production allocation.</p>
+                <span style="background: #22c55e; color: white; padding: 2px 8px; border-radius: 4px; font-size: 0.75em;">+$2.1M potential</span>
+            </div>
+            """, unsafe_allow_html=True)
+        
+        with insight_col2:
+            st.markdown("""
+            <div style="background: #fef3c7; border-left: 4px solid #f59e0b; padding: 15px; border-radius: 8px;">
+                <h5 style="color: #92400e; margin: 0;">⚠️ Pattern Detected</h5>
+                <p style="margin: 10px 0; font-size: 0.9em;">Reflow Oven #2 showing 12% yield variance. Predictive maintenance recommended within 5 days.</p>
+                <span style="background: #f59e0b; color: white; padding: 2px 8px; border-radius: 4px; font-size: 0.75em;">Action needed</span>
+            </div>
+            """, unsafe_allow_html=True)
+        
+        with insight_col3:
+            st.markdown("""
+            <div style="background: #fef2f2; border-left: 4px solid #ef4444; padding: 15px; border-radius: 8px;">
+                <h5 style="color: #991b1b; margin: 0;">🔴 Risk Alert</h5>
+                <p style="margin: 10px 0; font-size: 0.9em;">New US tariff policy draft may impact 15% of China-sourced components. Monitor closely.</p>
+                <span style="background: #ef4444; color: white; padding: 2px 8px; border-radius: 4px; font-size: 0.75em;">$4.2M exposure</span>
+            </div>
+            """, unsafe_allow_html=True)
+        
+        st.markdown("---")
+        
+        # Anomaly Detection
+        st.markdown("### 🔍 Real-Time Anomaly Detection")
+        
+        anomaly_data = pd.DataFrame({
+            'Metric': ['Supplier OTD', 'Production Yield', 'Logistics Cost', 'Quality PPM', 'Inventory Turns'],
+            'Current': [87.2, 98.7, 1.12, 245, 8.2],
+            'Expected': [92.0, 98.5, 1.05, 200, 8.5],
+            'Deviation': [-5.2, 0.2, 6.7, 22.5, -3.5],
+            'Status': ['🔴 Anomaly', '✅ Normal', '🟡 Warning', '🟡 Warning', '✅ Normal']
+        })
+        
+        st.dataframe(
+            anomaly_data.style.applymap(
+                lambda x: 'background-color: #fee2e2' if '🔴' in str(x) else ('background-color: #fef3c7' if '🟡' in str(x) else ''),
+                subset=['Status']
+            ),
+            use_container_width=True
+        )
+    
+    # ==========================================================================
+    # TAB 2: WHAT-IF SCENARIO SIMULATOR
+    # ==========================================================================
+    with ai_tab2:
+        st.subheader("🎚️ What-If Scenario Simulator")
+        st.markdown("Adjust parameters to see real-time impact on your supply chain KPIs")
+        
+        # Scenario Selection
+        scenario_type = st.selectbox(
+            "Select Scenario Type:",
+            ["📦 Supply Disruption", "📈 Demand Surge", "💵 Cost Changes", "🌍 Geopolitical Event", "🏭 Capacity Change"]
+        )
+        
+        st.markdown("---")
+        
+        sim_col1, sim_col2 = st.columns([1, 2])
+        
+        with sim_col1:
+            st.markdown("### ⚙️ Adjust Parameters")
+            
+            # Initialize impact variables
+            revenue_impact = 0
+            production_loss = 0
+            lead_time_impact = 0
+            recovery_weeks = 0
+            impact_factor = 0
+            
+            if scenario_type == "📦 Supply Disruption":
+                affected_supplier = st.selectbox("Affected Supplier", ["Qualcomm", "u-blox", "Skyworks", "Murata", "Samsung"])
+                disruption_severity = st.slider("Disruption Severity", 0, 100, 50, format="%d%%")
+                disruption_duration = st.slider("Duration (weeks)", 1, 24, 8)
+                st.markdown(f"**Scenario:** {affected_supplier} supply reduced by {disruption_severity}% for {disruption_duration} weeks")
+                
+                # Calculate impact based on supplier importance
+                supplier_weight = {"Qualcomm": 1.0, "u-blox": 0.6, "Skyworks": 0.4, "Murata": 0.3, "Samsung": 0.5}
+                impact_factor = (disruption_severity / 100) * supplier_weight.get(affected_supplier, 0.5) * (disruption_duration / 8)
+                revenue_impact = round(25 * impact_factor, 1)  # Base $25M at risk
+                production_loss = round(120 * impact_factor)  # Base 120K units
+                lead_time_impact = round(15 * impact_factor)  # Base 15 days
+                recovery_weeks = max(4, round(disruption_duration * 0.8))
+            
+            elif scenario_type == "📈 Demand Surge":
+                surge_product = st.selectbox("Product Line", ["ME310G1 LTE", "FN990A 5G", "LE910C4", "SE868K3 GNSS"])
+                surge_amount = st.slider("Demand Increase", 0, 100, 30, format="+%d%%")
+                surge_region = st.selectbox("Region", ["Global", "Americas", "EMEA", "APAC"])
+                st.markdown(f"**Scenario:** {surge_product} demand +{surge_amount}% in {surge_region}")
+                
+                # Demand surge - positive revenue but capacity strain
+                region_weight = {"Global": 1.0, "Americas": 0.4, "EMEA": 0.35, "APAC": 0.25}
+                impact_factor = (surge_amount / 100) * region_weight.get(surge_region, 0.5)
+                revenue_impact = -round(18 * impact_factor, 1)  # Positive opportunity (shown as negative loss)
+                production_loss = round(80 * impact_factor)  # Unfulfilled demand
+                lead_time_impact = round(10 * impact_factor)
+                recovery_weeks = max(2, round(8 * impact_factor))
+            
+            elif scenario_type == "💵 Cost Changes":
+                cost_type = st.selectbox("Cost Category", ["Raw Materials", "Logistics", "Labor", "Energy"])
+                cost_change = st.slider("Cost Change", -30, 50, 15, format="%+d%%")
+                st.markdown(f"**Scenario:** {cost_type} costs change by {cost_change:+}%")
+                
+                cost_weight = {"Raw Materials": 0.62, "Logistics": 0.12, "Labor": 0.18, "Energy": 0.08}
+                impact_factor = (cost_change / 100) * cost_weight.get(cost_type, 0.3)
+                revenue_impact = round(500 * impact_factor, 1)  # $500M revenue base, margin impact
+                production_loss = 0  # Cost changes don't affect production directly
+                lead_time_impact = round(3 * abs(cost_change / 15))  # Supply chain adjustments
+                recovery_weeks = max(2, round(abs(cost_change / 5)))
+            
+            elif scenario_type == "🌍 Geopolitical Event":
+                event_type = st.selectbox("Event Type", [
+                    "Taiwan Strait Tension",
+                    "China Export Restrictions", 
+                    "US Tariff Increase",
+                    "EU Regulatory Change"
+                ])
+                event_probability = st.slider("Probability", 0, 100, 40, format="%d%%")
+                st.markdown(f"**Scenario:** {event_type} (estimated {event_probability}% probability)")
+                
+                event_severity = {"Taiwan Strait Tension": 1.0, "China Export Restrictions": 0.8, "US Tariff Increase": 0.5, "EU Regulatory Change": 0.3}
+                impact_factor = (event_probability / 100) * event_severity.get(event_type, 0.5)
+                revenue_impact = round(45 * impact_factor, 1)  # Major disruption potential
+                production_loss = round(200 * impact_factor)
+                lead_time_impact = round(25 * impact_factor)
+                recovery_weeks = max(8, round(24 * impact_factor))
+            
+            else:  # Capacity Change
+                capacity_site = st.selectbox("Manufacturing Site", ["Trieste", "Shanghai", "Foxconn CM", "Flex CM"])
+                capacity_change = st.slider("Capacity Change", -50, 50, -20, format="%+d%%")
+                st.markdown(f"**Scenario:** {capacity_site} capacity {capacity_change:+}%")
+                
+                site_weight = {"Trieste": 0.35, "Shanghai": 0.30, "Foxconn CM": 0.20, "Flex CM": 0.15}
+                impact_factor = (abs(capacity_change) / 100) * site_weight.get(capacity_site, 0.25)
+                if capacity_change < 0:
+                    revenue_impact = round(20 * impact_factor, 1)
+                    production_loss = round(150 * impact_factor)
+                else:
+                    revenue_impact = -round(15 * impact_factor, 1)  # Positive (increased capacity)
+                    production_loss = -round(100 * impact_factor)  # Negative = gain
+                lead_time_impact = round(5 * impact_factor) if capacity_change < 0 else -round(3 * impact_factor)
+                recovery_weeks = max(2, round(12 * impact_factor))
+        
+        with sim_col2:
+            st.markdown("### 📊 Impact Analysis")
+            
+            # Dynamic impact metrics based on calculations
+            impact_col1, impact_col2, impact_col3, impact_col4 = st.columns(4)
+            
+            rev_sign = "-" if revenue_impact > 0 else "+"
+            rev_delta = f"{rev_sign}{abs(revenue_impact/500*100):.1f}%" if revenue_impact != 0 else "0%"
+            impact_col1.metric("Revenue Impact", f"{rev_sign}${abs(revenue_impact):.1f}M", rev_delta, delta_color="inverse" if revenue_impact > 0 else "normal")
+            
+            prod_sign = "-" if production_loss > 0 else "+"
+            prod_delta = f"{prod_sign}{abs(production_loss/500*100):.0f}%" if production_loss != 0 else "0%"
+            impact_col2.metric("Production Loss", f"{prod_sign}{abs(production_loss):.0f}K units", prod_delta, delta_color="inverse" if production_loss > 0 else "normal")
+            
+            lt_sign = "+" if lead_time_impact > 0 else "-"
+            lt_delta = f"{lt_sign}{abs(lead_time_impact/30*100):.0f}%" if lead_time_impact != 0 else "0%"
+            impact_col3.metric("Lead Time", f"{lt_sign}{abs(lead_time_impact):.0f} days", lt_delta, delta_color="inverse" if lead_time_impact > 0 else "normal")
+            
+            impact_col4.metric("Recovery Time", f"{recovery_weeks} weeks", "with mitigation")
+            
+            # Dynamic impact visualization
+            fig_impact = go.Figure()
+            
+            months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
+            baseline = [42, 44, 43, 45, 47, 46, 48, 49, 50, 51, 52, 54]
+            
+            # Calculate disrupted values based on impact factor
+            disrupted = baseline.copy()
+            mitigated = baseline.copy()
+            
+            # Impact period starts at month 3 (Apr) with duration based on recovery_weeks
+            impact_start = 3
+            impact_end = min(11, impact_start + max(1, recovery_weeks // 4))
+            
+            for i in range(impact_start, impact_end + 1):
+                # Disruption curve - worst at start, gradually recovering
+                months_into_impact = i - impact_start
+                disruption_factor = max(0, 1 - (months_into_impact / max(1, (impact_end - impact_start))))
+                
+                disrupted[i] = max(25, baseline[i] - (baseline[i] * impact_factor * 0.4 * disruption_factor))
+                mitigated[i] = max(30, baseline[i] - (baseline[i] * impact_factor * 0.2 * disruption_factor))
+            
+            fig_impact.add_trace(go.Scatter(x=months, y=baseline, name='Baseline', 
+                                            line=dict(color=TELIT_BLUE, width=3)))
+            fig_impact.add_trace(go.Scatter(x=months, y=disrupted, name='Without Mitigation',
+                                            line=dict(color=TELIT_RED, width=2, dash='dash')))
+            fig_impact.add_trace(go.Scatter(x=months, y=mitigated, name='With Mitigation',
+                                            line=dict(color=TELIT_GREEN, width=2)))
+            
+            # Dynamic impact period highlight
+            impact_months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
+            fig_impact.add_vrect(x0=impact_months[impact_start], x1=impact_months[impact_end], 
+                                fillcolor='rgba(255,0,0,0.1)', line_width=0, annotation_text="Impact Period")
+            
+            fig_impact.update_layout(
+                title="Revenue Projection ($M)",
+                height=300,
+                margin=dict(l=0, r=0, t=40, b=0),
+                legend=dict(orientation="h", yanchor="bottom", y=1.02, xanchor="right", x=1)
+            )
+            st.plotly_chart(fig_impact, use_container_width=True)
+            
+            # Mitigation recommendations
+            st.markdown("### 🛡️ Recommended Mitigations")
+            
+            mit_col1, mit_col2 = st.columns(2)
+            with mit_col1:
+                st.markdown("""
+                <div style="background: #f0fdf4; padding: 15px; border-radius: 8px; border: 1px solid #86efac;">
+                    <h5 style="color: #166534; margin: 0 0 10px 0;">✅ Immediate Actions</h5>
+                    <ol style="margin: 0; padding-left: 20px; font-size: 0.9em;">
+                        <li>Activate secondary supplier agreement</li>
+                        <li>Expedite existing POs with premium freight</li>
+                        <li>Reallocate inventory from EMEA to Americas</li>
+                        <li>Notify key customers of potential delays</li>
+                    </ol>
+                </div>
+                """, unsafe_allow_html=True)
+            
+            with mit_col2:
+                st.markdown("""
+                <div style="background: #eff6ff; padding: 15px; border-radius: 8px; border: 1px solid #93c5fd;">
+                    <h5 style="color: #1e40af; margin: 0 0 10px 0;">📋 Long-term Actions</h5>
+                    <ol style="margin: 0; padding-left: 20px; font-size: 0.9em;">
+                        <li>Qualify additional Tier 2 suppliers</li>
+                        <li>Increase safety stock for critical SKUs</li>
+                        <li>Review single-source dependencies</li>
+                        <li>Update BCP documentation</li>
+                    </ol>
+                </div>
+                """, unsafe_allow_html=True)
+    
+    # ==========================================================================
+    # TAB 3: LIVE ALERTS DASHBOARD
+    # ==========================================================================
+    with ai_tab3:
+        st.subheader("🔔 Live Critical Alerts")
+        st.markdown("Real-time monitoring of supply chain events requiring immediate attention")
+        
+        # Alert Summary
+        alert_col1, alert_col2, alert_col3, alert_col4 = st.columns(4)
+        alert_col1.metric("🔴 Critical", "3", "↑1 vs yesterday")
+        alert_col2.metric("🟠 High", "7", "↓2 vs yesterday")
+        alert_col3.metric("🟡 Medium", "12", "same")
+        alert_col4.metric("🟢 Resolved (24h)", "8", "on track")
+        
+        st.markdown("---")
+        
+        # Critical Alerts with Animation
+        st.markdown("### 🚨 Critical Alerts (Immediate Action Required)")
+        
+        critical_alerts = [
+            {
+                "id": "ALT-2024-1847",
+                "title": "Qualcomm MDM9607 Supply Shortage",
+                "severity": "CRITICAL",
+                "age": "2h 34m",
+                "impact": "$2.4M revenue at risk",
+                "affected": "ME310G1, LE910C4",
+                "owner": "John Chen (Procurement)",
+                "status": "In Progress"
+            },
+            {
+                "id": "ALT-2024-1852",
+                "title": "AOI Station #2 Quality Deviation",
+                "severity": "CRITICAL", 
+                "age": "45m",
+                "impact": "Production line at 65% capacity",
+                "affected": "SMT Line 2 (FN990A)",
+                "owner": "Maria Santos (Quality)",
+                "status": "Investigating"
+            },
+            {
+                "id": "ALT-2024-1855",
+                "title": "FCC Certification Expiry - SE868K3",
+                "severity": "CRITICAL",
+                "age": "18m",
+                "impact": "US shipments blocked in 5 days",
+                "affected": "SE868K3 GNSS (US market)",
+                "owner": "David Park (Compliance)",
+                "status": "Escalated"
+            }
+        ]
+        
+        for alert in critical_alerts:
+            st.markdown(f"""
+            <div style="background: linear-gradient(90deg, #fef2f2 0%, #fee2e2 100%); border-left: 5px solid #dc2626; padding: 20px; border-radius: 8px; margin-bottom: 15px; animation: pulse 2s infinite;">
+                <div style="display: flex; justify-content: space-between; align-items: start;">
+                    <div>
+                        <span style="background: #dc2626; color: white; padding: 2px 10px; border-radius: 4px; font-size: 0.75em; font-weight: bold;">🔴 {alert['severity']}</span>
+                        <span style="color: #6b7280; font-size: 0.85em; margin-left: 10px;">#{alert['id']}</span>
+                        <h4 style="margin: 8px 0 5px 0; color: #991b1b;">{alert['title']}</h4>
+                        <p style="margin: 0; color: #7f1d1d; font-size: 0.9em;"><strong>Impact:</strong> {alert['impact']}</p>
+                        <p style="margin: 5px 0; color: #374151; font-size: 0.85em;">Affected: {alert['affected']} | Owner: {alert['owner']}</p>
+                    </div>
+                    <div style="text-align: right;">
+                        <div style="font-size: 1.5em; color: #dc2626;">⏱️ {alert['age']}</div>
+                        <span style="background: #fbbf24; color: #78350f; padding: 2px 8px; border-radius: 4px; font-size: 0.75em;">{alert['status']}</span>
+                    </div>
+                </div>
+            </div>
+            """, unsafe_allow_html=True)
+        
+        st.markdown("### ⚠️ High Priority Alerts")
+        
+        high_alerts = [
+            {"title": "Shanghai Port Congestion - APAC Shipments", "age": "6h", "impact": "4-6 day delays"},
+            {"title": "Murata MLCC Price Increase Notice", "age": "1d", "impact": "+8% effective Q2"},
+            {"title": "BMW PO Change Request - Expedite 5K units", "age": "4h", "impact": "Customer escalation"},
+            {"title": "Trieste Line 1 Scheduled Maintenance Due", "age": "2d", "impact": "Plan for 8hr downtime"},
+        ]
+        
+        for ha in high_alerts:
+            st.markdown(f"""
+            <div style="background: #fffbeb; border-left: 4px solid #f59e0b; padding: 12px 15px; border-radius: 6px; margin-bottom: 8px; display: flex; justify-content: space-between; align-items: center;">
+                <div>
+                    <span style="color: #92400e; font-weight: 500;">{ha['title']}</span>
+                    <span style="color: #6b7280; font-size: 0.85em;"> — {ha['impact']}</span>
+                </div>
+                <span style="color: #b45309; font-size: 0.85em;">{ha['age']} ago</span>
+            </div>
+            """, unsafe_allow_html=True)
+        
+        # Alert Trend
+        st.markdown("---")
+        st.markdown("### 📈 Alert Trend (30 Days)")
+        
+        alert_dates = pd.date_range(end=datetime.now(), periods=30)
+        alert_counts = pd.DataFrame({
+            'Date': alert_dates,
+            'Critical': np.random.poisson(2, 30),
+            'High': np.random.poisson(5, 30),
+            'Medium': np.random.poisson(10, 30)
+        })
+        
+        fig_alerts = go.Figure()
+        fig_alerts.add_trace(go.Scatter(x=alert_counts['Date'], y=alert_counts['Critical'], 
+                                        name='Critical', fill='tozeroy', fillcolor='rgba(220,38,38,0.3)', line=dict(color='#dc2626')))
+        fig_alerts.add_trace(go.Scatter(x=alert_counts['Date'], y=alert_counts['High'],
+                                        name='High', fill='tozeroy', fillcolor='rgba(245,158,11,0.3)', line=dict(color='#f59e0b')))
+        fig_alerts.update_layout(height=250, margin=dict(l=0, r=0, t=10, b=0), 
+                                 legend=dict(orientation="h", yanchor="bottom", y=1.02))
+        st.plotly_chart(fig_alerts, use_container_width=True)
+    
+    # ==========================================================================
+    # TAB 4: INTERACTIVE NETWORK GRAPH
+    # ==========================================================================
+    with ai_tab4:
+        st.subheader("🕸️ Supply Chain Network Graph")
+        st.markdown("Interactive visualization of supplier-product-customer relationships")
+        
+        # Network controls
+        net_col1, net_col2, net_col3 = st.columns(3)
+        with net_col1:
+            view_depth = st.selectbox("View Depth", ["Full Network", "Tier 1 Only", "Critical Path", "Single-Source Risk"])
+        with net_col2:
+            highlight = st.selectbox("Highlight", ["None", "High Risk Nodes", "Revenue Impact", "Lead Time Critical"])
+        with net_col3:
+            product_filter = st.selectbox("Product Focus", ["All Products", "ME310G1", "FN990A", "LE910C4", "SE868K3"])
+        
+        # Create network graph using Plotly
+        # Nodes: Suppliers -> Components -> Products -> Customers
+        
+        # Node positions (calculated for radial layout)
+        import math
+        
+        # Define nodes by tier
+        suppliers = ['Qualcomm', 'u-blox', 'Skyworks', 'Murata', 'Samsung', 'MediaTek', 'JCET', 'ASE']
+        components = ['MDM9607', 'UBX-M10', 'SKY78', 'GRM188', 'Memory', 'RF-FEM', 'Package', 'Test']
+        products = ['ME310G1', 'FN990A', 'LE910C4', 'SE868K3']
+        customers = ['BMW', 'Continental', 'Landis+Gyr', 'Vodafone', 'NTT', 'Honeywell']
+        
+        # Calculate positions
+        node_x = []
+        node_y = []
+        node_text = []
+        node_color = []
+        node_size = []
+        
+        # Suppliers (left)
+        for i, s in enumerate(suppliers):
+            node_x.append(0)
+            node_y.append(i * 1.2 - len(suppliers) * 0.6)
+            node_text.append(f"<b>{s}</b><br>Supplier")
+            node_color.append(TELIT_BLUE)
+            node_size.append(25)
+        
+        # Components
+        for i, c in enumerate(components):
+            node_x.append(2)
+            node_y.append(i * 1.2 - len(components) * 0.6)
+            node_text.append(f"<b>{c}</b><br>Component")
+            node_color.append(TELIT_ORANGE)
+            node_size.append(20)
+        
+        # Products
+        for i, p in enumerate(products):
+            node_x.append(4)
+            node_y.append(i * 2 - len(products))
+            node_text.append(f"<b>{p}</b><br>Product")
+            node_color.append(TELIT_GREEN)
+            node_size.append(35)
+        
+        # Customers
+        for i, c in enumerate(customers):
+            node_x.append(6)
+            node_y.append(i * 1.3 - len(customers) * 0.65)
+            node_text.append(f"<b>{c}</b><br>Customer")
+            node_color.append('#9C27B0')
+            node_size.append(25)
+        
+        # Define edges
+        edges = [
+            # Supplier -> Component
+            (0, 8), (0, 9), (1, 8), (2, 10), (3, 11), (4, 12), (5, 9), (6, 14), (7, 15),
+            # Component -> Product
+            (8, 16), (8, 17), (9, 16), (9, 17), (10, 16), (10, 18), (11, 16), (11, 17), (11, 18), (11, 19),
+            (12, 17), (13, 17), (14, 16), (14, 17), (14, 18), (15, 18), (15, 19),
+            # Product -> Customer
+            (16, 20), (16, 21), (16, 23), (17, 20), (17, 21), (17, 24), (18, 22), (18, 23), (18, 25), (19, 22), (19, 24), (19, 25)
+        ]
+        
+        # Create edge traces
+        edge_x = []
+        edge_y = []
+        for e in edges:
+            edge_x.extend([node_x[e[0]], node_x[e[1]], None])
+            edge_y.extend([node_y[e[0]], node_y[e[1]], None])
+        
+        fig_network = go.Figure()
+        
+        # Add edges
+        fig_network.add_trace(go.Scatter(
+            x=edge_x, y=edge_y,
+            mode='lines',
+            line=dict(width=1, color='rgba(150,150,150,0.4)'),
+            hoverinfo='none'
+        ))
+        
+        # Add nodes
+        fig_network.add_trace(go.Scatter(
+            x=node_x, y=node_y,
+            mode='markers+text',
+            marker=dict(size=node_size, color=node_color, line=dict(width=2, color='white')),
+            text=[n.split('<br>')[0].replace('<b>', '').replace('</b>', '') for n in node_text],
+            textposition="bottom center",
+            hovertext=node_text,
+            hoverinfo='text',
+            textfont=dict(size=9)
+        ))
+        
+        # Add tier labels
+        for x, label in [(0, 'SUPPLIERS'), (2, 'COMPONENTS'), (4, 'PRODUCTS'), (6, 'CUSTOMERS')]:
+            fig_network.add_annotation(x=x, y=5.5, text=f"<b>{label}</b>", showarrow=False,
+                                       font=dict(size=12, color='#6b7280'))
+        
+        fig_network.update_layout(
+            height=500,
+            showlegend=False,
+            xaxis=dict(visible=False, range=[-1, 7]),
+            yaxis=dict(visible=False, range=[-6, 6]),
+            margin=dict(l=20, r=20, t=20, b=20),
+            plot_bgcolor='#f8fafc'
+        )
+        
+        st.plotly_chart(fig_network, use_container_width=True)
+        
+        # Network stats
+        st.markdown("---")
+        st.markdown("### 📊 Network Analysis")
+        
+        net_stat1, net_stat2, net_stat3, net_stat4, net_stat5 = st.columns(5)
+        net_stat1.metric("Total Nodes", "26", "4 tiers")
+        net_stat2.metric("Connections", "42", "relationships")
+        net_stat3.metric("Single Source", "3", "⚠️ risk items")
+        net_stat4.metric("Avg Path Length", "3.2", "hops")
+        net_stat5.metric("Network Resilience", "72%", "good")
+        
+        # Risk table
+        st.markdown("### ⚠️ Single-Source Dependencies")
+        risk_df = pd.DataFrame({
+            'Component': ['MDM9607 Chipset', 'UBX-M10 GNSS', 'RF Front-End Module'],
+            'Single Supplier': ['Qualcomm', 'u-blox', 'Skyworks'],
+            'Products Affected': ['ME310G1, LE910C4', 'SE868K3', 'ME310G1, FN990A'],
+            'Revenue at Risk': ['$85M', '$42M', '$67M'],
+            'Mitigation Status': ['🟡 In Progress', '🔴 Not Started', '✅ Qualified Alt']
+        })
+        st.dataframe(risk_df, use_container_width=True)
+    
+    # ==========================================================================
+    # TAB 5: TIME MACHINE
+    # ==========================================================================
+    with ai_tab5:
+        st.subheader("⏱️ Supply Chain Time Machine")
+        st.markdown("Explore historical performance and trends — travel back in time to understand what happened")
+        
+        # Date selection
+        time_col1, time_col2, time_col3 = st.columns([2, 2, 1])
+        with time_col1:
+            start_date = st.date_input("From", datetime.now() - timedelta(days=365))
+        with time_col2:
+            end_date = st.date_input("To", datetime.now())
+        with time_col3:
+            granularity = st.selectbox("Granularity", ["Daily", "Weekly", "Monthly"])
+        
+        # Time slider
+        st.markdown("#### 📅 Timeline Navigator")
+        selected_month = st.select_slider(
+            "Select Period",
+            options=['Jan 24', 'Feb 24', 'Mar 24', 'Apr 24', 'May 24', 'Jun 24', 
+                     'Jul 24', 'Aug 24', 'Sep 24', 'Oct 24', 'Nov 24', 'Dec 24'],
+            value='Dec 24'
+        )
+        
+        st.markdown("---")
+        
+        # KPI comparison
+        st.markdown("### 📊 KPI Comparison: Selected Period vs Previous")
+        
+        kpi_time_col1, kpi_time_col2, kpi_time_col3, kpi_time_col4, kpi_time_col5 = st.columns(5)
+        kpi_time_col1.metric("Revenue", "$48.2M", "+6.2% vs prev", delta_color="normal")
+        kpi_time_col2.metric("OTD Rate", "94.3%", "+2.1 pts", delta_color="normal")
+        kpi_time_col3.metric("Quality FPY", "98.7%", "+0.3 pts", delta_color="normal")
+        kpi_time_col4.metric("Inventory DOS", "32 days", "-3 days", delta_color="normal")
+        kpi_time_col5.metric("Supplier OTD", "89.2%", "-1.8 pts", delta_color="inverse")
+        
+        # Historical trend
+        st.markdown("### 📈 Historical Trends")
+        
+        metric_select = st.multiselect(
+            "Select Metrics to Display",
+            ["Revenue", "OTD Rate", "Quality FPY", "Inventory Value", "Production Volume"],
+            default=["Revenue", "OTD Rate"]
+        )
+        
+        dates = pd.date_range(start='2024-01-01', periods=12, freq='M')
+        hist_data = pd.DataFrame({
+            'Date': dates,
+            'Revenue': [38, 42, 41, 44, 46, 43, 45, 47, 48, 49, 47, 48],
+            'OTD Rate': [91, 92, 90, 93, 94, 92, 93, 94, 95, 94, 93, 94],
+            'Quality FPY': [97.8, 98.0, 97.9, 98.2, 98.3, 98.1, 98.4, 98.5, 98.6, 98.7, 98.5, 98.7],
+            'Inventory Value': [45, 48, 52, 50, 47, 49, 51, 48, 46, 44, 43, 42],
+            'Production Volume': [320, 345, 338, 362, 378, 355, 368, 382, 390, 398, 385, 392]
+        })
+        
+        fig_hist = go.Figure()
+        colors = [TELIT_BLUE, TELIT_GREEN, TELIT_ORANGE, '#9C27B0', TELIT_RED]
+        for i, metric in enumerate(metric_select):
+            fig_hist.add_trace(go.Scatter(
+                x=hist_data['Date'], y=hist_data[metric],
+                name=metric, line=dict(color=colors[i % len(colors)], width=2)
+            ))
+        
+        fig_hist.update_layout(height=350, margin=dict(l=0, r=0, t=10, b=0),
+                              legend=dict(orientation="h", yanchor="bottom", y=1.02))
+        st.plotly_chart(fig_hist, use_container_width=True)
+        
+        # Events timeline
+        st.markdown("### 📌 Significant Events")
+        
+        events = [
+            {"date": "Dec 2024", "event": "FN990A 5G mass production started", "impact": "positive"},
+            {"date": "Nov 2024", "event": "New Foxconn CM contract signed", "impact": "positive"},
+            {"date": "Oct 2024", "event": "Shanghai port strike - 2 week delays", "impact": "negative"},
+            {"date": "Aug 2024", "event": "BMW design win - $42M/year", "impact": "positive"},
+            {"date": "Jun 2024", "event": "Murata supply shortage", "impact": "negative"},
+            {"date": "Mar 2024", "event": "ISO 14001 certification renewed", "impact": "positive"},
+        ]
+        
+        for evt in events:
+            color = "#dcfce7" if evt['impact'] == 'positive' else "#fef2f2"
+            border = "#22c55e" if evt['impact'] == 'positive' else "#ef4444"
+            icon = "✅" if evt['impact'] == 'positive' else "⚠️"
+            st.markdown(f"""
+            <div style="background: {color}; border-left: 4px solid {border}; padding: 10px 15px; border-radius: 6px; margin-bottom: 8px; display: flex; align-items: center;">
+                <span style="font-weight: bold; min-width: 80px; color: #374151;">{evt['date']}</span>
+                <span style="margin-left: 10px;">{icon} {evt['event']}</span>
+            </div>
+            """, unsafe_allow_html=True)
+    
+    # ==========================================================================
+    # TAB 6: ROI CALCULATOR
+    # ==========================================================================
+    with ai_tab6:
+        st.subheader("💰 ROI Calculator")
+        st.markdown("Calculate potential return on investment from implementing Snowflake Supply Chain Intelligence")
+        
+        st.markdown("### 📝 Enter Your Current Metrics")
+        
+        roi_col1, roi_col2 = st.columns(2)
+        
+        with roi_col1:
+            st.markdown("**Revenue & Volume**")
+            annual_revenue = st.number_input("Annual Revenue ($M)", min_value=10, max_value=10000, value=500)
+            annual_units = st.number_input("Annual Units Shipped (K)", min_value=100, max_value=100000, value=6000)
+            avg_unit_price = st.number_input("Average Unit Price ($)", min_value=1, max_value=1000, value=85)
+            
+            st.markdown("**Current Performance**")
+            current_otd = st.slider("Current OTD Rate (%)", 70, 99, 88)
+            current_fpy = st.slider("Current First Pass Yield (%)", 90.0, 99.9, 96.5)
+            current_inventory_dos = st.slider("Current Inventory (Days)", 20, 90, 45)
+        
+        with roi_col2:
+            st.markdown("**Cost Structure**")
+            cogs_pct = st.slider("COGS (% of Revenue)", 40, 80, 62)
+            logistics_pct = st.slider("Logistics (% of Revenue)", 2, 15, 6)
+            expedite_cost = st.number_input("Annual Expedite Costs ($K)", min_value=0, max_value=10000, value=850)
+            
+            st.markdown("**Pain Points**")
+            manual_hours = st.number_input("Manual Reporting Hours/Week", min_value=0, max_value=200, value=40)
+            stockout_events = st.number_input("Stockout Events/Year", min_value=0, max_value=100, value=12)
+            quality_escapes = st.number_input("Quality Escapes/Year", min_value=0, max_value=50, value=8)
+        
+        st.markdown("---")
+        
+        if st.button("🧮 Calculate ROI", type="primary", use_container_width=True):
+            # Calculate improvements
+            otd_improvement = min(99 - current_otd, 5)  # Up to 5 point improvement
+            fpy_improvement = min(99.5 - current_fpy, 1.5)  # Up to 1.5 point improvement
+            inventory_reduction = current_inventory_dos * 0.15  # 15% reduction
+            
+            # Calculate savings
+            expedite_savings = expedite_cost * 0.30  # 30% reduction
+            inventory_savings = (annual_revenue * 1000000 * (cogs_pct/100) * (inventory_reduction / 365) * 0.10)  # 10% carrying cost
+            labor_savings = manual_hours * 52 * 75 * 0.70  # $75/hr, 70% reduction
+            quality_savings = quality_escapes * 25000 * 0.50  # $25K per escape, 50% reduction
+            stockout_savings = stockout_events * (annual_revenue * 1000000 / 365 / 10) * 0.60  # Avg day revenue/10, 60% reduction
+            
+            total_savings = expedite_savings * 1000 + inventory_savings + labor_savings + quality_savings + stockout_savings
+            
+            # Implementation cost estimate
+            impl_cost = 350000  # $350K implementation
+            annual_license = 180000  # $180K annual Snowflake
+            
+            # ROI calculation
+            year1_roi = ((total_savings - impl_cost - annual_license) / (impl_cost + annual_license)) * 100
+            year3_roi = ((total_savings * 3 - impl_cost - annual_license * 3) / (impl_cost + annual_license * 3)) * 100
+            payback_months = (impl_cost + annual_license) / (total_savings / 12)
+            
+            st.markdown("### 📊 ROI Analysis Results")
+            
+            result_col1, result_col2, result_col3, result_col4 = st.columns(4)
+            result_col1.metric("Annual Savings", f"${total_savings/1000000:.2f}M", "projected")
+            result_col2.metric("Year 1 ROI", f"{year1_roi:.0f}%", "net of costs")
+            result_col3.metric("3-Year ROI", f"{year3_roi:.0f}%", "cumulative")
+            result_col4.metric("Payback Period", f"{payback_months:.1f} months", "breakeven")
+            
+            st.markdown("---")
+            
+            st.markdown("### 💵 Savings Breakdown")
+            
+            savings_data = pd.DataFrame({
+                'Category': ['Expedite Cost Reduction', 'Inventory Carrying Cost', 'Labor Efficiency', 'Quality Improvement', 'Stockout Prevention'],
+                'Annual Savings': [expedite_savings * 1000, inventory_savings, labor_savings, quality_savings, stockout_savings],
+                'Improvement': ['30% reduction', f'{inventory_reduction:.0f} days freed', '70% automation', '50% fewer escapes', '60% prevention']
+            })
+            savings_data['Annual Savings'] = savings_data['Annual Savings'].apply(lambda x: f"${x:,.0f}")
+            
+            st.dataframe(savings_data, use_container_width=True)
+            
+            # Visualization
+            fig_roi = go.Figure()
+            
+            years = ['Year 1', 'Year 2', 'Year 3']
+            cumulative_savings = [total_savings, total_savings * 2, total_savings * 3]
+            cumulative_costs = [impl_cost + annual_license, impl_cost + annual_license * 2, impl_cost + annual_license * 3]
+            net_benefit = [s - c for s, c in zip(cumulative_savings, cumulative_costs)]
+            
+            fig_roi.add_trace(go.Bar(x=years, y=[s/1000000 for s in cumulative_savings], name='Cumulative Savings', marker_color=TELIT_GREEN))
+            fig_roi.add_trace(go.Bar(x=years, y=[c/1000000 for c in cumulative_costs], name='Cumulative Costs', marker_color=TELIT_RED))
+            fig_roi.add_trace(go.Scatter(x=years, y=[n/1000000 for n in net_benefit], name='Net Benefit', 
+                                         line=dict(color=TELIT_BLUE, width=3), mode='lines+markers'))
+            
+            fig_roi.update_layout(
+                title="3-Year Financial Projection ($M)",
+                height=350,
+                barmode='group',
+                legend=dict(orientation="h", yanchor="bottom", y=1.02)
+            )
+            st.plotly_chart(fig_roi, use_container_width=True)
+            
+            # Executive Summary
+            st.markdown("### 📋 Executive Summary")
+            st.markdown(f"""
+            <div style="background: linear-gradient(135deg, #1e3a5f 0%, #29b5e8 100%); padding: 25px; border-radius: 12px; color: white;">
+                <h4 style="color: white; margin-top: 0;">Investment Recommendation: ✅ PROCEED</h4>
+                <p>Based on your inputs, implementing Snowflake Supply Chain Intelligence is projected to deliver:</p>
+                <ul>
+                    <li><strong>${total_savings/1000000:.2f}M annual savings</strong> through operational improvements</li>
+                    <li><strong>{year1_roi:.0f}% ROI in Year 1</strong>, growing to {year3_roi:.0f}% over 3 years</li>
+                    <li><strong>Payback in {payback_months:.1f} months</strong></li>
+                    <li><strong>OTD improvement</strong> from {current_otd}% to {current_otd + otd_improvement}%</li>
+                    <li><strong>Inventory reduction</strong> of {inventory_reduction:.0f} days (${inventory_savings/1000:.0f}K freed capital)</li>
+                </ul>
+                <p style="margin-bottom: 0; opacity: 0.9; font-size: 0.9em;">*Projections based on industry benchmarks and comparable implementations. Actual results may vary.</p>
+            </div>
+            """, unsafe_allow_html=True)
+
+# =============================================================================
 # PAGE: EXECUTIVE DASHBOARD
 # =============================================================================
 elif page == "📊 Executive Dashboard":
@@ -1858,8 +2666,8 @@ elif page == "📊 Executive Dashboard":
     # ==========================================================================
     # EXECUTIVE DASHBOARD TABS
     # ==========================================================================
-    exec_tab1, exec_tab2, exec_tab3, exec_tab4, exec_tab5 = st.tabs([
-        "📈 Overview", "💰 Financial", "🏭 Operations", "🎯 Customers & Market", "⚠️ Alerts & AI"
+    exec_tab1, exec_tab2, exec_tab3, exec_tab4, exec_tab5, exec_tab6 = st.tabs([
+        "📈 Overview", "💰 Financial", "🏭 Operations", "🎯 Customers & Market", "⚠️ Alerts & AI", "🌍 Global Network"
     ])
     
     # ==========================================================================
@@ -2071,17 +2879,17 @@ elif page == "📊 Executive Dashboard":
         st.markdown("#### 🏥 Supply Chain Health Score")
         
         g1, g2, g3, g4, trend_col = st.columns([1, 1, 1, 1, 2])
-        
-        with g1:
+    
+    with g1:
             st.plotly_chart(create_gauge(95.8, "On-Time Delivery", TELIT_GREEN), use_container_width=True)
-        with g2:
-            st.plotly_chart(create_gauge(87.3, "Factory OEE", TELIT_BLUE), use_container_width=True)
-        with g3:
+    with g2:
+        st.plotly_chart(create_gauge(87.3, "Factory OEE", TELIT_BLUE), use_container_width=True)
+    with g3:
             st.plotly_chart(create_gauge(98.7, "Quality (FPY)", TELIT_GREEN), use_container_width=True)
-        with g4:
-            st.plotly_chart(create_gauge(78.5, "Supplier Score", TELIT_ORANGE), use_container_width=True)
-        
-        with trend_col:
+    with g4:
+        st.plotly_chart(create_gauge(78.5, "Supplier Score", TELIT_ORANGE), use_container_width=True)
+    
+    with trend_col:
             st.markdown("**📈 Production Trend (This Week)**")
             days = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri']
             fig_prod = go.Figure()
@@ -2089,30 +2897,30 @@ elif page == "📊 Executive Dashboard":
             fig_prod.add_trace(go.Scatter(x=days, y=[8000]*5, mode='lines', name='Target', line=dict(color=TELIT_ORANGE, dash='dash')))
             fig_prod.update_layout(height=200, margin=dict(l=0, r=0, t=10, b=0), legend=dict(orientation="h", y=1.1), yaxis_title="Units")
             st.plotly_chart(fig_prod, use_container_width=True)
+    
+    st.markdown("---")
+    
+        # Operations snapshot
+    ops_col, map_col = st.columns([1, 2])
+    
+    with ops_col:
+        st.markdown("#### 📦 Operations Snapshot")
+        st.metric("IoT Modules in Transit", "2.4M units", "+12.3%")
+        st.metric("Inventory Value", "$78.5M", "-3.8%", delta_color="inverse")
+        st.metric("Open POs", "187", "+8 new")
+        st.metric("Order Backlog", "$42.3M", "+$5.2M")
         
         st.markdown("---")
-        
-        # Operations snapshot
-        ops_col, map_col = st.columns([1, 2])
-        
-        with ops_col:
-            st.markdown("#### 📦 Operations Snapshot")
-            st.metric("IoT Modules in Transit", "2.4M units", "+12.3%")
-            st.metric("Inventory Value", "$78.5M", "-3.8%", delta_color="inverse")
-            st.metric("Open POs", "187", "+8 new")
-            st.metric("Order Backlog", "$42.3M", "+$5.2M")
-            
-            st.markdown("---")
-            st.markdown("#### 🏢 Global Sites Status")
-            sites = [
-                ("🟢", "Trieste, Italy", "Manufacturing", "94%"),
-                ("🟢", "Seoul, Korea", "Manufacturing", "89%"),
-                ("🟢", "Irvine, CA (HQ)", "R&D/Ops", "Active"),
-                ("🟢", "Tel Aviv, Israel", "R&D", "Active"),
-                ("🟢", "Bangalore, India", "R&D", "Active"),
-            ]
-            for status, name, type_, util in sites:
-                st.markdown(f"{status} **{name}** - {type_} ({util})")
+        st.markdown("#### 🏢 Global Sites Status")
+        sites = [
+            ("🟢", "Trieste, Italy", "Manufacturing", "94%"),
+            ("🟢", "Seoul, Korea", "Manufacturing", "89%"),
+            ("🟢", "Irvine, CA (HQ)", "R&D/Ops", "Active"),
+            ("🟢", "Tel Aviv, Israel", "R&D", "Active"),
+            ("🟢", "Bangalore, India", "R&D", "Active"),
+        ]
+        for status, name, type_, util in sites:
+            st.markdown(f"{status} **{name}** - {type_} ({util})")
     
     with map_col:
         st.markdown("#### 🌍 Telit Cinterion Global Footprint & Supply Chain")
@@ -2520,6 +3328,152 @@ elif page == "📊 Executive Dashboard":
         })
         st.dataframe(rec_data, use_container_width=True)
 
+    # ==========================================================================
+    # TAB 6: 3D GLOBAL SUPPLY CHAIN NETWORK
+    # ==========================================================================
+    with exec_tab6:
+        st.subheader("🌍 3D Supply Chain Network")
+        
+        import numpy as np
+        
+        # Simplified supply chain visualization using abstract positioning
+        # X = Region (Americas, Europe, Asia), Y = importance, Z = supply chain tier
+        nodes = {
+            'name': ['Qualcomm', 'Skyworks', 'u-blox', 'Infineon', 'STMicro', 'Samsung', 'JCET', 'Murata',
+                    'Telit Trieste', 'Telit Shanghai', 'Foxconn', 'Flex',
+                    'DC LA', 'DC Frankfurt', 'DC Singapore',
+                    'Landis+Gyr', 'Itron', 'BMW', 'Continental', 'NTT', 'Vodafone'],
+            'x': [1, 1.5, 3, 3.5, 3.2, 5, 5.5, 5.2,    # Suppliers: Americas(1-2), Europe(3-4), Asia(5-6)
+                  3.3, 5.3, 5.8, 5.5,                    # Manufacturing
+                  1.2, 3.4, 5.4,                         # Distribution
+                  1.3, 1.8, 3.5, 3.8, 5.6, 3.1],        # Customers
+            'y': [5, 3, 4, 2.5, 2, 3, 4.5, 2,          # Importance/size within region
+                  5, 4.5, 3.5, 3,
+                  3, 3, 3,
+                  4, 3, 5, 4, 4.5, 3.5],
+            'z': [0]*8 + [1]*4 + [2]*3 + [3]*6,        # Supply chain tier
+            'type': ['Supplier']*8 + ['Manufacturing']*4 + ['Distribution']*3 + ['Customer']*6,
+            'value': ['$52M', '$12M', '$18M', '$9M', '$9M', '$11M', '$24M', '$8M',
+                     '3.2M units', '2.8M units', '1.5M units', '1.2M units',
+                     '45K/wk', '38K/wk', '32K/wk',
+                     '$32M', '$18M', '$42M', '$28M', '$22M', '$15M'],
+            'size': [18, 12, 14, 10, 10, 12, 16, 10, 22, 20, 16, 14, 12, 12, 12, 14, 12, 18, 14, 14, 12]
+        }
+        
+        color_map = {'Supplier': '#2196F3', 'Manufacturing': '#4CAF50', 'Distribution': '#9C27B0', 'Customer': '#F44336'}
+        
+        fig_3d = go.Figure()
+        
+        # Add nodes by type
+        for node_type, color in color_map.items():
+            mask = [t == node_type for t in nodes['type']]
+            fig_3d.add_trace(go.Scatter3d(
+                x=[nodes['x'][i] for i, m in enumerate(mask) if m],
+                y=[nodes['y'][i] for i, m in enumerate(mask) if m],
+                z=[nodes['z'][i] for i, m in enumerate(mask) if m],
+                mode='markers',
+                marker=dict(
+                    size=[nodes['size'][i] for i, m in enumerate(mask) if m],
+                    color=color,
+                    opacity=0.85,
+                    line=dict(color='white', width=1),
+                    symbol='circle'
+                ),
+                text=[f"{nodes['name'][i]}<br>{nodes['value'][i]}" for i, m in enumerate(mask) if m],
+                hoverinfo='text',
+                name=node_type
+            ))
+        
+        # Add key supply chain flows
+        flows = [
+            (0, 8, '#FF9800'), (0, 9, '#FF9800'),   # Qualcomm → Mfg
+            (2, 8, '#FF9800'), (5, 9, '#FF9800'),   # u-blox/Samsung → Mfg
+            (8, 13, '#FF9800'), (9, 14, '#FF9800'), # Mfg → DC
+            (9, 12, '#FF9800'),
+            (12, 15, '#FF9800'), (13, 17, '#FF9800'), (14, 19, '#FF9800'),  # DC → Customer
+        ]
+        
+        for src, tgt, col in flows:
+            fig_3d.add_trace(go.Scatter3d(
+                x=[nodes['x'][src], nodes['x'][tgt]],
+                y=[nodes['y'][src], nodes['y'][tgt]],
+                z=[nodes['z'][src], nodes['z'][tgt]],
+                mode='lines',
+                line=dict(color=col, width=3),
+                opacity=0.5,
+                showlegend=False,
+                hoverinfo='skip'
+            ))
+        
+        fig_3d.update_layout(
+            scene=dict(
+                xaxis=dict(
+                    title='Region',
+                    ticktext=['Americas', 'Europe', 'Asia-Pacific'],
+                    tickvals=[1.5, 3.5, 5.5],
+                    range=[0, 7],
+                    backgroundcolor='rgb(248,248,248)',
+                    gridcolor='rgba(0,0,0,0.1)',
+                    showbackground=True
+                ),
+                yaxis=dict(
+                    title='',
+                    showticklabels=False,
+                    range=[0, 6],
+                    backgroundcolor='rgb(248,248,248)',
+                    gridcolor='rgba(0,0,0,0.1)',
+                    showbackground=True
+                ),
+                zaxis=dict(
+                    title='Supply Chain',
+                    ticktext=['Suppliers', 'Mfg', 'Distrib', 'Customers'],
+                    tickvals=[0, 1, 2, 3],
+                    range=[-0.5, 3.5],
+                    backgroundcolor='rgb(252,252,252)',
+                    gridcolor='rgba(0,0,0,0.1)',
+                    showbackground=True
+                ),
+                camera=dict(eye=dict(x=1.8, y=1.2, z=0.8)),
+                aspectratio=dict(x=1.5, y=1, z=1)
+            ),
+            height=500,
+            margin=dict(l=0, r=0, t=40, b=0),
+            legend=dict(orientation="h", yanchor="bottom", y=-0.08, xanchor="center", x=0.5),
+            title=dict(text="Supply Chain Network by Region & Tier", x=0.5, font=dict(size=15))
+        )
+        
+        st.plotly_chart(fig_3d, use_container_width=True)
+        
+        # Key metrics below
+        st.markdown("---")
+        m1, m2, m3, m4 = st.columns(4)
+        m1.metric("🔵 Suppliers", "8", "Tier 1 partners")
+        m2.metric("🟢 Manufacturing", "4", "2 owned + 2 CM")
+        m3.metric("🟣 Distribution", "3", "Global DCs")
+        m4.metric("🔴 Customers", "6", "Top accounts")
+        
+        # Network Statistics
+        st.markdown("---")
+        st.markdown("#### 📊 Supply Chain Network Statistics")
+        
+        net_col1, net_col2, net_col3, net_col4, net_col5 = st.columns(5)
+        net_col1.metric("Supplier Nodes", "8", "Tier 1")
+        net_col2.metric("Manufacturing Sites", "4", "2 owned + 2 CM")
+        net_col3.metric("Distribution Centers", "3", "Global coverage")
+        net_col4.metric("Key Customers", "6", "Top accounts")
+        net_col5.metric("Active Routes", "12", "Primary flows")
+        
+        # Supply chain flows table
+        st.markdown("#### 🚚 Key Material Flows")
+        flows_df = pd.DataFrame({
+            "Route": ["Qualcomm → Trieste", "Samsung → Shanghai", "Trieste → Frankfurt DC", "Shanghai → Singapore DC", "Frankfurt → BMW"],
+            "Material": ["SDX62 5G Modem", "NAND Flash", "FN990A Modules", "ME310G1 Modules", "FN990A28 Finished"],
+            "Monthly Volume": ["45K units", "120K units", "85K units", "180K units", "15K units"],
+            "Lead Time": ["12 weeks", "8 weeks", "3 days", "5 days", "2 days"],
+            "Mode": ["✈️ Air", "🚢 Sea", "🚛 Truck", "🚢 Sea", "🚛 Truck"]
+        })
+        st.dataframe(flows_df, use_container_width=True)
+
 # =============================================================================
 # PAGE: DIGITAL TWIN
 # =============================================================================
@@ -2586,78 +3540,226 @@ elif page == "🏭 Digital Twin":
     # TAB 1: FACTORY FLOOR
     # =================================================================
     with dt_tab1:
-        st.subheader("🗺️ Factory Floor Map - Live Status")
+        st.subheader("🏭 Interactive Production Floor")
         
-        # Create factory floor layout with Plotly
-        fig = go.Figure()
+        # Production flow visualization selector
+        view_mode = st.radio("View Mode", ["🗺️ Floor Map", "📊 Sankey Flow", "🎛️ Station Gauges", "📈 Live Throughput"], horizontal=True, key="factory_view")
         
-        # Factory zones with coordinates, status, and KPIs
-        zones = [
-            {"name": "RECEIVING\nDOCKS", "x": 30, "y": 420, "w": 90, "h": 60, "status": "green", "kpi": "3 Active"},
-            {"name": "RAW MATERIAL\nSTORAGE", "x": 30, "y": 300, "w": 90, "h": 100, "status": "green", "kpi": "78% Full"},
-            {"name": "SMT LINE 1\n(ME310G1)", "x": 140, "y": 380, "w": 140, "h": 80, "status": "green", "kpi": "847 u/hr | 98%"},
-            {"name": "SMT LINE 2\n(FN990A 5G)", "x": 140, "y": 280, "w": 140, "h": 80, "status": "orange", "kpi": "792 u/hr | 94%"},
-            {"name": "SMT LINE 3\n(LE910C4)", "x": 140, "y": 180, "w": 140, "h": 80, "status": "green", "kpi": "823 u/hr | 97%"},
-            {"name": "SMT LINE 4\n(SE868K3 GNSS)", "x": 140, "y": 80, "w": 140, "h": 80, "status": "green", "kpi": "654 u/hr | 99%"},
-            {"name": "REFLOW 1", "x": 300, "y": 380, "w": 60, "h": 80, "status": "green", "kpi": "245°C"},
-            {"name": "REFLOW 2", "x": 300, "y": 280, "w": 60, "h": 80, "status": "orange", "kpi": "238°C ⚠️"},
-            {"name": "REFLOW 3", "x": 300, "y": 180, "w": 60, "h": 80, "status": "green", "kpi": "243°C"},
-            {"name": "REFLOW 4", "x": 300, "y": 80, "w": 60, "h": 80, "status": "green", "kpi": "244°C"},
-            {"name": "AOI 1", "x": 380, "y": 380, "w": 50, "h": 80, "status": "green", "kpi": "99.2%"},
-            {"name": "AOI 2", "x": 380, "y": 280, "w": 50, "h": 80, "status": "red", "kpi": "65% ⚠️"},
-            {"name": "AOI 3", "x": 380, "y": 180, "w": 50, "h": 80, "status": "green", "kpi": "98.8%"},
-            {"name": "AOI 4", "x": 380, "y": 80, "w": 50, "h": 80, "status": "green", "kpi": "99.5%"},
-            {"name": "FIRMWARE\nPROGRAMMING", "x": 450, "y": 220, "w": 80, "h": 160, "status": "green", "kpi": "1,200/hr"},
-            {"name": "RF TEST\nCHAMBER 1", "x": 550, "y": 380, "w": 80, "h": 80, "status": "green", "kpi": "LTE: -105dBm"},
-            {"name": "RF TEST\nCHAMBER 2", "x": 550, "y": 280, "w": 80, "h": 80, "status": "green", "kpi": "5G: -98dBm"},
-            {"name": "GNSS TEST\nCHAMBER", "x": 550, "y": 180, "w": 80, "h": 80, "status": "green", "kpi": "GPS: 28dB"},
-            {"name": "FUNCTIONAL\nTEST", "x": 550, "y": 80, "w": 80, "h": 80, "status": "green", "kpi": "98.7% Pass"},
-            {"name": "CERT LAB\nFCC/CE/PTCRB", "x": 650, "y": 280, "w": 90, "h": 80, "status": "green", "kpi": "12 Pending"},
-            {"name": "FINAL QC\n& LABELING", "x": 760, "y": 320, "w": 80, "h": 80, "status": "green", "kpi": "2,340/hr"},
-            {"name": "FINISHED\nGOODS", "x": 760, "y": 180, "w": 80, "h": 120, "status": "green", "kpi": "85% Full"},
-            {"name": "SHIPPING", "x": 860, "y": 220, "w": 70, "h": 140, "status": "green", "kpi": "2 Loading"},
-        ]
-        
-        colors = {"green": "#00C48C", "orange": "#FF9F43", "red": "#FF4757"}
-        fill_colors = {
-            "green": "rgba(0, 196, 140, 0.2)",
-            "orange": "rgba(255, 159, 67, 0.2)",
-            "red": "rgba(255, 71, 87, 0.2)"
-        }
-        
-        for zone in zones:
-            fig.add_shape(
-                type="rect",
-                x0=zone["x"], y0=zone["y"],
-                x1=zone["x"] + zone["w"], y1=zone["y"] + zone["h"],
-                fillcolor=fill_colors[zone["status"]],
-                line=dict(color=colors[zone["status"]], width=3),
+        if view_mode == "🗺️ Floor Map":
+            # Original Factory Floor Map
+            fig = go.Figure()
+            
+            zones = [
+                {"name": "RECEIVING\nDOCKS", "x": 30, "y": 420, "w": 90, "h": 60, "status": "green", "kpi": "3 Active"},
+                {"name": "RAW MATERIAL\nSTORAGE", "x": 30, "y": 300, "w": 90, "h": 100, "status": "green", "kpi": "78% Full"},
+                {"name": "SMT LINE 1\n(ME310G1)", "x": 140, "y": 380, "w": 140, "h": 80, "status": "green", "kpi": "847 u/hr | 98%"},
+                {"name": "SMT LINE 2\n(FN990A 5G)", "x": 140, "y": 280, "w": 140, "h": 80, "status": "orange", "kpi": "792 u/hr | 94%"},
+                {"name": "SMT LINE 3\n(LE910C4)", "x": 140, "y": 180, "w": 140, "h": 80, "status": "green", "kpi": "823 u/hr | 97%"},
+                {"name": "SMT LINE 4\n(SE868K3)", "x": 140, "y": 80, "w": 140, "h": 80, "status": "green", "kpi": "654 u/hr | 99%"},
+                {"name": "REFLOW 1", "x": 300, "y": 380, "w": 60, "h": 80, "status": "green", "kpi": "245°C"},
+                {"name": "REFLOW 2", "x": 300, "y": 280, "w": 60, "h": 80, "status": "orange", "kpi": "238°C ⚠️"},
+                {"name": "REFLOW 3", "x": 300, "y": 180, "w": 60, "h": 80, "status": "green", "kpi": "243°C"},
+                {"name": "REFLOW 4", "x": 300, "y": 80, "w": 60, "h": 80, "status": "green", "kpi": "244°C"},
+                {"name": "AOI 1", "x": 380, "y": 380, "w": 50, "h": 80, "status": "green", "kpi": "99.2%"},
+                {"name": "AOI 2", "x": 380, "y": 280, "w": 50, "h": 80, "status": "red", "kpi": "65% ⚠️"},
+                {"name": "AOI 3", "x": 380, "y": 180, "w": 50, "h": 80, "status": "green", "kpi": "98.8%"},
+                {"name": "AOI 4", "x": 380, "y": 80, "w": 50, "h": 80, "status": "green", "kpi": "99.5%"},
+                {"name": "FIRMWARE\nPROGRAMMING", "x": 450, "y": 220, "w": 80, "h": 160, "status": "green", "kpi": "1,200/hr"},
+                {"name": "RF TEST 1", "x": 550, "y": 380, "w": 80, "h": 80, "status": "green", "kpi": "LTE: -105dBm"},
+                {"name": "RF TEST 2", "x": 550, "y": 280, "w": 80, "h": 80, "status": "green", "kpi": "5G: -98dBm"},
+                {"name": "GNSS TEST", "x": 550, "y": 180, "w": 80, "h": 80, "status": "green", "kpi": "GPS: 28dB"},
+                {"name": "FUNCTIONAL\nTEST", "x": 550, "y": 80, "w": 80, "h": 80, "status": "green", "kpi": "98.7% Pass"},
+                {"name": "CERT LAB\nFCC/CE/PTCRB", "x": 650, "y": 280, "w": 90, "h": 80, "status": "green", "kpi": "12 Pending →"},
+                {"name": "FINAL QC\n& LABELING", "x": 760, "y": 320, "w": 80, "h": 80, "status": "green", "kpi": "2,340/hr"},
+                {"name": "FINISHED\nGOODS", "x": 760, "y": 180, "w": 80, "h": 120, "status": "green", "kpi": "85% Full"},
+                {"name": "SHIPPING", "x": 860, "y": 220, "w": 70, "h": 140, "status": "green", "kpi": "2 Loading"},
+            ]
+            
+            colors = {"green": "#00C48C", "orange": "#FF9F43", "red": "#FF4757"}
+            fill_colors = {"green": "rgba(0, 196, 140, 0.2)", "orange": "rgba(255, 159, 67, 0.2)", "red": "rgba(255, 71, 87, 0.2)"}
+            
+            for zone in zones:
+                fig.add_shape(type="rect", x0=zone["x"], y0=zone["y"], x1=zone["x"]+zone["w"], y1=zone["y"]+zone["h"],
+                             fillcolor=fill_colors[zone["status"]], line=dict(color=colors[zone["status"]], width=3))
+                fig.add_annotation(x=zone["x"]+zone["w"]/2, y=zone["y"]+zone["h"]/2+15, text=zone["name"], 
+                                  showarrow=False, font=dict(size=10, color="#1E3A5F"))
+                fig.add_annotation(x=zone["x"]+zone["w"]/2, y=zone["y"]+zone["h"]/2-15, text=zone["kpi"],
+                                  showarrow=False, font=dict(size=9, color=colors[zone["status"]], family="monospace"))
+            
+            for x, y in [(120, 350), (285, 330), (365, 330), (435, 300), (535, 300), (640, 350), (745, 350)]:
+                fig.add_annotation(x=x, y=y, text="→", showarrow=False, font=dict(size=24, color="#6B7C93"))
+            
+            fig.update_layout(height=520, showlegend=False, xaxis=dict(visible=False, range=[0, 950]),
+                             yaxis=dict(visible=False, range=[0, 500]), margin=dict(l=10, r=10, t=10, b=10), plot_bgcolor="#f8fafc")
+            st.plotly_chart(fig, use_container_width=True)
+            
+        elif view_mode == "📊 Sankey Flow":
+            # Sankey diagram showing material flow
+            st.markdown("##### Production Flow - Units per Hour")
+            
+            fig_sankey = go.Figure(go.Sankey(
+                node=dict(
+                    pad=20,
+                    thickness=25,
+                    line=dict(color="black", width=0.5),
+                    label=[
+                        "Raw Materials", "SMT Line 1<br>(ME310G1)", "SMT Line 2<br>(FN990A 5G)", 
+                        "SMT Line 3<br>(LE910C4)", "SMT Line 4<br>(SE868K3)", "Reflow", 
+                        "AOI Inspection", "Firmware", "RF Testing", "Functional Test",
+                        "Final QC", "Finished Goods", "Scrap/Rework"
+                    ],
+                    color=[
+                        "#6B7C93", "#2196F3", "#4CAF50", "#FF9800", "#9C27B0",
+                        "#00BCD4", "#3F51B5", "#009688", "#E91E63", "#795548",
+                        "#607D8B", "#4CAF50", "#F44336"
+                    ],
+                    hovertemplate='%{label}<br>%{value} units/hr<extra></extra>'
+                ),
+                link=dict(
+                    source=[0, 0, 0, 0, 1, 2, 3, 4, 5, 5, 6, 6, 7, 8, 9, 10],
+                    target=[1, 2, 3, 4, 5, 5, 5, 5, 6, 12, 7, 12, 8, 9, 10, 11],
+                    value=[847, 792, 823, 654, 847, 792, 823, 654, 3050, 66, 2984, 45, 2939, 2939, 2900, 2850],
+                    color=[
+                        "rgba(33, 150, 243, 0.4)", "rgba(76, 175, 80, 0.4)", 
+                        "rgba(255, 152, 0, 0.4)", "rgba(156, 39, 176, 0.4)",
+                        "rgba(33, 150, 243, 0.3)", "rgba(76, 175, 80, 0.3)",
+                        "rgba(255, 152, 0, 0.3)", "rgba(156, 39, 176, 0.3)",
+                        "rgba(0, 188, 212, 0.3)", "rgba(244, 67, 54, 0.5)",
+                        "rgba(63, 81, 181, 0.3)", "rgba(244, 67, 54, 0.5)",
+                        "rgba(0, 150, 136, 0.3)", "rgba(233, 30, 99, 0.3)",
+                        "rgba(121, 85, 72, 0.3)", "rgba(76, 175, 80, 0.3)"
+                    ],
+                    hovertemplate='%{source.label} → %{target.label}<br>%{value} units/hr<extra></extra>'
+                )
+            ))
+            
+            fig_sankey.update_layout(
+                height=450,
+                margin=dict(l=10, r=10, t=30, b=10),
+                font=dict(size=11),
+                title=dict(text="🔄 Real-Time Production Flow (hover for details)", x=0.5, font=dict(size=14))
             )
-            fig.add_annotation(
-                x=zone["x"] + zone["w"]/2, y=zone["y"] + zone["h"]/2 + 15,
-                text=zone["name"], showarrow=False,
-                font=dict(size=10, color="#1E3A5F"),
-            )
-            fig.add_annotation(
-                x=zone["x"] + zone["w"]/2, y=zone["y"] + zone["h"]/2 - 15,
-                text=zone["kpi"], showarrow=False,
-                font=dict(size=9, color=colors[zone["status"]], family="monospace"),
-            )
+            st.plotly_chart(fig_sankey, use_container_width=True)
+            
+            # Flow metrics
+            flow_m1, flow_m2, flow_m3, flow_m4 = st.columns(4)
+            flow_m1.metric("Input Rate", "3,116 u/hr", "+2.1%")
+            flow_m2.metric("Output Rate", "2,850 u/hr", "+1.8%")
+            flow_m3.metric("Yield", "91.5%", "+0.3%")
+            flow_m4.metric("Scrap/Rework", "111 u/hr", "-8%", delta_color="inverse")
+            
+        elif view_mode == "🎛️ Station Gauges":
+            # Interactive gauges for each station
+            st.markdown("##### Station Performance Gauges (click to see details)")
+            
+            gauge_row1 = st.columns(4)
+            stations = [
+                ("SMT Line 1", 98, 95, "ME310G1", 847, "#2196F3"),
+                ("SMT Line 2", 94, 95, "FN990A 5G", 792, "#4CAF50"),
+                ("SMT Line 3", 97, 95, "LE910C4", 823, "#FF9800"),
+                ("SMT Line 4", 99, 95, "SE868K3", 654, "#9C27B0"),
+            ]
+            
+            for col, (name, value, target, product, rate, color) in zip(gauge_row1, stations):
+                fig_gauge = go.Figure(go.Indicator(
+                    mode="gauge+number+delta",
+                    value=value,
+                    delta={'reference': target, 'position': "bottom", 'relative': False},
+                    title={'text': f"<b>{name}</b><br><span style='font-size:11px;color:gray'>{product}</span>"},
+                    gauge={
+                        'axis': {'range': [0, 100], 'tickwidth': 1},
+                        'bar': {'color': color},
+                        'bgcolor': "white",
+                        'borderwidth': 2,
+                        'bordercolor': "gray",
+                        'steps': [
+                            {'range': [0, 80], 'color': 'rgba(244,67,54,0.3)'},
+                            {'range': [80, 95], 'color': 'rgba(255,152,0,0.3)'},
+                            {'range': [95, 100], 'color': 'rgba(76,175,80,0.3)'}
+                        ],
+                        'threshold': {
+                            'line': {'color': "red", 'width': 3},
+                            'thickness': 0.8,
+                            'value': target
+                        }
+                    },
+                    number={'suffix': '%', 'font': {'size': 28}}
+                ))
+                fig_gauge.update_layout(height=200, margin=dict(l=20, r=20, t=60, b=20))
+                col.plotly_chart(fig_gauge, use_container_width=True)
+                col.caption(f"⚡ {rate} u/hr")
+            
+            gauge_row2 = st.columns(4)
+            stations2 = [
+                ("Reflow Ovens", 96, 95, "Avg Temp", "243°C", "#00BCD4"),
+                ("AOI Inspection", 92, 95, "Avg Yield", "90.4%", "#3F51B5"),
+                ("RF Testing", 98, 95, "Pass Rate", "98.2%", "#E91E63"),
+                ("Final QC", 99, 98, "Quality", "99.1%", "#607D8B"),
+            ]
+            
+            for col, (name, value, target, metric, display, color) in zip(gauge_row2, stations2):
+                fig_gauge = go.Figure(go.Indicator(
+                    mode="gauge+number+delta",
+                    value=value,
+                    delta={'reference': target, 'position': "bottom"},
+                    title={'text': f"<b>{name}</b><br><span style='font-size:11px;color:gray'>{metric}: {display}</span>"},
+                    gauge={
+                        'axis': {'range': [0, 100]},
+                        'bar': {'color': color},
+                        'steps': [
+                            {'range': [0, 80], 'color': 'rgba(244,67,54,0.3)'},
+                            {'range': [80, 95], 'color': 'rgba(255,152,0,0.3)'},
+                            {'range': [95, 100], 'color': 'rgba(76,175,80,0.3)'}
+                        ],
+                        'threshold': {'line': {'color': "red", 'width': 3}, 'thickness': 0.8, 'value': target}
+                    },
+                    number={'suffix': '%', 'font': {'size': 28}}
+                ))
+                fig_gauge.update_layout(height=200, margin=dict(l=20, r=20, t=60, b=20))
+                col.plotly_chart(fig_gauge, use_container_width=True)
         
-        # Add flow arrows (outside the loop)
-        arrows = [(170, 380), (380, 380), (490, 380), (600, 310), (730, 310), (860, 310)]
-        for x, y in arrows:
-            fig.add_annotation(x=x, y=y, text="→", showarrow=False, font=dict(size=20, color="#6B7C93"))
+        else:  # Live Throughput
+            st.markdown("##### Live Throughput - Last 60 Minutes")
+            
+            import numpy as np
+            # Simulated live data
+            minutes = list(range(60))
+            np.random.seed(42)
+            line1 = 847 + np.random.randn(60).cumsum() * 5
+            line2 = 792 + np.random.randn(60).cumsum() * 8
+            line3 = 823 + np.random.randn(60).cumsum() * 4
+            line4 = 654 + np.random.randn(60).cumsum() * 3
+            
+            fig_live = go.Figure()
+            fig_live.add_trace(go.Scatter(x=minutes, y=line1, name="SMT Line 1 (ME310G1)", 
+                                         line=dict(color="#2196F3", width=2), fill='tozeroy', fillcolor='rgba(33,150,243,0.1)'))
+            fig_live.add_trace(go.Scatter(x=minutes, y=line2, name="SMT Line 2 (FN990A 5G)", 
+                                         line=dict(color="#4CAF50", width=2), fill='tozeroy', fillcolor='rgba(76,175,80,0.1)'))
+            fig_live.add_trace(go.Scatter(x=minutes, y=line3, name="SMT Line 3 (LE910C4)", 
+                                         line=dict(color="#FF9800", width=2), fill='tozeroy', fillcolor='rgba(255,152,0,0.1)'))
+            fig_live.add_trace(go.Scatter(x=minutes, y=line4, name="SMT Line 4 (SE868K3)", 
+                                         line=dict(color="#9C27B0", width=2), fill='tozeroy', fillcolor='rgba(156,39,176,0.1)'))
+            
+            # Add target line
+            fig_live.add_hline(y=800, line_dash="dash", line_color="red", annotation_text="Target: 800 u/hr")
+            
+            fig_live.update_layout(
+                height=400,
+                xaxis_title="Minutes Ago",
+                yaxis_title="Units/Hour",
+                legend=dict(orientation="h", yanchor="bottom", y=1.02, xanchor="center", x=0.5),
+                hovermode='x unified'
+            )
+            st.plotly_chart(fig_live, use_container_width=True)
+            
+            # Summary stats
+            live_cols = st.columns(4)
+            live_cols[0].metric("Line 1 Avg", f"{int(np.mean(line1))} u/hr", f"{int(line1[-1]-line1[0]):+d}")
+            live_cols[1].metric("Line 2 Avg", f"{int(np.mean(line2))} u/hr", f"{int(line2[-1]-line2[0]):+d}")
+            live_cols[2].metric("Line 3 Avg", f"{int(np.mean(line3))} u/hr", f"{int(line3[-1]-line3[0]):+d}")
+            live_cols[3].metric("Line 4 Avg", f"{int(np.mean(line4))} u/hr", f"{int(line4[-1]-line4[0]):+d}")
         
-        fig.update_layout(
-            height=500,
-            showlegend=False,
-            xaxis=dict(visible=False, range=[0, 1000]),
-            yaxis=dict(visible=False, range=[0, 500]),
-            margin=dict(l=10, r=10, t=10, b=10),
-            plot_bgcolor="#f8fafc",
-        )
-        st.plotly_chart(fig, use_container_width=True)
+        st.markdown("---")
         
         # Legend
         leg1, leg2, leg3, leg4 = st.columns(4)
@@ -5205,7 +6307,7 @@ elif page == "📈 Demand Forecast":
     st.markdown("---")
     
     # Tabbed Interface
-    df_tab1, df_tab2, df_tab3, df_tab4, df_tab5, df_tab6, df_tab7, df_tab8, df_tab9, df_tab10, df_tab11, df_tab12, df_tab13 = st.tabs([
+    df_tab1, df_tab2, df_tab3, df_tab4, df_tab5, df_tab6, df_tab7, df_tab8, df_tab9, df_tab10, df_tab11, df_tab12, df_tab13, df_tab14 = st.tabs([
         "📊 Overview",
         "📈 Models",
         "🏭 Products",
@@ -5218,7 +6320,8 @@ elif page == "📈 Demand Forecast":
         "⚡ Signals",
         "🌡️ Heatmap",
         "🔮 Scenarios",
-        "🤖 AI"
+        "🤖 AI",
+        "🌐 3D Surface"
     ])
     
     # =================================================================
@@ -6623,6 +7726,176 @@ elif page == "📈 Demand Forecast":
                 {items_html}
             </div>
             """, unsafe_allow_html=True)
+
+    # =================================================================
+    # TAB 14: 3D DEMAND SURFACE
+    # =================================================================
+    with df_tab14:
+        st.subheader("🌐 3D Demand Surface Visualization")
+        st.markdown("Explore demand patterns across Products, Time, and Volume in an interactive 3D surface")
+        
+        # Controls
+        surf_col1, surf_col2, surf_col3 = st.columns(3)
+        with surf_col1:
+            view_type = st.selectbox("View Type", ["Product × Time × Volume", "Region × Time × Volume", "Customer × Product × Volume"], key="3d_view")
+        with surf_col2:
+            time_range = st.selectbox("Time Range", ["2025 Forecast", "2024-2025", "Historical + Forecast"], key="3d_time")
+        with surf_col3:
+            color_scale = st.selectbox("Color Scale", ["Viridis", "Plasma", "Turbo", "Blues"], key="3d_color")
+        
+        # Create 3D Surface data
+        months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
+        products = ['FN990A 5G', 'ME310G1', 'LE910C4', 'SE868K3', 'Legacy']
+        
+        # Demand data (units in thousands)
+        import numpy as np
+        
+        # Create demand matrix with realistic patterns
+        demand_data = np.array([
+            [95, 102, 108, 115, 120, 118, 122, 128, 135, 142, 148, 155],   # FN990A 5G - growing
+            [125, 128, 132, 138, 142, 145, 140, 138, 142, 148, 152, 158],  # ME310G1 - stable/mature
+            [75, 72, 74, 76, 78, 75, 72, 74, 76, 78, 75, 72],              # LE910C4 - stable
+            [38, 40, 42, 44, 48, 52, 55, 58, 62, 65, 68, 72],              # SE868K3 - growing
+            [25, 23, 21, 19, 18, 16, 15, 14, 12, 11, 10, 8],               # Legacy - declining
+        ])
+        
+        # Create meshgrid for 3D surface
+        X, Y = np.meshgrid(np.arange(len(months)), np.arange(len(products)))
+        Z = demand_data
+        
+        # Create 3D Surface plot
+        fig_3d = go.Figure()
+        
+        # Add surface
+        fig_3d.add_trace(go.Surface(
+            x=X,
+            y=Y,
+            z=Z,
+            colorscale=color_scale.lower(),
+            colorbar=dict(
+                title=dict(text='Units (K)', side='right'),
+                ticksuffix='K'
+            ),
+            hovertemplate='<b>%{customdata[0]}</b><br>' +
+                          'Month: %{customdata[1]}<br>' +
+                          'Demand: %{z}K units<extra></extra>',
+            customdata=[[(products[y], months[x]) for x in range(len(months))] for y in range(len(products))]
+        ))
+        
+        # Add peak markers
+        for i, product in enumerate(products):
+            max_idx = np.argmax(demand_data[i])
+            fig_3d.add_trace(go.Scatter3d(
+                x=[max_idx],
+                y=[i],
+                z=[demand_data[i][max_idx] + 8],
+                mode='markers+text',
+                marker=dict(size=8, color=TELIT_GREEN, symbol='diamond'),
+                text=[f"Peak: {demand_data[i][max_idx]}K"],
+                textposition='top center',
+                textfont=dict(size=10, color='#333333'),
+                showlegend=False,
+                hoverinfo='skip'
+            ))
+        
+        fig_3d.update_layout(
+            scene=dict(
+                xaxis=dict(
+                    title='Month',
+                    ticktext=months,
+                    tickvals=list(range(len(months))),
+                    backgroundcolor='rgb(240, 240, 240)',
+                    gridcolor='rgba(150,150,150,0.3)',
+                    showbackground=True
+                ),
+                yaxis=dict(
+                    title='Product',
+                    ticktext=products,
+                    tickvals=list(range(len(products))),
+                    backgroundcolor='rgb(240, 240, 240)',
+                    gridcolor='rgba(150,150,150,0.3)',
+                    showbackground=True
+                ),
+                zaxis=dict(
+                    title='Demand (K units)',
+                    backgroundcolor='rgb(245, 245, 245)',
+                    gridcolor='rgba(150,150,150,0.3)',
+                    showbackground=True
+                ),
+                camera=dict(
+                    eye=dict(x=1.8, y=-1.8, z=0.8)
+                )
+            ),
+            height=550,
+            margin=dict(l=0, r=0, t=40, b=0),
+            title=dict(
+                text="📈 2025 Demand Forecast - Product × Month × Volume",
+                x=0.5,
+                font=dict(size=14)
+            ),
+        )
+        
+        st.plotly_chart(fig_3d, use_container_width=True)
+        st.caption("🖱️ Drag to rotate | Scroll to zoom | Double-click to reset view")
+        
+        # Key insights
+        st.markdown("---")
+        st.markdown("#### 📊 3D Surface Insights")
+        
+        insight_col1, insight_col2, insight_col3, insight_col4 = st.columns(4)
+        
+        with insight_col1:
+            st.markdown(f"""
+            <div style="background: linear-gradient(135deg, {TELIT_GREEN}20, {TELIT_GREEN}05); 
+                        border-radius: 12px; padding: 16px; border-left: 4px solid {TELIT_GREEN};">
+                <div style="font-size: 12px; color: {TELIT_GRAY};">📈 Highest Growth</div>
+                <div style="font-size: 20px; font-weight: 700; margin: 8px 0;">FN990A 5G</div>
+                <div style="font-size: 14px; color: {TELIT_GREEN};">+63% YoY</div>
+            </div>
+            """, unsafe_allow_html=True)
+        
+        with insight_col2:
+            st.markdown(f"""
+            <div style="background: linear-gradient(135deg, {TELIT_BLUE}20, {TELIT_BLUE}05); 
+                        border-radius: 12px; padding: 16px; border-left: 4px solid {TELIT_BLUE};">
+                <div style="font-size: 12px; color: {TELIT_GRAY};">📅 Peak Month</div>
+                <div style="font-size: 20px; font-weight: 700; margin: 8px 0;">December</div>
+                <div style="font-size: 14px; color: {TELIT_BLUE};">465K total units</div>
+            </div>
+            """, unsafe_allow_html=True)
+        
+        with insight_col3:
+            st.markdown(f"""
+            <div style="background: linear-gradient(135deg, {TELIT_ORANGE}20, {TELIT_ORANGE}05); 
+                        border-radius: 12px; padding: 16px; border-left: 4px solid {TELIT_ORANGE};">
+                <div style="font-size: 12px; color: {TELIT_GRAY};">📉 Declining</div>
+                <div style="font-size: 20px; font-weight: 700; margin: 8px 0;">Legacy 2G/3G</div>
+                <div style="font-size: 14px; color: {TELIT_ORANGE};">-68% YoY</div>
+            </div>
+            """, unsafe_allow_html=True)
+        
+        with insight_col4:
+            st.markdown(f"""
+            <div style="background: linear-gradient(135deg, #9C27B020, #9C27B005); 
+                        border-radius: 12px; padding: 16px; border-left: 4px solid #9C27B0;">
+                <div style="font-size: 12px; color: {TELIT_GRAY};">🎯 Seasonality</div>
+                <div style="font-size: 20px; font-weight: 700; margin: 8px 0;">Q4 Surge</div>
+                <div style="font-size: 14px; color: #9C27B0;">+18% vs Q1-Q3 avg</div>
+            </div>
+            """, unsafe_allow_html=True)
+        
+        # Product summary table
+        st.markdown("#### 📋 2025 Demand Summary by Product")
+        summary_df = pd.DataFrame({
+            "Product": products,
+            "Q1 Forecast": [f"{sum(demand_data[i][:3])}K" for i in range(len(products))],
+            "Q2 Forecast": [f"{sum(demand_data[i][3:6])}K" for i in range(len(products))],
+            "Q3 Forecast": [f"{sum(demand_data[i][6:9])}K" for i in range(len(products))],
+            "Q4 Forecast": [f"{sum(demand_data[i][9:])}K" for i in range(len(products))],
+            "Annual Total": [f"{sum(demand_data[i])}K" for i in range(len(products))],
+            "Trend": ["📈 +63%", "📊 +8%", "📉 -4%", "📈 +89%", "📉 -68%"]
+        })
+        st.dataframe(summary_df, use_container_width=True)
 
 # =============================================================================
 # PAGE: SUPPLIERS
@@ -8315,14 +9588,15 @@ elif page == "🔗 Traceability":
     st.markdown("---")
     
     # Tabbed Interface
-    tr_tab1, tr_tab2, tr_tab3, tr_tab4, tr_tab5, tr_tab6, tr_tab7 = st.tabs([
+    tr_tab1, tr_tab2, tr_tab3, tr_tab4, tr_tab5, tr_tab6, tr_tab7, tr_tab8 = st.tabs([
         "🔍 Lookup",
         "📦 Genealogy",
         "🏭 Production",
         "📋 BOM",
         "🚚 Shipments",
         "⚠️ Recalls",
-        "📊 Analytics"
+        "📊 Analytics",
+        "🔬 3D BOM"
     ])
     
     # =================================================================
@@ -8721,6 +9995,273 @@ elif page == "🔗 Traceability":
                 <div style="font-size: 10px; color: {TELIT_GRAY};">{detail}</div>
             </div>
             """, unsafe_allow_html=True)
+
+    # =================================================================
+    # TAB 8: 3D BOM EXPLOSION VIEW
+    # =================================================================
+    with tr_tab8:
+        st.subheader("🔬 3D Bill of Materials Explosion")
+        st.markdown("Interactive 3D visualization showing component layers of Telit IoT modules")
+        
+        # Product selector
+        bom_col1, bom_col2, bom_col3 = st.columns([2, 1, 1])
+        with bom_col1:
+            bom_product = st.selectbox("Select Module", ["FN990A 5G Module", "ME310G1 LTE-M Module", "LE910C4 LTE Module", "SE868K3 GNSS Module"], key="bom_3d_product")
+        with bom_col2:
+            explosion_level = st.slider("Explosion Level", 0, 100, 50, 10, key="bom_explosion")
+        with bom_col3:
+            show_labels = st.checkbox("Show Component Labels", value=True, key="bom_labels")
+        
+        # 3D BOM Components Data (positioned for explosion view)
+        import numpy as np
+        
+        # Component layers for FN990A 5G Module (z represents layer height)
+        components = pd.DataFrame({
+            'name': [
+                # Top layer - Antenna & Shield
+                'RF Shield', 'Main Antenna', 'Diversity Antenna',
+                # Upper layer - RF Frontend
+                'Skyworks PA', 'RF Switch', 'SAW Filters', 'LNA',
+                # Middle layer - Main ICs
+                'Qualcomm SDX62 Modem', 'u-blox GNSS', 'Power Management IC', 'Samsung Flash',
+                # Lower layer - Passives
+                'MLCCs (x45)', 'Inductors (x12)', 'Resistors (x28)', 'ESD Protection',
+                # Bottom layer - PCB & Connectors
+                'PCB (8-layer HDI)', 'SIM Connector', 'Antenna Connector', 'Board-to-Board'
+            ],
+            'x': [
+                0, -0.8, 0.8,
+                -1.2, 0, 1.2, 0.6,
+                0, -0.8, 0.8, 0,
+                -1.0, 0, 1.0, -0.5,
+                0, -0.6, 0.6, 0
+            ],
+            'y': [
+                0, 0.5, 0.5,
+                -0.5, 0.8, 0, -0.5,
+                0, 0.5, 0.5, -0.6,
+                -0.3, 0.5, 0.3, 0.8,
+                0, -0.5, -0.5, 0.6
+            ],
+            'base_z': [
+                4, 4.2, 4.2,
+                3, 3, 3, 3,
+                2, 2, 2, 2,
+                1, 1, 1, 1,
+                0, 0, 0, 0
+            ],
+            'size': [
+                25, 18, 18,
+                15, 12, 14, 10,
+                40, 22, 18, 16,
+                20, 15, 18, 10,
+                45, 12, 12, 8
+            ],
+            'color': [
+                '#78909C', '#FF5722', '#FF5722',
+                TELIT_ORANGE, '#9E9E9E', '#FFEB3B', '#4CAF50',
+                TELIT_BLUE, TELIT_GREEN, '#9C27B0', '#2196F3',
+                '#795548', '#607D8B', '#795548', '#F44336',
+                '#1B5E20', '#9E9E9E', '#9E9E9E', '#9E9E9E'
+            ],
+            'category': [
+                'Shielding', 'Antenna', 'Antenna',
+                'RF', 'RF', 'RF', 'RF',
+                'IC', 'IC', 'IC', 'IC',
+                'Passive', 'Passive', 'Passive', 'Passive',
+                'PCB', 'Connector', 'Connector', 'Connector'
+            ],
+            'supplier': [
+                'Internal', 'Laird', 'Laird',
+                'Skyworks', 'Infineon', 'Murata', 'Skyworks',
+                'Qualcomm', 'u-blox', 'Infineon', 'Samsung',
+                'Murata', 'TDK', 'Yageo', 'Nexperia',
+                'PCB Vendor', 'Hirose', 'Hirose', 'Samtec'
+            ],
+            'cost': [
+                '$0.85', '$0.95', '$0.85',
+                '$2.80', '$0.45', '$1.20', '$0.65',
+                '$42.50', '$8.20', '$3.50', '$3.15',
+                '$0.85', '$0.12', '$0.08', '$0.32',
+                '$4.50', '$0.45', '$0.35', '$0.28'
+            ]
+        })
+        
+        # Apply explosion factor
+        explosion_factor = explosion_level / 50  # 0-2 range
+        exploded_z = components['base_z'] * (1 + explosion_factor * 0.8)
+        
+        # Create 3D scatter plot for BOM explosion
+        fig_bom = go.Figure()
+        
+        # Category color mapping with distinct colors
+        cat_colors = {
+            'Shielding': '#607D8B',
+            'Antenna': '#FF5722', 
+            'RF': '#FF9800',
+            'IC': '#2196F3',
+            'Passive': '#795548',
+            'PCB': '#4CAF50',
+            'Connector': '#9E9E9E'
+        }
+        
+        # Add components by category for legend
+        categories = components['category'].unique()
+        for category in categories:
+            cat_data = components[components['category'] == category]
+            cat_z = exploded_z[components['category'] == category]
+            
+            hover_text = [
+                f"<b>{row['name']}</b><br>" +
+                f"Supplier: {row['supplier']}<br>" +
+                f"Cost: {row['cost']}<br>" +
+                f"Category: {row['category']}"
+                for _, row in cat_data.iterrows()
+            ]
+            
+            fig_bom.add_trace(go.Scatter3d(
+                x=cat_data['x'].tolist(),
+                y=cat_data['y'].tolist(),
+                z=cat_z.tolist(),
+                mode='markers+text' if show_labels else 'markers',
+                marker=dict(
+                    size=[s * 0.6 for s in cat_data['size'].tolist()],  # Scale down sizes
+                    color=cat_colors.get(category, '#999999'),
+                    opacity=0.9,
+                    line=dict(color='white', width=2),
+                    symbol='circle'
+                ),
+                text=cat_data['name'].tolist() if show_labels else None,
+                textposition='top center',
+                textfont=dict(size=10, color='#333333'),
+                hovertext=hover_text,
+                hoverinfo='text',
+                name=category
+            ))
+        
+        # Add connection lines (assembly hierarchy) - from modem to other components
+        modem_idx = 7  # SDX62 position
+        modem_x, modem_y, modem_z_val = components.iloc[modem_idx]['x'], components.iloc[modem_idx]['y'], exploded_z.iloc[modem_idx]
+        
+        for i in [0, 3, 4, 8, 9, 10, 11, 12, 13, 15]:
+            fig_bom.add_trace(go.Scatter3d(
+                x=[modem_x, components.iloc[i]['x']],
+                y=[modem_y, components.iloc[i]['y']],
+                z=[modem_z_val, exploded_z.iloc[i]],
+                mode='lines',
+                line=dict(color='rgba(100,100,100,0.3)', width=2),
+                showlegend=False,
+                hoverinfo='skip'
+            ))
+        
+        fig_bom.update_layout(
+            scene=dict(
+                xaxis=dict(
+                    title='X Position',
+                    showgrid=True,
+                    gridcolor='rgba(200,200,200,0.3)',
+                    showbackground=True,
+                    backgroundcolor='rgb(245, 245, 245)',
+                    range=[-2, 2]
+                ),
+                yaxis=dict(
+                    title='Y Position',
+                    showgrid=True,
+                    gridcolor='rgba(200,200,200,0.3)',
+                    showbackground=True,
+                    backgroundcolor='rgb(245, 245, 245)',
+                    range=[-1.5, 1.5]
+                ),
+                zaxis=dict(
+                    title='Assembly Layer',
+                    showgrid=True,
+                    gridcolor='rgba(200,200,200,0.5)',
+                    showbackground=True,
+                    backgroundcolor='rgb(250, 250, 250)',
+                    ticktext=['PCB', 'Passives', 'ICs', 'RF', 'Shield'],
+                    tickvals=[0, 1.8, 3.6, 5.4, 7.2]
+                ),
+                camera=dict(
+                    eye=dict(x=1.8, y=1.8, z=1.0)
+                ),
+                aspectmode='manual',
+                aspectratio=dict(x=1.5, y=1.2, z=1)
+            ),
+            height=550,
+            margin=dict(l=0, r=0, t=40, b=0),
+            legend=dict(
+                orientation="h",
+                yanchor="bottom",
+                y=-0.05,
+                xanchor="center",
+                x=0.5,
+                bgcolor='rgba(255,255,255,0.9)',
+                bordercolor='rgba(0,0,0,0.1)',
+                borderwidth=1
+            ),
+            title=dict(
+                text=f"🔬 {bom_product} - Component Explosion View",
+                x=0.5,
+                font=dict(size=14)
+            )
+        )
+        
+        st.plotly_chart(fig_bom, use_container_width=True)
+        st.caption("🖱️ Drag to rotate | Scroll to zoom | Use slider to explode/collapse layers")
+        
+        # BOM Summary
+        st.markdown("---")
+        st.markdown("#### 📊 BOM Summary - FN990A 5G Module")
+        
+        bom_stat_col1, bom_stat_col2, bom_stat_col3, bom_stat_col4, bom_stat_col5 = st.columns(5)
+        bom_stat_col1.metric("Total Components", "19", "unique parts")
+        bom_stat_col2.metric("Total BOM Cost", "$71.86", "per unit")
+        bom_stat_col3.metric("Suppliers", "12", "Tier 1")
+        bom_stat_col4.metric("PCB Layers", "8", "HDI")
+        bom_stat_col5.metric("Assembly Steps", "14", "SMT + test")
+        
+        # Cost breakdown by category
+        st.markdown("#### 💰 Cost Breakdown by Category")
+        cost_bom_col1, cost_bom_col2 = st.columns(2)
+        
+        with cost_bom_col1:
+            cost_by_cat = pd.DataFrame({
+                "Category": ["IC (Modem/GNSS/PMIC)", "RF Components", "Passives", "PCB & Connectors", "Shielding/Antenna"],
+                "Cost": ["$57.35", "$5.10", "$1.37", "$5.58", "$2.65"],
+                "% of BOM": ["79.8%", "7.1%", "1.9%", "7.8%", "3.4%"],
+                "Components": ["4", "4", "4", "4", "3"]
+            })
+            st.dataframe(cost_by_cat, use_container_width=True)
+        
+        with cost_bom_col2:
+            # Pie chart for cost distribution
+            fig_bom_pie = go.Figure(go.Pie(
+                labels=["ICs", "RF", "Passives", "PCB/Conn", "Shield/Ant"],
+                values=[57.35, 5.10, 1.37, 5.58, 2.65],
+                hole=0.5,
+                marker_colors=[TELIT_BLUE, TELIT_ORANGE, '#795548', TELIT_GREEN, '#78909C'],
+                textinfo='percent',
+                textfont_size=11
+            ))
+            fig_bom_pie.update_layout(
+                height=250,
+                margin=dict(l=20, r=20, t=10, b=10),
+                showlegend=True,
+                legend=dict(orientation="h", y=-0.1)
+            )
+            fig_bom_pie.add_annotation(text="<b>$71.86</b><br>Total", x=0.5, y=0.5, font_size=14, showarrow=False)
+            st.plotly_chart(fig_bom_pie, use_container_width=True)
+        
+        # Supplier concentration
+        st.markdown("#### 🏭 Supplier Concentration Analysis")
+        supplier_risk = pd.DataFrame({
+            "Supplier": ["Qualcomm", "u-blox", "Samsung", "Skyworks", "Murata", "Others"],
+            "% of BOM Cost": ["59.1%", "11.4%", "4.4%", "4.8%", "2.9%", "17.4%"],
+            "Components": ["1", "1", "1", "2", "2", "12"],
+            "Risk Level": ["🔴 Critical", "🟡 High", "🟢 Low", "🟢 Low", "🟢 Low", "🟢 Low"],
+            "Alt Source": ["MediaTek", "Quectel", "Micron", "Qorvo", "TDK", "Multiple"]
+        })
+        st.dataframe(supplier_risk, use_container_width=True)
 
 # =============================================================================
 # PAGE: CERTIFICATIONS
