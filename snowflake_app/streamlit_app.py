@@ -10949,6 +10949,522 @@ elif page == "🔄 Product Lifecycle":
     ])
     
     with plm_tab1:
+        # =====================================================================
+        # 3D PRODUCT MODEL SHOWCASE WITH SELECTOR
+        # =====================================================================
+        st.markdown("### 🎯 Interactive 3D Product Explorer")
+        
+        # Product catalog with different configurations
+        product_catalog = {
+            "FN990A - 5G Sub-6 Module": {
+                "model": "FN990A28",
+                "tech": "5G Sub-6 GHz",
+                "form": "LGA 30×34mm",
+                "chipset": "Qualcomm SDX55",
+                "bands": "n1/n3/n5/n7/n8/n28/n41/n77/n78/n79",
+                "speed": "DL 2.5 Gbps / UL 660 Mbps",
+                "gnss": "GPS, GLONASS, Galileo, BeiDou",
+                "status": "Active - Growth Phase",
+                "status_color": TELIT_GREEN,
+                "launched": "Q1 2023",
+                "eol": "2032+",
+                "apps": ["🚗 Automotive", "🏭 Industrial", "📡 FWA", "🏥 Healthcare"],
+                "length": 30, "width": 34, "height": 2.8,
+                "shield_color": "#c0c0c0",
+                "pcb_color": "#1a472a",
+                "has_dual_sim": False,
+                "num_rf_conn": 2,
+                "chip_count": 4
+            },
+            "ME310G1 - LTE Cat-M1 Module": {
+                "model": "ME310G1-W1",
+                "tech": "LTE Cat-M1/NB2",
+                "form": "LGA 14.3×14.3mm",
+                "chipset": "Qualcomm MDM9205",
+                "bands": "B1/B2/B3/B4/B5/B8/B12/B13/B18/B19/B20/B25/B26/B28",
+                "speed": "DL 375 kbps / UL 375 kbps",
+                "gnss": "GPS, GLONASS",
+                "status": "Active - Mature",
+                "status_color": TELIT_BLUE,
+                "launched": "Q2 2020",
+                "eol": "2030+",
+                "apps": ["📊 Asset Tracking", "🔋 Utilities", "🌡️ Sensors", "🏗️ Smart City"],
+                "length": 14.3, "width": 14.3, "height": 1.8,
+                "shield_color": "#a8a8a8",
+                "pcb_color": "#0d3d0d",
+                "has_dual_sim": False,
+                "num_rf_conn": 1,
+                "chip_count": 2
+            },
+            "LE910C4-NF - LTE Cat-4 Module": {
+                "model": "LE910C4-NF",
+                "tech": "LTE Cat-4",
+                "form": "LGA 28.2×28.2mm",
+                "chipset": "Qualcomm MDM9207",
+                "bands": "B2/B4/B5/B12/B13/B14/B66/B71",
+                "speed": "DL 150 Mbps / UL 50 Mbps",
+                "gnss": "GPS, GLONASS, Galileo",
+                "status": "Active - Mature",
+                "status_color": TELIT_BLUE,
+                "launched": "Q3 2019",
+                "eol": "2029",
+                "apps": ["🚐 Fleet", "📹 Video", "🏭 Industrial", "🔒 Security"],
+                "length": 28.2, "width": 28.2, "height": 2.4,
+                "shield_color": "#b0b0b0",
+                "pcb_color": "#1a3d1a",
+                "has_dual_sim": True,
+                "num_rf_conn": 2,
+                "chip_count": 3
+            },
+            "SE868K3-A - GNSS Module": {
+                "model": "SE868K3-A",
+                "tech": "Multi-GNSS",
+                "form": "LGA 11×11mm",
+                "chipset": "MediaTek MT3333",
+                "bands": "L1 (GPS/GLONASS/Galileo/BeiDou)",
+                "speed": "N/A (GNSS Only)",
+                "gnss": "GPS, GLONASS, Galileo, BeiDou, QZSS",
+                "status": "Active - Growth",
+                "status_color": TELIT_GREEN,
+                "launched": "Q1 2022",
+                "eol": "2031+",
+                "apps": ["📍 Tracking", "🚗 Automotive", "👟 Wearables", "🚁 Drones"],
+                "length": 11, "width": 11, "height": 1.5,
+                "shield_color": "#d4af37",
+                "pcb_color": "#0f2f0f",
+                "has_dual_sim": False,
+                "num_rf_conn": 1,
+                "chip_count": 1
+            },
+            "FN920A - 5G RedCap Module": {
+                "model": "FN920A10",
+                "tech": "5G RedCap (NR-Light)",
+                "form": "LGA 23×20mm",
+                "chipset": "Qualcomm SDX35",
+                "bands": "n1/n3/n7/n28/n41/n77/n78",
+                "speed": "DL 220 Mbps / UL 100 Mbps",
+                "gnss": "GPS, GLONASS, Galileo, BeiDou",
+                "status": "Ramp-Up",
+                "status_color": TELIT_ORANGE,
+                "launched": "Q4 2024",
+                "eol": "2034+",
+                "apps": ["⌚ Wearables", "🏭 IIoT", "🏥 Medical", "🔌 Smart Grid"],
+                "length": 23, "width": 20, "height": 2.2,
+                "shield_color": "#4a90d9",
+                "pcb_color": "#142414",
+                "has_dual_sim": False,
+                "num_rf_conn": 1,
+                "chip_count": 3
+            },
+            "HE910 - 3G Legacy Module": {
+                "model": "HE910-NAG",
+                "tech": "3G HSPA+",
+                "form": "LGA 28×28mm",
+                "chipset": "Qualcomm MDM6200",
+                "bands": "B2/B5 (850/1900 MHz)",
+                "speed": "DL 14.4 Mbps / UL 5.76 Mbps",
+                "gnss": "GPS",
+                "status": "EOL Announced",
+                "status_color": TELIT_RED,
+                "launched": "Q2 2015",
+                "eol": "Jun 2026",
+                "apps": ["🔧 Legacy", "🏭 Industrial", "📟 M2M", "🚛 Telematics"],
+                "length": 28, "width": 28, "height": 2.5,
+                "shield_color": "#888888",
+                "pcb_color": "#2a2a1a",
+                "has_dual_sim": False,
+                "num_rf_conn": 1,
+                "chip_count": 2
+            }
+        }
+        
+        # Product selector
+        selected_product = st.selectbox(
+            "🔍 Select a product to view in 3D:",
+            list(product_catalog.keys()),
+            index=0
+        )
+        
+        prod = product_catalog[selected_product]
+        
+        model_col1, model_col2 = st.columns([2, 1])
+        
+        with model_col1:
+            # Create an impressive 3D IoT Module visualization
+            import numpy as np
+            
+            # Get dimensions from selected product
+            module_length = prod["length"]
+            module_width = prod["width"]
+            module_height = prod["height"]
+            pcb_color = prod["pcb_color"]
+            shield_color = prod["shield_color"]
+            
+            # Calculate proportional dimensions
+            pcb_thickness = 0.8 * (module_height / 2.8)
+            
+            # Create 3D figure
+            fig_3d = go.Figure()
+            
+            # PCB Base Layer
+            fig_3d.add_trace(go.Mesh3d(
+                x=[0, module_length, module_length, 0, 0, module_length, module_length, 0],
+                y=[0, 0, module_width, module_width, 0, 0, module_width, module_width],
+                z=[0, 0, 0, 0, pcb_thickness, pcb_thickness, pcb_thickness, pcb_thickness],
+                i=[0, 0, 0, 0, 4, 4, 0, 1, 0, 2, 1, 3],
+                j=[1, 2, 4, 5, 5, 6, 1, 5, 3, 6, 2, 7],
+                k=[2, 3, 5, 6, 6, 7, 4, 4, 7, 7, 6, 6],
+                color=pcb_color,
+                opacity=1,
+                name='PCB Substrate',
+                flatshading=True,
+                lighting=dict(ambient=0.5, diffuse=0.8, specular=0.3, roughness=0.5),
+                lightposition=dict(x=50, y=50, z=100)
+            ))
+            
+            # RF Shielding Can - proportional to module size
+            shield_margin = module_length * 0.1
+            shield_x, shield_y = shield_margin, shield_margin
+            shield_w = module_length - 2 * shield_margin
+            shield_l = module_width - 2 * shield_margin
+            shield_h = module_height - pcb_thickness - 0.3
+            fig_3d.add_trace(go.Mesh3d(
+                x=[shield_x, shield_x+shield_w, shield_x+shield_w, shield_x, 
+                   shield_x, shield_x+shield_w, shield_x+shield_w, shield_x],
+                y=[shield_y, shield_y, shield_y+shield_l, shield_y+shield_l,
+                   shield_y, shield_y, shield_y+shield_l, shield_y+shield_l],
+                z=[pcb_thickness, pcb_thickness, pcb_thickness, pcb_thickness, 
+                   pcb_thickness+shield_h, pcb_thickness+shield_h, pcb_thickness+shield_h, pcb_thickness+shield_h],
+                i=[0, 0, 0, 0, 4, 4, 0, 1, 0, 2, 1, 3],
+                j=[1, 2, 4, 5, 5, 6, 1, 5, 3, 6, 2, 7],
+                k=[2, 3, 5, 6, 6, 7, 4, 4, 7, 7, 6, 6],
+                color=shield_color,
+                opacity=1,
+                name='RF Shield',
+                flatshading=True,
+                lighting=dict(ambient=0.4, diffuse=0.6, specular=0.9, roughness=0.1),
+                lightposition=dict(x=50, y=50, z=100)
+            ))
+            
+            # Shield ventilation holes pattern - proportional to size
+            hole_rows = max(2, int(shield_w / 6))
+            hole_cols = max(2, int(shield_l / 5))
+            hole_spacing_x = shield_w / (hole_rows + 1)
+            hole_spacing_y = shield_l / (hole_cols + 1)
+            
+            for i in range(hole_rows):
+                for j in range(hole_cols):
+                    hole_x = shield_x + hole_spacing_x * (i + 0.5)
+                    hole_y = shield_y + hole_spacing_y * (j + 0.5)
+                    fig_3d.add_trace(go.Scatter3d(
+                        x=[hole_x, hole_x + hole_spacing_x * 0.3],
+                        y=[hole_y, hole_y + hole_spacing_y * 0.3],
+                        z=[pcb_thickness+shield_h+0.01, pcb_thickness+shield_h+0.01],
+                        mode='lines',
+                        line=dict(color='#666666', width=2),
+                        showlegend=False,
+                        hoverinfo='skip'
+                    ))
+            
+            # Add U.FL RF Connector(s) (gold colored) - number based on product
+            theta = np.linspace(0, 2*np.pi, 20)
+            r_outer = min(1.5, module_length * 0.05)
+            z_conn = pcb_thickness + shield_h + 0.2
+            
+            for rf_idx in range(prod["num_rf_conn"]):
+                if prod["num_rf_conn"] == 1:
+                    conn_x = module_length - module_length * 0.12
+                    conn_y = module_width / 2
+                else:
+                    conn_x = module_length - module_length * 0.12
+                    conn_y = module_width * (0.3 + rf_idx * 0.4)
+                
+                # Connector outer ring
+                fig_3d.add_trace(go.Scatter3d(
+                    x=conn_x + r_outer * np.cos(theta),
+                    y=conn_y + r_outer * np.sin(theta),
+                    z=np.full(20, z_conn),
+                    mode='lines',
+                    line=dict(color='#FFD700', width=6),
+                    name=f'RF Connector {rf_idx+1}' if prod["num_rf_conn"] > 1 else 'RF Connector',
+                    hoverinfo='name'
+                ))
+                
+                # Connector center pin
+                fig_3d.add_trace(go.Scatter3d(
+                    x=[conn_x, conn_x],
+                    y=[conn_y, conn_y],
+                    z=[z_conn, z_conn + 0.5],
+                    mode='lines',
+                    line=dict(color='#FFD700', width=4),
+                    showlegend=False,
+                    hoverinfo='skip'
+                ))
+            
+            # Add SMD Components on top of shield - based on product chip count
+            chip_names = ['Modem/SoC', 'Power Amp', 'Memory', 'Filter', 'Transceiver', 'GNSS']
+            chip_colors = ['#2a2a2a', '#1a1a1a', '#333333', '#404040', '#252525', '#3a3a3a']
+            
+            chip_size = module_length * 0.08
+            c_z = pcb_thickness + shield_h + 0.01
+            chip_height = module_height * 0.12
+            
+            for i in range(min(prod["chip_count"], 6)):
+                # Position chips in a grid pattern
+                row = i // 2
+                col = i % 2
+                cx = shield_x + shield_w * (0.2 + col * 0.35)
+                cy = shield_y + shield_l * (0.2 + row * 0.25)
+                cw = chip_size * (1.5 if i == 0 else 1.0)  # Main chip is larger
+                cl = chip_size * (1.2 if i == 0 else 0.8)
+                
+                fig_3d.add_trace(go.Mesh3d(
+                    x=[cx, cx+cw, cx+cw, cx, cx, cx+cw, cx+cw, cx],
+                    y=[cy, cy, cy+cl, cy+cl, cy, cy, cy+cl, cy+cl],
+                    z=[c_z, c_z, c_z, c_z, c_z+chip_height, c_z+chip_height, c_z+chip_height, c_z+chip_height],
+                    i=[0, 0, 0, 0, 4, 4, 0, 1, 0, 2, 1, 3],
+                    j=[1, 2, 4, 5, 5, 6, 1, 5, 3, 6, 2, 7],
+                    k=[2, 3, 5, 6, 6, 7, 4, 4, 7, 7, 6, 6],
+                    color=chip_colors[i % len(chip_colors)],
+                    opacity=1,
+                    name=chip_names[i % len(chip_names)],
+                    flatshading=True,
+                    lighting=dict(ambient=0.3, diffuse=0.7, specular=0.5),
+                    hoverinfo='name'
+                ))
+            
+            # Create LGA pads on bottom - proportional to module size
+            pad_cols = max(4, int(module_length / 3))
+            pad_rows = max(4, int(module_width / 3))
+            pad_size = module_length * 0.025
+            pad_margin = module_length * 0.08
+            pad_spacing_x = (module_length - 2 * pad_margin) / (pad_cols - 1) if pad_cols > 1 else 0
+            pad_spacing_y = (module_width - 2 * pad_margin) / (pad_rows - 1) if pad_rows > 1 else 0
+            
+            # Add pads as scatter points for visibility
+            for i in range(pad_cols):
+                for j in range(pad_rows):
+                    pad_x = pad_margin + i * pad_spacing_x
+                    pad_y = pad_margin + j * pad_spacing_y
+                    fig_3d.add_trace(go.Scatter3d(
+                        x=[pad_x], y=[pad_y], z=[-0.02],
+                        mode='markers',
+                        marker=dict(size=max(2, 4 - (30 - module_length) * 0.1), color='#DAA520', symbol='square'),
+                        showlegend=False,
+                        hoverinfo='skip'
+                    ))
+            
+            # Add Telit branding text simulation (as a line pattern)
+            brand_y = shield_y + shield_l * 0.85
+            brand_x1 = module_length * 0.25
+            brand_x2 = module_length * 0.75
+            fig_3d.add_trace(go.Scatter3d(
+                x=[brand_x1, brand_x2],
+                y=[brand_y, brand_y],
+                z=[pcb_thickness + shield_h + 0.02, pcb_thickness + shield_h + 0.02],
+                mode='lines',
+                line=dict(color='#00A7E1', width=max(3, 6 - (30 - module_length) * 0.15)),
+                name='Telit Cinterion',
+                hoverinfo='name'
+            ))
+            
+            # Status LED indicator
+            led_x = shield_x + shield_w * 0.15
+            led_y = shield_y + shield_l * 0.9
+            led_color = '#00ff00' if 'Active' in prod['status'] or 'Growth' in prod['status'] else ('#ffaa00' if 'Ramp' in prod['status'] else '#ff4444')
+            fig_3d.add_trace(go.Scatter3d(
+                x=[led_x], y=[led_y], z=[pcb_thickness + shield_h + 0.2],
+                mode='markers',
+                marker=dict(size=max(4, 6 - (30 - module_length) * 0.1), color=led_color, symbol='circle',
+                           line=dict(color='#006600', width=1)),
+                name='Status LED',
+                hoverinfo='name'
+            ))
+            
+            # Dynamic annotation positions
+            main_conn_y = module_width / 2 if prod["num_rf_conn"] == 1 else module_width * 0.3
+            
+            # Determine technology label based on product
+            tech_label = prod["tech"].split()[0] if " " in prod["tech"] else prod["tech"]
+            tech_emoji = "📡" if "5G" in prod["tech"] else ("📶" if "LTE" in prod["tech"] else ("🛰️" if "GNSS" in prod["tech"] else "📻"))
+            
+            # Update layout for stunning visual effect
+            fig_3d.update_layout(
+                scene=dict(
+                    xaxis=dict(visible=False, showgrid=False, zeroline=False, showbackground=False),
+                    yaxis=dict(visible=False, showgrid=False, zeroline=False, showbackground=False),
+                    zaxis=dict(visible=False, showgrid=False, zeroline=False, showbackground=False),
+                    bgcolor='rgba(13,33,55,1)',
+                    camera=dict(
+                        eye=dict(x=1.5, y=1.5, z=1.2),
+                        up=dict(x=0, y=0, z=1),
+                        center=dict(x=0, y=0, z=0)
+                    ),
+                    aspectmode='data',
+                    annotations=[
+                        dict(
+                            x=module_length - module_length * 0.12, 
+                            y=main_conn_y + module_width * 0.08, 
+                            z=z_conn + module_height * 0.3,
+                            text="🔌 RF Port",
+                            showarrow=True,
+                            arrowhead=2,
+                            arrowcolor='#00A7E1',
+                            font=dict(size=11, color='white'),
+                            bgcolor='rgba(0,167,225,0.3)',
+                            borderpad=4
+                        ),
+                        dict(
+                            x=module_length * 0.4, 
+                            y=module_width * 0.4, 
+                            z=pcb_thickness + shield_h + module_height * 0.25,
+                            text=f"{tech_emoji} {tech_label}",
+                            showarrow=True,
+                            arrowhead=2,
+                            arrowcolor='#00C48C',
+                            font=dict(size=11, color='white'),
+                            bgcolor='rgba(0,196,140,0.3)',
+                            borderpad=4
+                        ),
+                        dict(
+                            x=led_x, 
+                            y=led_y + module_width * 0.08, 
+                            z=pcb_thickness + shield_h + module_height * 0.2,
+                            text="💡 LED",
+                            showarrow=True,
+                            arrowhead=2,
+                            arrowcolor=led_color,
+                            font=dict(size=10, color=led_color),
+                            bgcolor=f'rgba({int(led_color[1:3], 16)},{int(led_color[3:5], 16)},{int(led_color[5:7], 16)},0.2)',
+                            borderpad=3
+                        ),
+                    ]
+                ),
+                paper_bgcolor='rgba(13,33,55,1)',
+                plot_bgcolor='rgba(13,33,55,1)',
+                height=450,
+                margin=dict(l=0, r=0, t=30, b=0),
+                showlegend=True,
+                legend=dict(
+                    x=0.02, y=0.98,
+                    bgcolor='rgba(30,58,95,0.8)',
+                    bordercolor='#00A7E1',
+                    borderwidth=1,
+                    font=dict(color='white', size=10)
+                ),
+                title=dict(
+                    text=f'<b>{prod["model"]}</b> - Interactive 3D Model',
+                    font=dict(color='white', size=14),
+                    x=0.5
+                )
+            )
+            
+            # Add rotation animation frames
+            frames = []
+            for angle in range(0, 360, 10):
+                rad = np.radians(angle)
+                frames.append(go.Frame(
+                    layout=dict(
+                        scene_camera=dict(
+                            eye=dict(
+                                x=2*np.cos(rad),
+                                y=2*np.sin(rad),
+                                z=1.2
+                            )
+                        )
+                    ),
+                    name=str(angle)
+                ))
+            
+            fig_3d.frames = frames
+            
+            # Add play button for animation
+            fig_3d.update_layout(
+                updatemenus=[
+                    dict(
+                        type='buttons',
+                        showactive=False,
+                        x=0.02,
+                        y=0.02,
+                        xanchor='left',
+                        yanchor='bottom',
+                        buttons=[
+                            dict(
+                                label='▶ Rotate',
+                                method='animate',
+                                args=[None, dict(
+                                    frame=dict(duration=100, redraw=True),
+                                    fromcurrent=True,
+                                    mode='immediate',
+                                    transition=dict(duration=50)
+                                )]
+                            ),
+                            dict(
+                                label='⏸ Stop',
+                                method='animate',
+                                args=[[None], dict(
+                                    frame=dict(duration=0, redraw=False),
+                                    mode='immediate',
+                                    transition=dict(duration=0)
+                                )]
+                            )
+                        ],
+                        font=dict(color='white'),
+                        bgcolor='rgba(0,167,225,0.7)',
+                        bordercolor='#00A7E1'
+                    )
+                ]
+            )
+            
+            st.plotly_chart(fig_3d, use_container_width=True, config={'displayModeBar': True})
+            
+            st.caption("🖱️ **Drag to rotate** | **Scroll to zoom** | **Click legend items to toggle**")
+        
+        with model_col2:
+            # Dynamic Product Specifications Card
+            status_icon = "✅" if "Active" in prod["status"] else ("🔄" if "Ramp" in prod["status"] else "⚠️")
+            status_bg = f"rgba({int(prod['status_color'][1:3], 16)},{int(prod['status_color'][3:5], 16)},{int(prod['status_color'][5:7], 16)},0.2)"
+            
+            apps_html = "".join([f'<span style="background: rgba(255,255,255,0.1); padding: 4px 10px; border-radius: 12px; font-size: 11px;">{app}</span>' for app in prod["apps"]])
+            
+            spec_html = f"""<div style="background: linear-gradient(135deg, {TELIT_NAVY} 0%, {TELIT_DARK} 100%); border-radius: 16px; padding: 24px; color: white;">
+<h4 style="color: {TELIT_BLUE}; margin-bottom: 16px;">📋 Product Specifications</h4>
+<div style="margin-bottom: 20px;">
+<div style="font-size: 11px; color: #94a3b8; text-transform: uppercase;">Model</div>
+<div style="font-size: 18px; font-weight: 600;">{prod["model"]}</div>
+</div>
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 20px;">
+<div style="background: rgba(0,167,225,0.15); border-radius: 8px; padding: 12px;">
+<div style="font-size: 10px; color: #94a3b8;">TECHNOLOGY</div>
+<div style="font-size: 14px; font-weight: 600; color: {TELIT_BLUE};">{prod["tech"]}</div>
+</div>
+<div style="background: rgba(0,196,140,0.15); border-radius: 8px; padding: 12px;">
+<div style="font-size: 10px; color: #94a3b8;">FORM FACTOR</div>
+<div style="font-size: 14px; font-weight: 600; color: {TELIT_GREEN};">{prod["form"]}</div>
+</div>
+</div>
+<div style="border-top: 1px solid rgba(255,255,255,0.1); padding-top: 16px;">
+<div style="font-size: 12px; margin-bottom: 8px;"><span style="color: #94a3b8;">Chipset:</span> <span style="color: white;">{prod["chipset"]}</span></div>
+<div style="font-size: 12px; margin-bottom: 8px;"><span style="color: #94a3b8;">Bands:</span> <span style="color: white;">{prod["bands"]}</span></div>
+<div style="font-size: 12px; margin-bottom: 8px;"><span style="color: #94a3b8;">Peak Speed:</span> <span style="color: white;">{prod["speed"]}</span></div>
+<div style="font-size: 12px; margin-bottom: 8px;"><span style="color: #94a3b8;">GNSS:</span> <span style="color: white;">{prod["gnss"]}</span></div>
+</div>
+<div style="margin-top: 20px; padding: 12px; background: {status_bg}; border-radius: 8px; border-left: 3px solid {prod['status_color']};">
+<div style="font-size: 11px; color: {prod['status_color']}; font-weight: 600;">{status_icon} LIFECYCLE STATUS</div>
+<div style="font-size: 14px; font-weight: 700; color: white; margin-top: 4px;">{prod["status"]}</div>
+<div style="font-size: 11px; color: #94a3b8; margin-top: 4px;">Launched {prod["launched"]} • Est. EOL: {prod["eol"]}</div>
+</div>
+<div style="margin-top: 16px;">
+<div style="font-size: 11px; color: #94a3b8; margin-bottom: 8px;">KEY APPLICATIONS</div>
+<div style="display: flex; flex-wrap: wrap; gap: 6px;">
+{apps_html}
+</div>
+</div>
+</div>"""
+            st.markdown(spec_html, unsafe_allow_html=True)
+        
+        st.markdown("---")
+        
         st.markdown("### Product Portfolio Status")
         
         col1, col2 = st.columns(2)
